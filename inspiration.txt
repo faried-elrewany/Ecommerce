@@ -1,0 +1,20 @@
+shop item https://codepen.io/Tbgse/pen/LNBORO
+
+card minimalist 
+https://codepen.io/kurtlopez/pen/zPEwea
+ 
+الوان رمادي مينماليست 
+
+navigation 
+https://codepen.io/cupcomcodes/pen/WNNNLem
+
+tailwind card
+
+
+tailwind css components https://www.hyperui.dev/components/ecommerce/product-cards
+
+tailwind stamps :
+https://tailwindcss.5balloons.info/components/nav/
+
+tailwind css 
+https://tailwind-elements.com/docs/standard/getting-started/quick-start/

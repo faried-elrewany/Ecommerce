@@ -1,42 +1,63 @@
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
+
+import "./index.css";
+
+// import required modules
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
+
 function App() {
   return (
     <>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
-      <div class="max-w-xs text-sm breadcrumbs">
-        <ul>
-          <li className="bg-slate-700 text-blue-300">Long text 1</li>
-          <li>Long text 2</li>
-          <li>Long text 3</li>
-          <li>Long text 4</li>
-          <li>Long text 5</li>
-        </ul>
-      </div>
+      <Swiper
+        tyle={{
+          "--swiper-pagination-color": "#FFBA08",
+          "--swiper-pagination-bullet-inactive-color": "#999999",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          "--swiper-pagination-bullet-size": "16px",
+          "--swiper-pagination-bullet-horizontal-gap": "6px",
+        }}
+        slidesPerView={1}
+        dir="rtl"
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper  bg-slate-200 mb-20"
+      >
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+      </Swiper>
     </>
   );
 }
