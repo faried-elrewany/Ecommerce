@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 import App from "./App.jsx";
-import ComplexNavbar from "./ComplexNavbar.jsx";
+import Header from "./ComplexNavbar.jsx";
 import "./index.css";
+import "./NavBarStyles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <ComplexNavbar /> */}
-    <Navbar />
+    <Header />
+    <Navigation />
     <App />
   </React.StrictMode>
 );

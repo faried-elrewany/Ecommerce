@@ -8,6 +8,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui"), require("tw-elements/dist/plugin.cjs")],
-  darkMode: "class",
+  plugins: [require("tailwindcss-rtl")],
 };

@@ -39,23 +39,23 @@ function App() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper  bg-slate-200 mb-20"
       >
-        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className=" h-52 text-slate-700">
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className=" h-52 text-slate-700">
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
         </SwiperSlide>
         <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
         </SwiperSlide>
-        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className=" h-52 text-slate-700">
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
         </SwiperSlide>
-        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className=" h-52 text-slate-700">
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
         </SwiperSlide>
-        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className="bg-slate-500 h-52 text-slate-700">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className=" h-52 text-slate-700">
+          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
         </SwiperSlide>
       </Swiper>
     </>

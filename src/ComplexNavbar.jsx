@@ -1,79 +1,130 @@
 import React from "react";
-
-const ComplexNavbar = () => {
+function ContactInfo(props) {
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-      </div>
-      <div className="form-control">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
-        />
-      </div>
-      <div className="flex-none">
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
-            <div className="indicator">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <span className="badge badge-sm indicator-item">8</span>
-            </div>
-          </label>
-          <div
-            tabIndex={0}
-            className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
-          >
-            <div className="card-body">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
-          </ul>
-        </div>
+    <div className="header-content-top">
+      <div className="content">
+        {props.info.map((item, index) => (
+          <span key={index}>
+            <i className={item.icon}></i> {item.text}
+          </span>
+        ))}
       </div>
     </div>
   );
-};
+}
 
-export default ComplexNavbar;
+function Logo(props) {
+  return (
+    <strong className="logo">
+      <i className={props.icon}></i>
+    </strong>
+  );
+}
+
+function Search(props) {
+  return (
+    <label className="open-search" htmlFor="open-search">
+      <i className={props.icon}></i>
+      <input
+        className="input-open-search"
+        id="open-search"
+        type="checkbox"
+        name="menu"
+      />
+      <div className="search">
+        <button className="button-search">
+          <i className={props.icon}></i>
+        </button>
+        <input
+          type="text"
+          placeholder={props.placeholder}
+          className="input-search"
+        />
+      </div>
+    </label>
+  );
+}
+
+function NavContent(props) {
+  return (
+    <nav className="nav-content">
+      <ul className="nav-content-list">
+        {props.items.map((item, index) => (
+          <li className="nav-content-item" key={index}>
+            <a className="nav-content-link" href={item.link}>
+              <i className={item.icon}></i>
+            </a>
+          </li>
+        ))}
+        <li className="nav-content-item account-login">
+          <label
+            className="open-menu-login-account"
+            htmlFor="open-menu-login-account"
+          >
+            <input
+              className="input-menu"
+              id="open-menu-login-account"
+              type="checkbox"
+              name="menu"
+            />
+            <i className="fa fa-user-circle"></i>
+            <span className="login-text">
+              {props.account.text} <strong>{props.account.action}</strong>
+            </span>{" "}
+            <span className="item-arrow"></span>
+            <ul className="login-list">
+              {props.account.items.map((item, index) => (
+                <li className="login-list-item" key={index}>
+                  <a href={item.link}>{item.text}</a>
+                </li>
+              ))}
+            </ul>
+          </label>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+function Header() {
+  const contactInfo = [
+    { icon: "fas fa-phone-square-alt", text: "+201552805430" },
+    { icon: "fas fa-envelope-square", text: "fariedelrewany@email.com" },
+  ];
+
+  const logoIcon = "fa fa-heart";
+  const searchIcon = "fa fa-search";
+  const searchPlaceholder = " م الذي تبحث عنه";
+
+  const navItems = [
+    { icon: "fa fa-heart", link: "" },
+    { icon: "fa fa-shopping-cart", link: "" },
+  ];
+
+  const accountMenu = {
+    text: "مرحبا, تسجيل الدخول",
+    action: "انشاء حساب",
+    items: [
+      { text: "الصقحة الشخصية", link: "" },
+      { text: "انشاء حساب", link: "" },
+      { text: "تسجيل الخروج", link: "" },
+    ],
+  };
+
+  return (
+    <header className="header">
+      <ContactInfo info={contactInfo} />
+      <Container>
+        <Logo icon={logoIcon} />
+        <Search icon={searchIcon} placeholder={searchPlaceholder} />
+        <NavContent items={navItems} account={accountMenu} />
+      </Container>
+    </header>
+  );
+}
+
+function Container(props) {
+  return <div className="container">{props.children}</div>;
+}
+
+export default Header;
