@@ -3,8 +3,8 @@
 }
 
 :root {
-  --blue: rgb(51 65 85);
-  --lightblue: rgb(71 85 105);
+  --slate: rgb(51 65 85);
+  --lightslate: rgb(71 85 105);
   --font: "Rubik", sans-serif;
   --color-text: rgb(248 250 252);
   --shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.3);
@@ -27,14 +27,13 @@ ul {
 
 header {
   box-shadow: var(--shadow);
-  position: sticky;
   top: 0;
   width: 100%;
   z-index: 10;
 }
 
 .header-content-top {
-  background: var(--blue);
+  background: var(--slate);
   height: 30px;
   width: 100%;
 }
@@ -74,7 +73,7 @@ header {
 
 /* logo */
 .container .logo {
-  color: var(--blue);
+  color: var(--slate);
   font-size: 40px;
   line-height: 20px;
   padding-left: 15px;
@@ -129,15 +128,15 @@ header {
 /* input search effects */
 .search .input-search {
   border-radius: 3px;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--slate);
   height: 40px;
   padding: 0 15px 0 70px;
   width: 100%;
   background: white no-repeat;
   background-image: linear-gradient(
       to bottom,
-      var(--blue) 0%,
-      var(--lightblue) 90%
+      var(--slate) 0%,
+      var(--lightslate) 90%
     ),
     linear-gradient(to bottom, var(--color-text), var(--color-text));
   background-size: 0 2px, 100% 1px;
@@ -151,7 +150,7 @@ header {
 
 /* open search menu mobile */
 .search .button-search {
-  background: var(--blue);
+  background: var(--slate);
   border: 0;
   color: var(--color-text);
   cursor: pointer;
@@ -211,7 +210,7 @@ header {
   cursor: pointer;
   display: flex;
   position: relative;
-  color: var(--blue);
+  color: var(--slate);
 }
 .container .nav-content .nav-content-list .nav-content-item .input-menu {
   display: none;
@@ -226,7 +225,7 @@ header {
 }
 .container .nav-content .nav-content-list .nav-content-item .login-list {
   background: #fff;
-  border-bottom: 3px solid var(--blue);
+  border-bottom: 3px solid var(--slate);
   border-radius: 3px;
   box-shadow: var(--shadow);
   display: none;
@@ -237,7 +236,7 @@ header {
   transition: 100ms all linear 0s;
   width: 200px;
   z-index: 10;
-  color: var(--blue);
+  color: var(--slate);
 }
 .container
   .nav-content
@@ -246,7 +245,7 @@ header {
   .login-list
   .login-list-item {
   padding: 15px 20px;
-  color: var(--blue);
+  color: var(--slate);
 }
 .container
   .nav-content
@@ -254,7 +253,7 @@ header {
   .nav-content-item
   .login-list
   .login-list-item:hover {
-  background: var(--blue);
+  background: var(--slate);
   color: var(--color-text);
 }
 .container
@@ -273,7 +272,7 @@ header {
   color: #e74c3c;
 }
 .container.nav-content.nav-content-list.nav-content-item:hover .fas {
-  color: var(--blue);
+  color: var(--slate);
 }
 .container.nav-content.nav-content-list.account-login.login-text {
   display: flex;
@@ -294,7 +293,7 @@ header {
   font-size: 19px;
   padding: 10px 15px;
   transition: 100ms all linear 0s;
-  color: var(--blue);
+  color: var(--slate);
 }
 @media (max-width: 991px) {
   .container .nav-content .nav-content-list .nav-content-link {
@@ -308,7 +307,7 @@ header {
   margin: 0 auto;
   max-width: 1300px;
   width: 100%;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 /* ul list category featured */
@@ -335,10 +334,10 @@ header {
   height: 40px;
   justify-content: center;
   transition: 100ms all linear 0s;
-  color: var(--blue);
+  color: var(--slate);
 }
 .nav-container .nav-row .nav-row-list .nav-row-list-link:hover {
-  background: var(--blue);
+  background: var(--slate);
   color: var(--color-text);
   width: 100%;
 }
@@ -357,7 +356,7 @@ header {
 /* container all navigator */
 .nav-container .all-navigator {
   align-items: center;
-  background: var(--blue);
+  background: var(--slate);
   color: #fff;
   display: flex;
   height: 40px;
@@ -428,7 +427,7 @@ header {
 /* all category list */
 .all-category-list {
   background: #fff;
-  border-bottom: 3px solid var(--blue);
+  border-bottom: 3px solid var(--slate);
   box-shadow: var(--shadow);
   display: none;
   height: auto;
@@ -448,7 +447,7 @@ header {
 /* items primary categories */
 .all-category-list-item:hover {
   display: block;
-  background: var(--blue);
+  background: var(--slate);
 }
 .all-category-list-item:hover .category-second-list {
   right: 100%;
@@ -466,13 +465,13 @@ header {
   justify-content: space-between;
   padding: 15px;
   transition: 100ms all linear 0s;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 /* container cateory all */
 .category-second-list {
   background: #fff;
-  border-bottom: 3px solid var(--blue);
+  border-bottom: 3px solid var(--slate);
   box-shadow: inset -44px -1px 88px -59px rgba(0, 0, 0, 0.37);
   display: flex;
   height: 322px;
@@ -509,10 +508,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  color: var(--blue);
+  color: var(--slate);
 }
 .category-second-item:hover {
-  background: var(--blue);
+  background: var(--slate);
   color: var(--color-text);
 }
 .category-second-item:hover a {
