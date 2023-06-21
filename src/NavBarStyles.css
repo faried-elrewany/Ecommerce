@@ -18,7 +18,6 @@ strong {
 label,
 a {
   text-decoration: none;
-  color: var(--color-text);
 }
 
 ul {
@@ -191,8 +190,16 @@ header {
   top: -3px;
 }
 @media (max-width: 768px) {
-  .container .nav-content .nav-content-list .nav-content-item .item-arrow {
+  .container.nav-content.nav-content-list.nav-content-item.item-arrow {
     display: none;
+  }
+  .header-content-top .content {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .header-content-top {
+    height: 45px;
   }
 }
 .container
@@ -226,10 +233,11 @@ header {
   overflow: hidden;
   position: absolute;
   left: 0;
-  top: 28px;
+  top: 100%;
   transition: 100ms all linear 0s;
   width: 200px;
   z-index: 10;
+  color: var(--blue);
 }
 .container
   .nav-content
@@ -238,6 +246,7 @@ header {
   .login-list
   .login-list-item {
   padding: 15px 20px;
+  color: var(--blue);
 }
 .container
   .nav-content
@@ -246,6 +255,7 @@ header {
   .login-list
   .login-list-item:hover {
   background: var(--blue);
+  color: var(--color-text);
 }
 .container
   .nav-content
@@ -254,7 +264,6 @@ header {
   .login-list
   .login-list-item:hover
   a {
-  color: #fff;
 }
 .container
   .nav-content
@@ -263,11 +272,10 @@ header {
   .fas {
   color: #e74c3c;
 }
-.container .nav-content .nav-content-list .nav-content-item:hover .fas {
+.container.nav-content.nav-content-list.nav-content-item:hover .fas {
   color: var(--blue);
 }
-.container .nav-content .nav-content-list .account-login .login-text {
-  align-items: end;
+.container.nav-content.nav-content-list.account-login.login-text {
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -427,7 +435,7 @@ header {
   min-height: 300px;
   padding: 15px 0;
   position: absolute;
-  top: 24px;
+  top: 100%;
   width: 300px;
   z-index: 90;
 }
