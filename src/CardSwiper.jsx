@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import ReactDOM from "react-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,6 +13,12 @@ import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 
 function CardSwiper() {
+  const props = {
+    width: 400,
+    height: 250,
+    zoomWidth: 500,
+    img: "https://i.ibb.co/Vvndkmy/banner.jpg",
+  };
   return (
     <>
       <Swiper

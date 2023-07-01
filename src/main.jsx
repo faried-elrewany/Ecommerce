@@ -9,17 +9,20 @@ import CategoryCard from "./CategoryCard.jsx";
 import Row from "./Row.jsx";
 import Card from "./Card.jsx";
 import Carousal from "./Carousal.jsx";
+import ZoomImage from "./ZoomImage";
 import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 
 import "./index.css";
 import CardDetails from "./CardDetails.jsx";
-// import "./NavBarStyles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Header /> */}
+    <ZoomImage />
+    {/* <div className="card-detail"> */}
+    {/* <ReactImageZoom {...props} /> */}
+    {/* </div> */};{/* <Header /> */}
     {/* Home Page */}
     {/* <Header />
     <Navigation />
@@ -110,6 +113,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Row>
     </Container> */}
     {/* End Home Page */}
-    <CardDetails />
+    {/* <CardDetails /> */}
   </React.StrictMode>
 );
