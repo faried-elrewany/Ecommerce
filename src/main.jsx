@@ -13,11 +13,15 @@ import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 
 import "./index.css";
-import "./NavBarStyles.css";
+import CardDetails from "./CardDetails.jsx";
+// import "./NavBarStyles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Header />
+    {/* <App /> */}
+    {/* <Header /> */}
+    {/* Home Page */}
+    {/* <Header />
     <Navigation />
     <App />
     <Container>
@@ -104,6 +108,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           rating={"4.5"}
         />
       </Row>
-    </Container>
+    </Container> */}
+    {/* End Home Page */}
+    <CardDetails />
   </React.StrictMode>
 );

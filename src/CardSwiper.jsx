@@ -11,11 +11,11 @@ import "swiper/css/effect-coverflow";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 
-function App() {
+function CardSwiper() {
   return (
     <>
       <Swiper
-        tyle={{
+        style={{
           "--swiper-pagination-color": "#FFBA08",
           "--swiper-pagination-bullet-inactive-color": "#999999",
           "--swiper-pagination-bullet-inactive-opacity": "1",
@@ -26,38 +26,41 @@ function App() {
         dir="rtl"
         spaceBetween={30}
         loop={true}
-        pagination={{
-          clickable: true,
-        }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper  bg-slate-200 mb-20"
+        modules={[Navigation]}
+        className="mySwiper  mb-20"
       >
-        <SwiperSlide className="  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
+        <SwiperSlide className=" h-full  w-full  text-slate-700">
+          <img
+            className="object-contain object-center"
+            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+          />
         </SwiperSlide>
-        <SwiperSlide className="  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
+        <SwiperSlide className=" h-full  w-full  text-slate-700">
+          <img
+            className="object-contain object-center"
+            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+          />
         </SwiperSlide>
-        <SwiperSlide className="bg-slate-500  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
+        <SwiperSlide className=" h-full  w-full  text-slate-700">
+          <img
+            className="object-contain object-center"
+            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+          />
         </SwiperSlide>
-        <SwiperSlide className="  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className="  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className="  text-slate-700">
-          <img src="https://i.ibb.co/Vvndkmy/banner.jpg" />
+        <SwiperSlide className=" h-full  w-full  text-slate-700">
+          <img
+            className="object-contain object-center"
+            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+          />
         </SwiperSlide>
       </Swiper>
     </>
   );
 }
 
-export default App;
+export default CardSwiper;
