@@ -17,6 +17,7 @@ import "./index.css";
 
 import Zoom from "react-img-zoom";
 import Login from "./Login";
+import SignUp from "./SignUp.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
@@ -53,7 +54,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         rating={"4.5"}
       />
     </Row> */}
-    <Login />
+    {/* <Login /> */}
+    <SignUp />
     {/* Home Page */}
     {/* <Header />
     <Navigation />

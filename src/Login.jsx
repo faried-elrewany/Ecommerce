@@ -54,7 +54,7 @@ export default function Login() {
   };
 
   return (
-    <section className="  h-[100vh] flex justify-center items-center">
+    <section className="  h-[100vh] flex justify-center items-center overflow-hidden">
       <Card className="w-96">
         <CardHeader
           variant="gradient"
