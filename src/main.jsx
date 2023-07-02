@@ -13,11 +13,12 @@ import "./NavBarStyles.css";
 import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 import CardDetails from "./CardDetails.jsx";
+import CartItems from "./Cart.jsx";
 import "./index.css";
 
 import Zoom from "react-img-zoom";
-import Login from "./Login";
 import SignUp from "./SignUp.jsx";
+import Login from "./Login";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
@@ -55,7 +56,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       />
     </Row> */}
     {/* <Login /> */}
-    <SignUp />
+    {/* <SignUp /> */}
+    <CartItems />
     {/* Home Page */}
     {/* <Header />
     <Navigation />

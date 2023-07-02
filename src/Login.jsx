@@ -59,7 +59,6 @@ export default function Login() {
         <CardHeader
           variant="gradient"
           color="indigo"
-          class="bg-slate-800"
           className="mb-4 grid h-28 place-items-center "
         >
           <Typography variant="h3" color="white">
@@ -88,6 +87,7 @@ export default function Login() {
             fullWidth
             onClick={handleSubmit}
             color="indigo"
+            type="submit"
           >
             تسجيل الدخول
           </Button>
