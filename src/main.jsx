@@ -14,6 +14,7 @@ import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 import CardDetails from "./CardDetails.jsx";
 import CartItems from "./Cart.jsx";
+import CouponInput from "./Coupon.jsx";
 import "./index.css";
 
 import Zoom from "react-img-zoom";
@@ -25,7 +26,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <div className="card-detail"> */}
     {/* <Zoom img={clothe} zoomScale={1.5} width={600} height={600} /> */}
     {/* </div> */}
+    {/* <CouponInput /> */}
     {/* <Header />
+    
     <Navigation />
     <CardDetails />
     <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} />
