@@ -124,7 +124,7 @@ function Header() {
 }
 
 function Container(props) {
-  return <div className="container">{props.children}</div>;
+  return <div className="container-header">{props.children}</div>;
 }
 
 export default Header;

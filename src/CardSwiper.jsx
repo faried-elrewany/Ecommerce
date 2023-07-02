@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import ReactDOM from "react-dom";
-
+import Zoom from "react-img-zoom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -38,31 +38,39 @@ function CardSwiper() {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Navigation]}
-        className="mySwiper  mb-20"
+        modules={[Autoplay, Navigation]}
+        className="mySwiper  mb-20  rounded"
       >
-        <SwiperSlide className=" h-full  w-full  text-slate-700">
-          <img
-            className="object-contain object-center"
-            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+        <SwiperSlide className=" h-full  w-full rounded text-slate-700">
+          <Zoom
+            img="https://i.ibb.co/Vvndkmy/banner.jpg"
+            zoomScale={1.5}
+            width={600}
+            height={600}
           />
         </SwiperSlide>
-        <SwiperSlide className=" h-full  w-full  text-slate-700">
-          <img
-            className="object-contain object-center"
-            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+        <SwiperSlide className=" h-full  w-full rounded text-slate-700">
+          <Zoom
+            img="https://i.ibb.co/Vvndkmy/banner.jpg"
+            zoomScale={1.5}
+            width={600}
+            height={600}
           />
         </SwiperSlide>
-        <SwiperSlide className=" h-full  w-full  text-slate-700">
-          <img
-            className="object-contain object-center"
-            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+        <SwiperSlide className=" h-full  w-full rounded text-slate-700">
+          <Zoom
+            img="https://i.ibb.co/Vvndkmy/banner.jpg"
+            zoomScale={1.5}
+            width={400}
+            height={600}
           />
         </SwiperSlide>
-        <SwiperSlide className=" h-full  w-full  text-slate-700">
-          <img
-            className="object-contain object-center"
-            src="https://i.ibb.co/Vvndkmy/banner.jpg"
+        <SwiperSlide className=" h-full  rounded w-full  text-slate-700">
+          <Zoom
+            img="https://i.ibb.co/Vvndkmy/banner.jpg"
+            zoomScale={1.5}
+            width={600}
+            height={600}
           />
         </SwiperSlide>
       </Swiper>

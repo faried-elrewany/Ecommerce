@@ -4,13 +4,13 @@ import ProductOptions from "./ProductOptions.jsx";
 
 const CardDetails = () => {
   return (
-    <section className="text-gray-700 body-font overflow-hidden bg-white">
-      <div className="container px-5 py-12 mx-auto lg:py-24">
+    <section className="text-gray-700 body-font  bg-slate-50">
+      <div className="container px-5 py-4  mx-auto ">
         <div className="flex flex-col-reverse lg:flex-row">
           <div className="  h-[400px] lg:w-1/3 w-full object-cover object-center rounded  mb-5 lg:mb-0 lg:me-10">
             <CardSwiper />
           </div>
-          <div className="  flex-auto p-4 lg:w-1/2 w-full lg:py-6 bg-slate-200">
+          <div className="  flex-auto p-4 lg:w-1/2 w-full lg:py-6 ">
             <h2 className="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-2 lg:mb-4">
               اسم المنتج{" "}
             </h2>
@@ -134,7 +134,7 @@ const CardDetails = () => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 20.00 <span>جنية</span>
               </span>
-              <button className="flex ms-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+              <button className="flex ms-auto text-white bg-slate-800 transition border-0 py-2 px-6 focus:outline-none hover:bg-slate-900 rounded">
                 اضافة الي العربة{" "}
               </button>
             </div>

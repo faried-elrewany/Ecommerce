@@ -9,20 +9,51 @@ import CategoryCard from "./CategoryCard.jsx";
 import Row from "./Row.jsx";
 import Card from "./Card.jsx";
 import Carousal from "./Carousal.jsx";
-import ZoomImage from "./ZoomImage";
+import "./NavBarStyles.css";
 import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
-
-import "./index.css";
 import CardDetails from "./CardDetails.jsx";
+import "./index.css";
 
+import Zoom from "react-img-zoom";
+import Login from "./Login";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
-    <ZoomImage />
     {/* <div className="card-detail"> */}
-    {/* <ReactImageZoom {...props} /> */}
-    {/* </div> */};{/* <Header /> */}
+    {/* <Zoom img={clothe} zoomScale={1.5} width={600} height={600} /> */}
+    {/* </div> */}
+    {/* <Header />
+    <Navigation />
+    <CardDetails />
+    <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} />
+    <Row>
+      <Card
+        imageSrc={labtop}
+        title="السلام عليكم ورحمة الله وبركاته"
+        price="150"
+        rating={"4.5"}
+      />
+      <Card
+        imageSrc={labtop}
+        title="السلام عليكم ورحمة الله وبركاته"
+        price="150"
+        rating={"4.5"}
+      />
+      <Card
+        imageSrc={labtop}
+        title="السلام عليكم ورحمة الله وبركاته"
+        price="150"
+        rating={"4.5"}
+      />
+      <Card
+        imageSrc={labtop}
+        title="السلام عليكم ورحمة الله وبركاته بسم الله الرحمن الرحيم"
+        price="150"
+        rating={"4.5"}
+      />
+    </Row> */}
+    <Login />
     {/* Home Page */}
     {/* <Header />
     <Navigation />
