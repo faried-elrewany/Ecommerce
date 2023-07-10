@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import clothe from "./images/clothe.png";
-import { Input } from "@material-tailwind/react";
 
 function ProductCard({
   id,
@@ -99,6 +98,16 @@ function ProductCard({
 }
 
 const Cart = () => {
+  const array = [1, 3, 2, 5, 7, 9, 2, 3, 2, 4, 5];
+  console.log(
+    array.filter((item, index) => {
+      console.log(array.indexOf(item), index, item);
+      return array.indexOf(item) === index;
+    })
+  );
+  const unique = new Set(array);
+  // unique = array;
+  console.log("hello", unique);
   const [cart, setCart] = useState([
     { id: 1, name: "Winter Thick Hooded", price: 23453, quantity: 1 },
     { id: 2, name: "Summer Cotton T-shirt", price: 1500, quantity: 2 },
