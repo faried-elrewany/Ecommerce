@@ -3,8 +3,8 @@
 }
 
 :root {
-  --slate: rgb(51 65 85);
-  --lightslate: rgb(71 85 105);
+  --slate: #ef5350;
+  --lightslate: #ffebee;
   --font: "Rubik", sans-serif;
   --color-text: rgb(248 250 252);
   --shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.3);

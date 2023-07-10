@@ -14,7 +14,7 @@ import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 import CardDetails from "./CardDetails.jsx";
 import CartItems from "./Cart.jsx";
-import CouponInput from "./Coupon.jsx";
+import Test from "./Test";
 import "./index.css";
 
 import Zoom from "react-img-zoom";
@@ -60,7 +60,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Row> */}
     {/* <Login /> */}
     {/* <SignUp /> */}
-    <CartItems />
+    {/* <CartItems />
+     */}
+    <Test />
     {/* Home Page */}
     {/* <Header />
     <Navigation />
