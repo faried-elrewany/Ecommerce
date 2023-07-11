@@ -20,6 +20,7 @@ import "./index.css";
 import Zoom from "react-img-zoom";
 import SignUp from "./SignUp.jsx";
 import Login from "./Login";
+import Filters from "./Filters";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
@@ -62,7 +63,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <SignUp /> */}
     {/* <CartItems />
      */}
-    <Test />
+    {/* <Test /> */}
+    <Filters />
     {/* Home Page */}
     {/* <Header />
     <Navigation />
