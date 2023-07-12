@@ -181,3 +181,33 @@ export function PriceFilter() {
     </details>
   );
 }
+// _____________________________________________________________________________________
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export function FilterMenu() {
+  return (
+    <Menu
+      animate={{
+        mount: { y: 0 },
+        unmount: { y: 25 },
+      }}
+    >
+      <MenuHandler>
+        <Button color="red">ترتيب حسب </Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 4</MenuItem>
+        <MenuItem>Menu Item 5</MenuItem>
+        <MenuItem>Menu Item 6</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}

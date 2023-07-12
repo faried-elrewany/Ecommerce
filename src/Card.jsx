@@ -1,53 +1,67 @@
-import React from "react";
+import labtop from "./images/labtop.png";
+import clothe from "./images/clothe.png";
 
-const Card = ({ imageSrc, title, price, rating }) => {
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+  Tooltip,
+  IconButton,
+} from "@material-tailwind/react";
+import {
+  BanknotesIcon,
+  StarIcon,
+  HeartIcon,
+  WifiIcon,
+  HomeIcon,
+  TvIcon,
+  FireIcon,
+} from "@heroicons/react/24/solid";
+
+export default function CardElement() {
   return (
-    <a
-      href="#"
-      className="group relative  flex justify-center flex-col  overflow-hidden w-64 shadow-2xl"
-    >
-      <button className="absolute end-4 top-4 z-10 rounded-full text-slate-900 transition hover:text-slate-900/75 hover:-translate-y-1">
-        <span className="sr-only">Wishlist</span>
-        <i
-          className="fa-regular fa-heart"
-          style={{ color: "#ea344f", fontSize: "24px" }}
-        ></i>
-      </button>
-      <div className="flex w-full p-2 items-center justify-center">
+    <Card className=" w-72 shadow-lg">
+      <CardHeader floated={false} color="blue-gray">
         <img
-          src={imageSrc}
-          alt=""
-          className=" w-3/4 h-3/4 object-contain object-center transition duration-500 group-hover:scale-105"
+          className="w-60 h-52   object-contain object-center transition duration-500 group-hover:scale-105 "
+          src={labtop}
+          alt="ui/ux review check"
         />
-      </div>
-
-      <div className="relative border border-slate-100 bg-white p-4">
-        <h5 className="mt-2 text-sm font-medium text-slate-900">{title}</h5>
-
-        <div className="flex justify-between items-center mt-2">
-          <p className="text-xl text-slate-700 font-semibold self-center">
-            {price} جنيه
-          </p>
-          <div className="flex justify-center items-center gap-1 self-center">
-            <span className="self-center text-[#facc15]">{rating}</span>
-            <i
-              className="fa-solid fa-star"
-              style={{ color: "#facc15", fontSize: "18px" }}
-            ></i>
-          </div>
-        </div>
-
-        <form className="mt-4">
-          <a
-            href="#"
-            className="block w-full text-center rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+        <IconButton
+          size="sm"
+          color="red"
+          variant="text"
+          className="!absolute top-4 end-4 rounded-full"
+        >
+          <HeartIcon className="h-6 w-6" />
+        </IconButton>
+      </CardHeader>
+      <CardBody>
+        <div className="mb-3 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray" className="font-medium">
+            Wooden House, Florida
+          </Typography>
+          <Typography
+            color="blue-gray"
+            className="flex items-center gap-1.5 font-normal"
           >
-            اشتري الان
-          </a>
-        </form>
-      </div>
-    </a>
+            <StarIcon className="-mt-0.5 h-5 w-5 text-yellow-700" />
+            5.0
+          </Typography>
+        </div>
+        <Typography color="gray">
+          Enter a freshly updated and thoughtfully furnished peaceful home
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-1">
+        <Button size="md" color="red" fullWidth={true}>
+          Reserve
+        </Button>
+      </CardFooter>
+    </Card>
   );
-};
-
-export default Card;
+}

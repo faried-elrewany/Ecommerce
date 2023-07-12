@@ -15,12 +15,14 @@ import labtop from "./images/labtop.png";
 import CardDetails from "./CardDetails.jsx";
 import CartItems from "./Cart.jsx";
 import Test from "./Test";
+import Admin from "./Admin.jsx";
+
 import "./index.css";
 
 import Zoom from "react-img-zoom";
 import SignUp from "./SignUp.jsx";
 import Login from "./Login";
-import Filters from "./Filters";
+import CollectionFilter from "./CollectionFilter.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
@@ -63,8 +65,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <SignUp /> */}
     {/* <CartItems />
      */}
+    {/* الكارته */}
     {/* <Test /> */}
-    <Filters />
+    <Admin />
+    {/* <CollectionFilter /> */}
     {/* Home Page */}
     {/* <Header />
     <Navigation />

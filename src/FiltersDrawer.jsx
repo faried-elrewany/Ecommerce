@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { PriceFilter, AvailabilityFilter } from "./FiltersComponents.jsx";
-export default function Filter() {
+export default function FiltersDrawer() {
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -15,7 +15,7 @@ export default function Filter() {
   return (
     <React.Fragment>
       <Button onClick={openDrawer} color="red">
-        Open Drawer
+        Filters
       </Button>
       <Drawer open={open} onClose={closeDrawer} className="p-4">
         <div className="mb-6 flex items-center justify-between">
