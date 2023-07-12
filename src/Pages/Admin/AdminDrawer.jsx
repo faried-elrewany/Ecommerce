@@ -1,115 +1,90 @@
 import React from "react";
 import {
-  Navbar,
-  Collapse,
+  Drawer,
+  Button,
   Typography,
   IconButton,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Chip,
 } from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  PresentationChartBarIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+  InboxIcon,
+  PowerIcon,
+} from "@heroicons/react/24/solid";
 
-function NavList() {
-  return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="red"
-        className="p-1 font-medium"
-      >
-        <a
-          href="#"
-          className="flex items-center hover:text-red-900 transition-colors"
-        >
-          Pages
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="red"
-        className="p-1 font-medium"
-      >
-        <a
-          href="#"
-          className="flex items-center hover:text-red-900 transition-colors"
-        >
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="red"
-        className="p-1 font-medium"
-      >
-        <a
-          href="#"
-          className="flex items-center hover:text-red-900 transition-colors"
-        >
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="red"
-        className="p-1 font-medium"
-      >
-        <a
-          href="#"
-          className="flex items-center hover:text-red-900 transition-colors"
-        >
-          Docs
-        </a>
-      </Typography>
-    </ul>
-  );
-}
-
-export default function Example() {
-  const [openNav, setOpenNav] = React.useState(false);
-
-  const handleWindowResize = () =>
-    window.innerWidth >= 960 && setOpenNav(false);
-
-  React.useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
+export function Example() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-6 py-3" dir="ltr">
-      <div className="flex items-center justify-between text-red-900">
-        <Typography
-          as="a"
-          href="#"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
-        >
-          Admin Dashboard
-        </Typography>
-        <div className="hidden lg:block">
-          <NavList />
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer}>
+        <div className="mb-2 flex items-center justify-between p-4">
+          <Typography variant="h5" color="blue-gray">
+            Side Menu
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
         </div>
-        <IconButton
-          variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          ripple={false}
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-          ) : (
-            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-          )}
-        </IconButton>
-      </div>
-      <Collapse open={openNav}>
-        <NavList />
-      </Collapse>
-    </Navbar>
+        <List>
+          <ListItem>
+            <ListItemPrefix>
+              <PresentationChartBarIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Dashboard
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <ShoppingBagIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            E-Commerce
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <InboxIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Inbox
+            <ListItemSuffix>
+              <Chip
+                value="14"
+                size="sm"
+                variant="ghost"
+                color="blue-gray"
+                className="rounded-full"
+              />
+            </ListItemSuffix>
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Profile
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <Cog6ToothIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Settings
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <PowerIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Log Out
+          </ListItem>
+        </List>
+      </Drawer>
+    </React.Fragment>
   );
 }

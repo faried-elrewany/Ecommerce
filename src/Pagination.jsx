@@ -2,7 +2,7 @@ import React from "react";
 import { IconButton, Typography } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export default function Pagination() {
   const [active, setActive] = React.useState(1);
 
   const next = () => {
