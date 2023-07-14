@@ -16,6 +16,8 @@ import CardDetails from "./CardDetails.jsx";
 import CartItems from "./Cart.jsx";
 import Test from "./Test";
 import Admin from "./Admin.jsx";
+import UserFavoriteProductsPage from "./Pages/User/UserFavoriteProductsPage.jsx";
+import UserAllAddresPage from "./Pages/User/UserAllAddresPage.jsx";
 
 import "./index.css";
 
@@ -26,6 +28,7 @@ import CollectionFilter from "./CollectionFilter.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
+    <UserAllAddresPage />
     {/* <div className="card-detail"> */}
     {/* <Zoom img={clothe} zoomScale={1.5} width={600} height={600} /> */}
     {/* </div> */}
@@ -67,7 +70,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
      */}
     {/* الكارته */}
     {/* <Test /> */}
-    <Admin />
+    {/* <Admin /> */}
     {/* <CollectionFilter /> */}
     {/* Home Page */}
     {/* <Header />
