@@ -1,3 +1,14 @@
+import AdminAddBrand from "./AdminAddBrand";
+import AdminAllOrders from "./AdminAllOrders";
+import AdminAllProducts from "./AdminAllProducts";
+import AddNewProduct from "./AddNewProduct";
+import AddSubCategory from "./AddSubCategory";
+import AddCategory from "./AddCategory";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+
+<Bars3Icon className="h-6 w-6 text-gray-500" />;
+
+//  ناقص صفحة كمان
 import React from "react";
 import {
   Drawer,
@@ -6,83 +17,45 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Chip,
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
 
-export function Example() {
-  const [open, setOpen] = React.useState(false);
-  const openDrawer = () => setOpen(true);
-  const closeDrawer = () => setOpen(false);
+export default function SideBar({ items }) {
+  const [openRight, setOpenRight] = React.useState(false);
 
+  const openDrawerRight = () => setOpenRight(true);
+  const closeDrawerRight = () => setOpenRight(false);
   return (
     <React.Fragment>
-      <Button onClick={openDrawer}>Open Drawer</Button>
-      <Drawer open={open} onClose={closeDrawer}>
-        <div className="mb-2 flex items-center justify-between p-4">
-          <Typography variant="h5" color="blue-gray">
-            Side Menu
+      <div className="flex flex-wrap gap-4">
+        <Button onClick={openDrawerRight} color="red">
+          <Bars3Icon className="h-6 w-6 text-white" />
+        </Button>
+      </div>
+      <Drawer
+        placement="right"
+        open={openRight}
+        onClose={closeDrawerRight}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="red">
+            صفحة الادمن
           </Typography>
-          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
-            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerRight}
+          >
+            <XMarkIcon color="red" strokeWidth={2} className="h-5 w-5" />
           </IconButton>
         </div>
         <List>
-          <ListItem>
-            <ListItemPrefix>
-              <PresentationChartBarIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Dashboard
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <ShoppingBagIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            E-Commerce
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <InboxIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Inbox
-            <ListItemSuffix>
-              <Chip
-                value="14"
-                size="sm"
-                variant="ghost"
-                color="blue-gray"
-                className="rounded-full"
-              />
-            </ListItemSuffix>
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Profile
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Settings
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <PowerIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Log Out
-          </ListItem>
+          {items.map(({ name, href }) => (
+            <ListItem key={name}>
+              <a href={href}>{name}</a>
+            </ListItem>
+          ))}
         </List>
       </Drawer>
     </React.Fragment>

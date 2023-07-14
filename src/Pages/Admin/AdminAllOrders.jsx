@@ -10,7 +10,7 @@ const AdminAllOrders = () => {
       <h2 className="font-bold text-2xl m-4 text-red-900">
         ادارة جميع الطلبات
       </h2>
-      <div className=" flex flex-col w-3/4 mx-auto items-center justify-center">
+      <div className=" flex flex-col w-3/4  justify-center">
         <ProductCard
           image={labtop}
           category="اجهزة الكترونية"
@@ -33,7 +33,7 @@ const AdminAllOrders = () => {
           price={3000}
         />
       </div>
-      <div className=" flex flex-col w-72 mx-auto justify-center m-8 items-start  gap-4 border-2 border-red-500 rounded-lg p-4">
+      <div className=" flex flex-col w-72  justify-center m-8 items-start  gap-4 border-2 border-red-500 rounded-lg p-4">
         <h4 className="font-bold text-2xl">تفاصيل العميل</h4>
         <p className="font-extrabold text-red-900">
           الاسم: <span className="font-medium text-gray-800">احمد عبدالله</span>
