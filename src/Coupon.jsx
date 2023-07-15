@@ -75,7 +75,7 @@ export function Quantity() {
       <div class="flex items-center   ">
         <button
           type="button"
-          class="w-10 h-10   text-2xl leading-10 text-gray-600 transition hover:opacity-75"
+          class="w-10 h-10   text-2xl leading-10 text-red-600 transition hover:opacity-75"
         >
           -
         </button>
@@ -89,7 +89,7 @@ export function Quantity() {
 
         <button
           type="button"
-          class="w-10 text-2xl h-10 leading-10 text-gray-600 transition hover:opacity-75"
+          class="w-10 text-2xl h-10 leading-10 text-red-600 transition hover:opacity-75"
         >
           +
         </button>
