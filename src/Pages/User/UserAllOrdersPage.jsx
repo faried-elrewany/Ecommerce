@@ -4,7 +4,7 @@ import Pagination from "../../Components/Pagination";
 import PropTypes from "prop-types";
 import { TrashIcon } from "@heroicons/react/24/outline";
 
-import { Quantity } from "../../Coupon.jsx";
+import { Quantity } from "../../Components/Coupon.jsx";
 import labtop from "../../images/labtop.png";
 
 export function ProductCard({

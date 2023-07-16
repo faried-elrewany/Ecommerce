@@ -1,8 +1,8 @@
 import React from "react";
 import { ProductCard } from "../Cart/CartPage";
 import labtop from "../../images/labtop.png";
-import { InputDisabled, ButtonAction } from "../../Coupon.jsx";
-import SelectOptions from "../../SelectOptions";
+import { InputDisabled, ButtonAction } from "../../Components/Coupon.jsx";
+import SelectOptions from "../../Components/SelectOptions";
 
 const AdminAllOrders = () => {
   return (

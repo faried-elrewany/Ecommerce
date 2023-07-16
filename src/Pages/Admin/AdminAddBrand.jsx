@@ -1,7 +1,7 @@
 import React from "react";
 import avatar from "../../images/avatar.png";
 import { InputComponent } from "./Input.jsx";
-import { ButtonAction } from "../../Coupon.jsx";
+import { ButtonAction } from "../../Components/Coupon.jsx";
 
 const AdminAddBrand = () => {
   return (

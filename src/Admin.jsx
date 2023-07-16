@@ -14,11 +14,11 @@ const Admin = () => {
   return (
     <>
       {/* صفحة الاوردرز */}
-      {/* <AdminDrawer />
-      <AdminAllOrders /> */}
+      <AdminDrawer />
+      {/* <AdminAllOrders /> */}
       {/* صفحة البراند */}
       {/* {/* <AddCategory /> */}
-      <AddCategory />
+      {/* <AddCategory /> */}
       {/* صفحة كل المنتجات */}
       {/* دي المفروض هتبقي في كل صفحة من الكومبوننتس */}
       {/* <div className="flex w-full justify-around items-center m-2">

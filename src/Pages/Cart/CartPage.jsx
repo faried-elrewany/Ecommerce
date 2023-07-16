@@ -8,7 +8,7 @@ import {
   ButtonAction,
   Colors,
   Quantity,
-} from "../../Coupon.jsx";
+} from "../../Components/Coupon.jsx";
 import labtop from "../../images/labtop.png";
 
 export function ProductCard({

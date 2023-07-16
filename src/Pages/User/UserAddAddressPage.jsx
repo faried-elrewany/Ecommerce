@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../Admin/AdminDrawer";
 
-import { ButtonAction } from "../../Coupon";
+import { ButtonAction } from "../../Components/Coupon";
 import { InputComponent, TextArea } from "../Admin/Input.jsx";
 const listItems = [
   { name: "ادارة الطلبات", href: "#" },

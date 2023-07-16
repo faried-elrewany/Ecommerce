@@ -38,3 +38,5 @@ const ProductOptions = () => {
 };
 
 export default ProductOptions;
+// ده الكومبوونت الي فيه اللون والحجم والتقييم
+// برضو خليه دايناميك

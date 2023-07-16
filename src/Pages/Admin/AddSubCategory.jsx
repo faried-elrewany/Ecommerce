@@ -1,6 +1,6 @@
 import React from "react";
-import SelectOptions from "../../SelectOptions.jsx";
-import { ButtonAction } from "../../Coupon.jsx";
+import SelectOptions from "../../Components/SelectOptions.jsx";
+import { ButtonAction } from "../../Components/Coupon.jsx";
 import { InputComponent, TextArea } from "./Input.jsx";
 
 const AddSubCategory = () => {

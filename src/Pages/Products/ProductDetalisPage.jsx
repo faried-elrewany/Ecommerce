@@ -1,6 +1,6 @@
 import React from "react";
-import NavCategories from "../../NavCategories";
-import CardDetails from "../../CardDetails";
+import NavCategories from "../../Components/NavCategories";
+import CardDetails from "../../Components/CardDetails";
 import Row from "../../Components/Row";
 import CardElement from "../../Components/Card";
 

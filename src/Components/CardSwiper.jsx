@@ -79,3 +79,4 @@ function CardSwiper() {
 }
 
 export default CardSwiper;
+// متنساش دي هتعملها دايناميك علشان تحول الزوم فق الكارد ديتيلز بيدج لكومبومننت دايناميك بال api
