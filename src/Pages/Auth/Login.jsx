@@ -10,7 +10,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-import AlertMessage from "./Alert.jsx";
+import AlertMessage from "../../Alert.jsx";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +58,7 @@ export default function Login() {
       <Card className="w-96">
         <CardHeader
           variant="gradient"
-          color="indigo"
+          color="red"
           className="mb-4 grid h-28 place-items-center "
         >
           <Typography variant="h3" color="white">
@@ -71,13 +71,13 @@ export default function Login() {
             size="lg"
             value={email}
             onChange={handleEmailChange}
-            color="indigo"
+            color="red"
           />
           <Input
             label="الرقم السري"
             size="lg"
             value={password}
-            color="indigo"
+            color="red"
             onChange={handlePasswordChange}
           />
         </CardBody>
@@ -86,18 +86,18 @@ export default function Login() {
             variant="gradient"
             fullWidth
             onClick={handleSubmit}
-            color="indigo"
+            color="red"
             type="submit"
           >
             تسجيل الدخول
           </Button>
-          <Typography variant="small" className="mt-6 flex justify-center">
+          <Typography variant="large" className="mt-6 flex justify-center">
             لا تمتلك حساب ؟
             <Typography
               as="a"
               href="#signup"
-              variant="small"
-              color="indigo"
+              variant="large"
+              color="red"
               className="ml-1 font-bold ms-2"
             >
               الاشتراك

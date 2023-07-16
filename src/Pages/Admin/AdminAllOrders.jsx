@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard } from "../../Test";
+import { ProductCard } from "../Cart/Test";
 import labtop from "../../images/labtop.png";
 import { InputDisabled, ButtonAction } from "../../Coupon.jsx";
 import SelectOptions from "../../SelectOptions";

@@ -1,5 +1,5 @@
-import labtop from "./images/labtop.png";
-import clothe from "./images/clothe.png";
+import labtop from "../images/labtop.png";
+import clothe from "../images/clothe.png";
 
 import {
   Card,
@@ -8,22 +8,13 @@ import {
   CardFooter,
   Typography,
   Button,
-  Tooltip,
   IconButton,
 } from "@material-tailwind/react";
-import {
-  BanknotesIcon,
-  StarIcon,
-  HeartIcon,
-  WifiIcon,
-  HomeIcon,
-  TvIcon,
-  FireIcon,
-} from "@heroicons/react/24/solid";
+import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 
 export default function CardElement() {
   return (
-    <Card className=" w-72 shadow-lg">
+    <Card className=" w-64 shadow-lg">
       <CardHeader floated={false} color="blue-gray">
         <img
           className="w-60 h-52   object-contain object-center transition duration-500 group-hover:scale-105 "

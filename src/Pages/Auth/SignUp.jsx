@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  Card,
-  Input,
-  Checkbox,
-  Button,
-  Typography,
-} from "@material-tailwind/react";
-import AlertMessage from "./Alert.jsx";
+import { Card, Input, Button, Typography } from "@material-tailwind/react";
+import AlertMessage from "../../Alert.jsx";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -67,7 +61,7 @@ export default function SignUp() {
   return (
     <section className="  h-[100vh] flex justify-center items-center overflow-hidden">
       <Card color="transparent" shadow={false}>
-        <Typography variant="h4" color="blue-gray">
+        <Typography variant="h2" color="red">
           الاشتراك
         </Typography>
         <Typography color="gray" className="mt-1 font-normal">
@@ -84,6 +78,7 @@ export default function SignUp() {
               value={name}
               name="name"
               onChange={handleNameChange}
+              color="red"
             />
             <Input
               size="md"
@@ -91,6 +86,7 @@ export default function SignUp() {
               label="الايميل"
               value={email}
               onChange={handleEmailChange}
+              color="red"
             />
             <Input
               name="password"
@@ -99,20 +95,26 @@ export default function SignUp() {
               label="الرقم السري"
               value={password}
               onChange={handlePasswordChange}
+              color="red"
             />
           </div>
 
-          <Button className="mt-6 text-xl" fullWidth onClick={handleSubmit}>
+          <Button
+            color="red"
+            className="mt-6 text-xl"
+            fullWidth
+            onClick={handleSubmit}
+          >
             الاشتراك
           </Button>
           <Typography
             color="gray"
-            className="mt-4 ms-2 text-center font-normal"
+            className="mt-4 ms-2 text-center font-normal text-lg"
           >
             بالفعل تمتلك ايميل?{" "}
             <a
               href="#"
-              className="font-medium text-blue-500 transition-colors hover:text-blue-700"
+              className="font-bold text-red-500 transition-colors hover:text-red-700"
             >
               تسجيل الدخول{" "}
             </a>

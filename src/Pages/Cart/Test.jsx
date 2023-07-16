@@ -8,9 +8,9 @@ import {
   ButtonAction,
   Colors,
   Quantity,
-} from "./Coupon.jsx";
-import Header from "./ComplexNavbar.jsx";
-import labtop from "./images/labtop.png";
+} from "../../Coupon.jsx";
+import Header from "../../ComplexNavbar.jsx";
+import labtop from "../../images/labtop.png";
 
 export function ProductCard({
   image,
@@ -60,7 +60,7 @@ ProductCard.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string).isRequired,
   price: PropTypes.number.isRequired,
 };
-const Test = () => {
+const CartPage = () => {
   return (
     <div>
       {/* header */}
@@ -101,4 +101,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default CartPage;

@@ -2,8 +2,8 @@ import FiltersDrawer from "./FiltersDrawer.jsx";
 import React from "react";
 import { FilterMenu } from "./FiltersComponents.jsx";
 import Header from "./ComplexNavbar.jsx";
-import Row from "./Row.jsx";
-import Card from "./Card.jsx";
+import Row from "./Components/Row.jsx";
+import Card from "./Components/Card.jsx";
 import labtop from "./images/labtop.png";
 import Pagination from "./Pagination.jsx";
 

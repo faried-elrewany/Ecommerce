@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../Admin/AdminDrawer";
-import CardElement from "../../Card";
-import Row from "../../Row";
+import CardElement from "../../Components/Card";
+import Row from "../../Components/Row";
 import Pagination from "../../Pagination";
 
 const UserFavoriteProductsPage = () => {
