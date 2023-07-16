@@ -39,7 +39,8 @@
 }
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  color: #555 !important;
+  color: #eee !important;
+  font-size: 1.5rem !important;
 }
 .card-detail {
   width: 400px;

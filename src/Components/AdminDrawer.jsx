@@ -1,9 +1,9 @@
-import AdminAddBrand from "./AdminAddBrand";
-import AdminAllOrders from "./AdminAllOrders";
-import AdminAllProducts from "./AdminAllProducts";
-import AddNewProduct from "./AddNewProduct";
-import AddSubCategory from "./AddSubCategory";
-import AddCategory from "./AddCategory";
+import AdminAddBrand from "../Pages/Admin/AdminAddBrand";
+import AdminAllOrders from "../Pages/Admin/AdminAllOrders";
+import AdminAllProducts from "../Pages/Admin/AdminAllProducts";
+import AddNewProduct from "../Pages/Admin/AddNewProduct";
+import AddSubCategory from "../Pages/Admin/AddSubCategory";
+import AddCategory from "../Pages/Admin/AddCategory";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 <Bars3Icon className="h-6 w-6 text-gray-500" />;
@@ -28,7 +28,7 @@ export default function SideBar({ items }) {
   return (
     <React.Fragment>
       <div className="flex flex-wrap gap-4">
-        <Button onClick={openDrawerRight} color="red">
+        <Button onClick={openDrawerRight} color="red" size="sm">
           <Bars3Icon className="h-6 w-6 text-white" />
         </Button>
       </div>

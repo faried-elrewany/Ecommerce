@@ -1,19 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import App from "./Components/HomeCarousal.jsx";
 import Header from "./Components/ComplexNavbar.jsx";
 import "./NavBarStyles.css";
 import "./index.css";
-import Admin from "./Admin.jsx";
 
 // User Pages
 import UserFavoriteProductsPage from "./Pages/User/UserFavoriteProductsPage.jsx";
-import UserAllAddresPage from "./Pages/User/UserAllAddresPage.jsx";
 import UserProfilePage from "./Pages/User/UserProfilePage.jsx";
 import UserAllOrdersPage from "./Pages/User/UserAllOrdersPage.jsx";
 import UserAddAddressPage from "./Pages/User/UserAddAddressPage.jsx";
+import UserAllAddresPage from "./Pages/User/UserAllAddresPage.jsx";
+
+// Admin Pages
+import AdminAllOrders from "./Pages/Admin/AdminAllOrders.jsx";
+import AdminAddBrand from "./Pages/Admin/AdminAddBrand.jsx";
+import AdminAllProducts from "./Pages/Admin/AdminAllProducts.jsx";
+import AddNewProduct from "./Pages/Admin/AddNewProduct.jsx";
+import AddCategory from "./Pages/Admin/AddCategory.jsx";
 
 // main app pages
 import SignUp from "./Pages/Auth/SignUp.jsx";
@@ -25,6 +29,9 @@ import ProductDetalisPage from "./Pages/Products/ProductDetalisPage";
 import ShopProductsPage from "./Pages/Products/ShopProductsPage";
 import CartPage from "./Pages/Cart/CartPage";
 import Footer from "./Components/Footer.jsx";
+import User from "./Pages/User/User.jsx";
+import Admin from "./Pages/Admin/Admin.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Header />
@@ -38,18 +45,27 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/products" element={<ShopProductsPage />} />
         <Route path="/products/:id" element={<ProductDetalisPage />} />
         <Route path="/cart" element={<CartPage />} />
+
+        {/* User Routes */}
+        <Route path="/user" element={<User />}>
+          <Route index element={<UserAllOrdersPage />} />
+          <Route path="all-orders" element={<UserAllOrdersPage />} />
+          <Route path="add-address" element={<UserAddAddressPage />} />
+          <Route path="profile" element={<UserProfilePage />} />
+          <Route path="addresses" element={<UserAllAddresPage />} />
+          <Route path="wishlist" element={<UserFavoriteProductsPage />} />
+        </Route>
+        {/* Admin Routes */}
+        <Route path="/admin" element={<Admin />}>
+          <Route index element={<AdminAllOrders />} />
+          <Route path="all-orders" element={<AdminAllOrders />} />
+          <Route path="add-brand" element={<AdminAddBrand />} />
+          <Route path="all-products" element={<AdminAllProducts />} />
+          <Route path="add-product" element={<AddNewProduct />} />
+          <Route path="add-category" element={<AddCategory />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     <Footer />
-    {/* الصفحات الرئيسية */}
-    {/* <HomePage /> */}
-    {/* <CartPage /> */}
-    {/* <AllBrandPage /> */}
-    {/* <AllCategoryPage /> */}
-    {/* <UserAddAddressPage /> */}
-    {/* <ProductDetalisPage /> */}
-    {/* <ShopProductsPage /> */}
-
-    {/* ******************** صفحات الخاصة بالادمن  */}
   </React.StrictMode>
 );

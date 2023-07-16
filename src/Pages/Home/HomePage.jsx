@@ -8,6 +8,7 @@ import SubTitle from "../../Components/SubTitle";
 import CardElement from "../../Components/Card";
 import Ad from "../../Components/Ad";
 import BrandElement from "../../Components/brandElement";
+import NavCategories from "../../Components/NavCategories";
 
 export default function HomePage() {
   const slides = [
@@ -49,6 +50,7 @@ export default function HomePage() {
   ];
   return (
     <>
+      <NavCategories />
       <HomeCarousal slides={slides} />
       <Container>
         <SubTitle title={"التصنيفات"} BtnTitle={"المزيد"} href={"#"} />

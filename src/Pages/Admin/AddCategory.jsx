@@ -2,14 +2,9 @@ import React from "react";
 import avatar from "../../images/avatar.png";
 import { InputComponent } from "./Input.jsx";
 import { ButtonAction } from "../../Components/Coupon.jsx";
-import SideBar from "./AdminDrawer";
+import SideBar from "../../Components/AdminDrawer";
 
 const AddCategory = () => {
-  const listItems = [
-    { name: "Dashboard", href: "#" },
-    { name: "Profile", href: "#" },
-    { name: "Settings", href: "#" },
-  ];
   return (
     <>
       <div className="flex  justify-around items-center m-2">
