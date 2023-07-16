@@ -30,7 +30,6 @@ import SignUp from "./Pages/Auth/SignUp.jsx";
 import Login from "./Pages/Auth/Login";
 import CollectionFilter from "./CollectionFilter.jsx";
 import HomePage from "./Pages/Home/HomePage";
-import BrandsCarousal from "./Components/BrandsCarousal";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HomePage />
