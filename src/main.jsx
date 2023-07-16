@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Navigation from "./Navigation";
+import Navigation from "./NavCategories";
 import App from "./Components/HomeCarousal.jsx";
 import Header from "./Components/ComplexNavbar.jsx";
 import Container from "./Components/Container.jsx";
@@ -31,6 +31,8 @@ import CollectionFilter from "./CollectionFilter.jsx";
 import HomePage from "./Pages/Home/HomePage";
 import AllBrandPage from "./Pages/Brand/AllBrandPage";
 import AllCategoryPage from "./Pages/Category/AllCategoryPage";
+import ProductDetalisPage from "./Pages/Products/ProductDetalisPage";
+import ShopProductsPage from "./Pages/Products/ShopProductsPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <HomePage /> */}
@@ -38,128 +40,18 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <AllBrandPage /> */}
     {/* <AllCategoryPage /> */}
     {/* <UserAddAddressPage /> */}
-    <Navigation />
-    <CardDetails />
-    <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} />
-    <Row>
-      <Card
-        imageSrc={labtop}
-        title="السلام عليكم ورحمة الله وبركاته"
-        price="150"
-        rating={"4.5"}
-      />
+    {/* <ProductDetalisPage /> */}
+    <ShopProductsPage />
 
-      <Card
-        imageSrc={labtop}
-        title="السلام عليكم ورحمة الله وبركاته"
-        price="150"
-        rating={"4.5"}
-      />
-      <Card
-        imageSrc={labtop}
-        title="السلام عليكم ورحمة الله وبركاته"
-        price="150"
-        rating={"4.5"}
-      />
-      <Card
-        imageSrc={labtop}
-        title="السلام عليكم ورحمة الله وبركاته بسم الله الرحمن الرحيم"
-        price="150"
-        rating={"4.5"}
-      />
-    </Row>{" "}
     {/* الكارته */}
     {/* <Admin /> */}
     {/* <CollectionFilter /> */}
     {/* Home Page */}
     {/* <Header /> */}
     {/* <Navigation /> */}
-    {/* <App /> */}
     {/* <BrandsCarousal /> */}
     {/* <Container>
-      <SubTitle title={"الفئات"} BtnTitle={"المزيد"} />
-      <Row>
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-      </Row>
-      <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} />
-      <Row>
-        <CategoryCard bg={"#f0f"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-      </Row>
-      <SubTitle title={"الفئات"} BtnTitle={"المزيد"} />
 
-      <Row>
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته بسم الله الرحمن الرحيم"
-          price="150"
-          rating={"4.5"}
-        />
-      </Row>
-      <SubTitle title={"اشهر الماركات"} BtnTitle={"المزيد"} />
-
-      <Row>
-        <Carousal imgSrc={labtop} />
-        <Carousal imgSrc={labtop} />
-        <Carousal imgSrc={labtop} />
-        <Carousal imgSrc={labtop} />
-        <Carousal imgSrc={labtop} />
-      </Row>
-      <SubTitle title={"الفئات"} BtnTitle={"المزيد"} />
-
-      <Row>
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته"
-          price="150"
-          rating={"4.5"}
-        />
-        <Card
-          imageSrc={labtop}
-          title="السلام عليكم ورحمة الله وبركاته بسم الله الرحمن الرحيم"
-          price="150"
-          rating={"4.5"}
-        />
-      </Row>
     </Container> */}
     {/* End Home Page */}
     {/* <CardDetails /> */}

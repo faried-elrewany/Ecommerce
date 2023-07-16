@@ -82,7 +82,7 @@ const NavContainer = () => {
     </div>
   );
 };
-function App() {
+function NavCategories() {
   return (
     <>
       <NavContainer />
@@ -90,4 +90,4 @@ function App() {
   );
 }
 
-export default App;
+export default NavCategories;
