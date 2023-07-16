@@ -9,7 +9,6 @@ import {
   Colors,
   Quantity,
 } from "../../Coupon.jsx";
-import Header from "../../ComplexNavbar.jsx";
 import labtop from "../../images/labtop.png";
 
 export function ProductCard({
@@ -63,8 +62,6 @@ ProductCard.propTypes = {
 const CartPage = () => {
   return (
     <div>
-      {/* header */}
-      <Header />
       <h2 className="text-red-400 mt-4 text-2xl font-bold ">عربة التسوق </h2>
       {/* layout conatiner */}
 

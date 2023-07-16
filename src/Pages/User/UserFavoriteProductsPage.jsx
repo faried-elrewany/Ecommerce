@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "../Admin/AdminDrawer";
 import CardElement from "../../Components/Card";
 import Row from "../../Components/Row";
-import Pagination from "../../Pagination";
+import Pagination from "../../Components/Pagination";
 
 const UserFavoriteProductsPage = () => {
   const listItems = [

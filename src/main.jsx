@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Navigation from "./Navigation";
 import App from "./Components/HomeCarousal.jsx";
-import Header from "./ComplexNavbar.jsx";
+import Header from "./Components/ComplexNavbar.jsx";
 import Container from "./Components/Container.jsx";
 import SubTitle from "./Components/SubTitle.jsx";
 import CategoryCard from "./Components/CategoryCard.jsx";
@@ -13,8 +13,7 @@ import "./NavBarStyles.css";
 import clothe from "./images/clothe.png";
 import labtop from "./images/labtop.png";
 import CardDetails from "./CardDetails.jsx";
-import CartItems from "./Cart.jsx";
-import Test from "./Pages/Cart/Test";
+import CartPage from "./Pages/Cart/CartPage";
 import Admin from "./Admin.jsx";
 import UserFavoriteProductsPage from "./Pages/User/UserFavoriteProductsPage.jsx";
 import UserAllAddresPage from "./Pages/User/UserAllAddresPage.jsx";
@@ -30,16 +29,15 @@ import SignUp from "./Pages/Auth/SignUp.jsx";
 import Login from "./Pages/Auth/Login";
 import CollectionFilter from "./CollectionFilter.jsx";
 import HomePage from "./Pages/Home/HomePage";
+import AllBrandPage from "./Pages/Brand/AllBrandPage";
+import AllCategoryPage from "./Pages/Category/AllCategoryPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HomePage />
+    {/* <HomePage /> */}
+    {/* <CartPage /> */}
+    {/* <AllBrandPage /> */}
+    {/* <AllCategoryPage /> */}
     {/* <UserAddAddressPage /> */}
-    {/* <div className="card-detail">
-      <Zoom img={clothe} zoomScale={1.5} width={600} height={600} />
-    </div> */}
-    {/* <CouponInput /> */}
-    {/* <Header />
-
     <Navigation />
     <CardDetails />
     <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} />
@@ -50,7 +48,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         price="150"
         rating={"4.5"}
       />
-      
+
       <Card
         imageSrc={labtop}
         title="السلام عليكم ورحمة الله وبركاته"
@@ -69,12 +67,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         price="150"
         rating={"4.5"}
       />
-    </Row> */}
-
-    {/* <CartItems />
-     */}
+    </Row>{" "}
     {/* الكارته */}
-    {/* <Test /> */}
     {/* <Admin /> */}
     {/* <CollectionFilter /> */}
     {/* Home Page */}

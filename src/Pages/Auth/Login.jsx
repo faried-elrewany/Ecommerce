@@ -10,7 +10,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-import AlertMessage from "../../Alert.jsx";
+import AlertMessage from "../../Components/Alert.jsx";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

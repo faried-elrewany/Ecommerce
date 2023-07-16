@@ -9,7 +9,7 @@ import CardElement from "../../Components/Card";
 import Ad from "../../Components/Ad";
 import BrandElement from "../../Components/brandElement";
 import Footer from "../../Components/Footer";
-import Header from "../../ComplexNavbar";
+import Header from "../../Components/ComplexNavbar";
 
 export default function HomePage() {
   const slides = [

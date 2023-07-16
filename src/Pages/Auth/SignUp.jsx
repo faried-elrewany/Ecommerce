@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
-import AlertMessage from "../../Alert.jsx";
+import AlertMessage from "../../Components/Alert.jsx";
 
 export default function SignUp() {
   const [name, setName] = useState("");

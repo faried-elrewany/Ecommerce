@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "../Admin/AdminDrawer";
-import Pagination from "../../Pagination";
+import Pagination from "../../Components/Pagination";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
