@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SubCategory = ({ subCategories, imageUrl }) => {
   return (
     <div className="category-second-list">
@@ -72,9 +74,9 @@ const NavContainer = () => {
         <ul className="nav-row">
           {categories.map((category, index) => (
             <li key={index} className="nav-row-list">
-              <a href="" className="nav-row-list-link">
+              <Link to="/" className="nav-row-list-link">
                 {category.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

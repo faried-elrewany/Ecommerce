@@ -31,10 +31,10 @@ function UserProfileComponent(props) {
 }
 const UserProfilePage = () => {
   const listItems = [
-    { name: "ادارة الطلبات", href: "#" },
-    { name: "المنتجات المفضلة", href: "#" },
-    { name: "العنواوين الشخصية", href: "#" },
-    { name: "الملف الشخصي", href: "#" },
+    { name: "ادارة الطلبات", href: "/user/all-orders" },
+    { name: "المنتجات المفضلة", href: "/user/wishlist" },
+    { name: "العنواوين الشخصية", href: "/user/addresses" },
+    { name: "الملف الشخصي", href: "/user/profile" },
   ];
   return (
     <>

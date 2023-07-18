@@ -27,7 +27,7 @@ export default function FiltersDrawer() {
           </IconButton>
         </div>
 
-        <div class="space-y-2">
+        <div className="space-y-2">
           {/* filters starts  here */}
           <AvailabilityFilter inStock={5} outOfStock={15} preOrder={18} />
           <AvailabilityFilter inStock={5} outOfStock={15} preOrder={18} />

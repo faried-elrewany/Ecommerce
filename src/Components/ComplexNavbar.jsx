@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 function ContactInfo(props) {
   return (
     <div className="header-content-top">
@@ -51,9 +52,9 @@ function NavContent(props) {
       <ul className="nav-content-list">
         {props.items.map((item, index) => (
           <li className="nav-content-item" key={index}>
-            <a className="nav-content-link" href={item.link}>
+            <NavLink className="nav-content-link" to={item.link}>
               <i className={item.icon}></i>
-            </a>
+            </NavLink>
           </li>
         ))}
         <li className="nav-content-item account-login">
@@ -70,13 +71,15 @@ function NavContent(props) {
             <i className="fa fa-user-circle"></i>
             <span className="login-text">
               {props.account.text} <strong>{props.account.action}</strong>
-            </span>{" "}
+            </span>
             <span className="item-arrow"></span>
             <ul className="login-list">
               {props.account.items.map((item, index) => (
-                <li className="login-list-item" key={index}>
-                  <a href={item.link}>{item.text}</a>
-                </li>
+                <NavLink to={item.link}>
+                  <li className="login-list-item" key={index}>
+                    {item.text}
+                  </li>
+                </NavLink>
               ))}
             </ul>
           </label>
@@ -97,17 +100,18 @@ function Header() {
   const searchPlaceholder = " م الذي تبحث عنه";
 
   const navItems = [
-    { icon: "fa fa-heart", link: "" },
-    { icon: "fa fa-shopping-cart", link: "" },
+    { icon: "fa fa-heart", link: "user/wishlist" },
+    { icon: "fa fa-shopping-cart", link: "/cart" },
   ];
 
   const accountMenu = {
     text: "مرحبا, تسجيل الدخول",
     action: "انشاء حساب",
     items: [
-      { text: "الصقحة الشخصية", link: "" },
-      { text: "انشاء حساب", link: "" },
-      { text: "تسجيل الخروج", link: "" },
+      { text: "الصقحة الشخصية", link: "/" },
+      { text: "انشاء حساب", link: "/register" },
+      { text: " تسجيل الدخول", link: "/login" },
+      { text: "تسجيل الخروج", link: "/" },
     ],
   };
 

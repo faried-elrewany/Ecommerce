@@ -1,9 +1,9 @@
 import React from "react";
 import SideBar from "../../Components/AdminDrawer";
-import Pagination from "../../Components/Pagination";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { EyeIcon } from "@heroicons/react/24/outline";
-
+import { useNavigate } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
 function HouseComponent(props) {
   return (
     <div className="w-11/12 mx-auto flex flex-col bg-gray-200 rounded-lg gap-4 p-4 justify-content">
@@ -31,11 +31,13 @@ function HouseComponent(props) {
   );
 }
 const UserAllAddresPage = () => {
+  const navigate = useNavigate();
+
   const listItems = [
-    { name: "ادارة الطلبات", href: "#" },
-    { name: "المنتجات المفضلة", href: "#" },
-    { name: "العنواوين الشخصية", href: "#" },
-    { name: "الملف الشخصي", href: "#" },
+    { name: "ادارة الطلبات", href: "/user/all-orders" },
+    { name: "المنتجات المفضلة", href: "/user/wishlist" },
+    { name: "العنواوين الشخصية", href: "/user/addresses" },
+    { name: "الملف الشخصي", href: "/user/profile" },
   ];
   return (
     <>
@@ -61,6 +63,15 @@ const UserAllAddresPage = () => {
           address="القليوبية الخانكة شارع لرويني"
           phone="01552805430"
         />
+      </div>
+      <div className="flex justify-center m-4">
+        <Button
+          className="w-56 outline-none"
+          color="red"
+          onClick={() => navigate("/user/add-address")}
+        >
+          اضف عنوان جديد
+        </Button>
       </div>
     </>
   );

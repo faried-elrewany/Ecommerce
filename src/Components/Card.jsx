@@ -1,5 +1,6 @@
 import labtop from "../images/labtop.png";
 import clothe from "../images/clothe.png";
+import { useNavigate } from "react-router-dom";
 
 import {
   Card,
@@ -13,6 +14,8 @@ import {
 import { StarIcon, HeartIcon } from "@heroicons/react/24/solid";
 
 export default function CardElement() {
+  const navigate = useNavigate();
+
   return (
     <Card className=" w-64 shadow-lg">
       <CardHeader floated={false} color="blue-gray">
@@ -49,8 +52,13 @@ export default function CardElement() {
         </Typography>
       </CardBody>
       <CardFooter className="pt-1">
-        <Button size="md" color="red" fullWidth={true}>
-          Reserve
+        <Button
+          onClick={() => navigate("/products/:id")}
+          size="md"
+          color="red"
+          fullWidth={true}
+        >
+          Buy Now
         </Button>
       </CardFooter>
     </Card>

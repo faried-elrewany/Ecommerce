@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import AlertMessage from "../../Components/Alert.jsx";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -107,18 +108,20 @@ export default function SignUp() {
           >
             الاشتراك
           </Button>
-          <Typography
-            color="gray"
-            className="mt-4 ms-2 text-center font-normal text-lg"
-          >
-            بالفعل تمتلك ايميل?{" "}
-            <a
-              href="#"
-              className="font-bold text-red-500 transition-colors hover:text-red-700"
+          <Link to="/login">
+            <Typography
+              color="gray"
+              className="mt-4 ms-2 text-center font-normal text-lg"
             >
-              تسجيل الدخول{" "}
-            </a>
-          </Typography>
+              بالفعل تمتلك ايميل?{" "}
+              <a
+                href="#"
+                className="font-bold text-red-500 transition-colors hover:text-red-700"
+              >
+                تسجيل الدخول{" "}
+              </a>
+            </Typography>
+          </Link>
         </form>
       </Card>
       {showAlert && (

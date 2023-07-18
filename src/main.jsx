@@ -31,12 +31,13 @@ import CartPage from "./Pages/Cart/CartPage";
 import Footer from "./Components/Footer.jsx";
 import User from "./Pages/User/User.jsx";
 import Admin from "./Pages/Admin/Admin.jsx";
-import Car from "./Components/Carousal.jsx";
+import ErrorPage from "./Pages/Error/ErrorPage.jsx";
+import AddSubCategory from "./Pages/Admin/AddSubCategory.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Header />
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
@@ -64,7 +65,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="all-products" element={<AdminAllProducts />} />
           <Route path="add-product" element={<AddNewProduct />} />
           <Route path="add-category" element={<AddCategory />} />
+          <Route path="add-sub-category" element={<AddSubCategory />} />
+          <Route path="add-address" element={<UserAddAddressPage />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
     <Footer />

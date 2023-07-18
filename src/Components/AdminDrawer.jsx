@@ -1,11 +1,5 @@
-import AdminAddBrand from "../Pages/Admin/AdminAddBrand";
-import AdminAllOrders from "../Pages/Admin/AdminAllOrders";
-import AdminAllProducts from "../Pages/Admin/AdminAllProducts";
-import AddNewProduct from "../Pages/Admin/AddNewProduct";
-import AddSubCategory from "../Pages/Admin/AddSubCategory";
-import AddCategory from "../Pages/Admin/AddCategory";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-
+import { Link } from "react-router-dom";
 <Bars3Icon className="h-6 w-6 text-gray-500" />;
 
 //  ناقص صفحة كمان
@@ -25,10 +19,11 @@ export default function SideBar({ items }) {
 
   const openDrawerRight = () => setOpenRight(true);
   const closeDrawerRight = () => setOpenRight(false);
+  console.log(items[0].href);
   return (
     <React.Fragment>
       <div className="flex flex-wrap gap-4">
-        <Button onClick={openDrawerRight} color="red" size="sm">
+        <Button onClick={openDrawerRight} color="red" size="small">
           <Bars3Icon className="h-6 w-6 text-white" />
         </Button>
       </div>
@@ -52,9 +47,9 @@ export default function SideBar({ items }) {
         </div>
         <List>
           {items.map(({ name, href }) => (
-            <ListItem key={name}>
-              <a href={href}>{name}</a>
-            </ListItem>
+            <Link to={href} onClick={() => console.log("clicked")}>
+              <ListItem key={name}>{name}</ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>

@@ -1,16 +1,14 @@
 import SideBar from "../../Components/AdminDrawer";
 import React from "react";
-import AdminAllOrders from "./AdminAllOrders.jsx";
-import AdminAddBrand from "./AdminAddBrand.jsx";
-import AdminAllProducts from "./AdminAllProducts.jsx";
-import AddNewProduct from "./AddNewProduct.jsx";
-import AddCategory from "./AddCategory.jsx";
 import { Outlet } from "react-router-dom";
 const Admin = () => {
   const listItems = [
-    { name: "Dashboard", href: "#" },
-    { name: "Profile", href: "#" },
-    { name: "Settings", href: "#" },
+    { name: "ادارة الطلبات", href: "/admin/all-orders" },
+    { name: "ادارة المنتجات", href: "/admin/all-products" },
+    { name: "اضف ماركة", href: "/admin/add-brand" },
+    { name: "اضف تصنيف", href: "/admin/add-category" },
+    { name: "اضف تصنيف فرعي", href: "/admin/add-sub-category" },
+    { name: "اضف منتج", href: "/admin/add-product" },
   ];
   return (
     <>

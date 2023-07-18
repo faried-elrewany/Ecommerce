@@ -11,6 +11,7 @@ import {
 } from "@material-tailwind/react";
 
 import AlertMessage from "../../Components/Alert.jsx";
+import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -93,18 +94,21 @@ export default function Login() {
           </Button>
           <Typography variant="large" className="mt-6 flex justify-center">
             لا تمتلك حساب ؟
-            <Typography
-              as="a"
-              href="#signup"
-              variant="large"
-              color="red"
-              className="ml-1 font-bold ms-2"
-            >
-              الاشتراك
-            </Typography>
+            <Link to="/register">
+              <Typography
+                as="a"
+                href="#signup"
+                variant="large"
+                color="red"
+                className="ml-1 font-bold ms-2"
+              >
+                الاشتراك
+              </Typography>
+            </Link>
           </Typography>
         </CardFooter>
       </Card>
+
       {showAlert && (
         <AlertMessage
           message={alertMessage}
@@ -119,6 +123,14 @@ export default function Login() {
           onClose={() => setShowSuccess(false)}
         />
       )}
+      <div className=" absolute  top-28 flex gap-4 m-4">
+        <Link to="/admin" className="ml-1 font-bold ms-2">
+          حساب ادمن
+        </Link>
+        <Link to="/user" className="ml-1 font-bold ms-2">
+          حساب يوزر
+        </Link>
+      </div>
     </section>
   );
 }
