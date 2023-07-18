@@ -6,7 +6,7 @@ const SubCategory = ({ subCategories, imageUrl }) => {
       <ul className="category-second-list-ul">
         {subCategories.map((subCategory, index) => (
           <li key={index} className="category-second-item">
-            <a href="">{subCategory}</a>
+            <Link to="/">{subCategory}</Link>
           </li>
         ))}
       </ul>
@@ -56,9 +56,9 @@ const NavContainer = () => {
           <ul className="all-category-list">
             {categories.map((category, index) => (
               <li key={index} className="all-category-list-item">
-                <a href="" className="all-category-list-link">
+                <Link to="/" className="all-category-list-link">
                   {category.name} <i className="fas fa-angle-right"></i>
-                </a>
+                </Link>
                 {category.subCategories && (
                   <SubCategory
                     subCategories={category.subCategories}

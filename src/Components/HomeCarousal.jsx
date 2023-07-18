@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 function HomeCarousal({ slides }) {
   return (
@@ -22,7 +22,7 @@ function HomeCarousal({ slides }) {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper  mb-20"
       >
         {slides.map((slide, index) => (

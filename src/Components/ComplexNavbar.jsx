@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 function ContactInfo(props) {
   return (
     <div className="header-content-top">
@@ -17,7 +18,9 @@ function ContactInfo(props) {
 function Logo(props) {
   return (
     <strong className="logo">
-      <i className={props.icon}></i>
+      <NavLink to="/">
+        <i class="fa-solid fa-f"></i>
+      </NavLink>
     </strong>
   );
 }
@@ -119,7 +122,7 @@ function Header() {
     <header className="header">
       <ContactInfo info={contactInfo} />
       <Container>
-        <Logo icon={logoIcon} />
+        <Logo />
         <Search icon={searchIcon} placeholder={searchPlaceholder} />
         <NavContent items={navItems} account={accountMenu} />
       </Container>
