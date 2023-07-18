@@ -31,6 +31,7 @@ import CartPage from "./Pages/Cart/CartPage";
 import Footer from "./Components/Footer.jsx";
 import User from "./Pages/User/User.jsx";
 import Admin from "./Pages/Admin/Admin.jsx";
+import Car from "./Components/Carousal.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -67,5 +68,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Routes>
     </BrowserRouter>
     <Footer />
+    {/* <Car /> */}
   </React.StrictMode>
 );
