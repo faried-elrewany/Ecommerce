@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function ContactInfo(props) {
   return (
@@ -18,9 +18,7 @@ function ContactInfo(props) {
 function Logo(props) {
   return (
     <strong className="logo">
-      <NavLink to="/">
-        <i class="fa-solid fa-f"></i>
-      </NavLink>
+      {/* <NavLink to="/"><i class="fa-solid fa-f"></i></NavLink> */}
     </strong>
   );
 }

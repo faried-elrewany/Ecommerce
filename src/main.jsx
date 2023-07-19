@@ -48,7 +48,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/products/:id" element={<ProductDetalisPage />} />
         <Route path="/cart" element={<CartPage />} />
 
-        {/* User Routes */}
         <Route path="/user" element={<User />}>
           <Route index element={<UserAllOrdersPage />} />
           <Route path="all-orders" element={<UserAllOrdersPage />} />
@@ -57,7 +56,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="addresses" element={<UserAllAddresPage />} />
           <Route path="wishlist" element={<UserFavoriteProductsPage />} />
         </Route>
-        {/* Admin Routes */}
+
         <Route path="/admin" element={<Admin />}>
           <Route index element={<AdminAllOrders />} />
           <Route path="all-orders" element={<AdminAllOrders />} />
@@ -70,8 +69,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
-    <Footer />
-    {/* <Car /> */}
   </React.StrictMode>
 );
