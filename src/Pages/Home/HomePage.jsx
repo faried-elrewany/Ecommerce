@@ -53,7 +53,11 @@ export default function HomePage() {
       <NavCategories />
       <HomeCarousal slides={slides} />
       <Container>
-        <SubTitle title={"التصنيفات"} BtnTitle={"المزيد"} href={"#"} />
+        <SubTitle
+          title={"التصنيفات"}
+          BtnTitle={"المزيد"}
+          href={"/allcategory"}
+        />
         <Row>
           <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
           <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
@@ -62,7 +66,11 @@ export default function HomePage() {
           <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
           <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
         </Row>
-        <SubTitle title={"الاكثر مبيعا"} BtnTitle={"المزيد"} href={"#"} />
+        <SubTitle
+          title={"الاكثر مبيعا"}
+          BtnTitle={"المزيد"}
+          href={"/products"}
+        />
         <Row>
           <CardElement />
           <CardElement />
@@ -77,6 +85,11 @@ export default function HomePage() {
           <CardElement />
           <CardElement />
         </Row>
+        <SubTitle
+          title={" اشهر الماركات"}
+          BtnTitle={"المزيد"}
+          href={"/allbrand"}
+        />
         <Row>
           <BrandElement />
           <BrandElement />

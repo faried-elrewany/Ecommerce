@@ -18,7 +18,9 @@ function ContactInfo(props) {
 function Logo(props) {
   return (
     <strong className="logo">
-      {/* <NavLink to="/"><i class="fa-solid fa-f"></i></NavLink> */}
+      <NavLink to="/">
+        <i class="fa-solid fa-f"></i>
+      </NavLink>
     </strong>
   );
 }
