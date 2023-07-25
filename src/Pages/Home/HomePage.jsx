@@ -9,6 +9,9 @@ import CardElement from "../../Components/Card";
 import Ad from "../../Components/Ad";
 import BrandElement from "../../Components/brandElement";
 import NavCategories from "../../Components/NavCategories";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllCategory } from "../../redux/actions/categoryAction";
 
 export default function HomePage() {
   const slides = [
@@ -48,6 +51,14 @@ export default function HomePage() {
       discount: 30,
     },
   ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCategory(2));
+  }, []);
+  const category = useSelector((state) => state.allCategory.category);
+
+  console.log("بسم الله", category);
   return (
     <>
       <NavCategories />
