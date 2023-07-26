@@ -1,5 +1,4 @@
 import React from "react";
-import clothe from "../images/clothe.png";
 const CategoryCard = ({ img, title, bg }) => {
   return (
     <a href="#" className="block w-32 h-32  ">

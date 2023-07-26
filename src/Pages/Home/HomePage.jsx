@@ -2,7 +2,6 @@ import React from "react";
 import HomeCarousal from "../../Components/HomeCarousal";
 import Container from "../../Components/Container";
 import Row from "../../Components/Row";
-import CategoryCard from "../../Components/CategoryCard";
 import clothe from "../../images/clothe.png";
 import SubTitle from "../../Components/SubTitle";
 import CardElement from "../../Components/Card";
@@ -12,6 +11,7 @@ import NavCategories from "../../Components/NavCategories";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllCategory } from "../../redux/actions/categoryAction";
+import CategoryContainer from "../../Components/Category/CategoryContainer";
 
 export default function HomePage() {
   const slides = [
@@ -52,36 +52,20 @@ export default function HomePage() {
     },
   ];
   const dispatch = useDispatch();
-
+  // eval print + render firsttime state changed reavalute print render use effect
   useEffect(() => {
     dispatch(getAllCategory(2));
+    console.log("effect");
   }, []);
   const category = useSelector((state) => state.allCategory.category);
-
-  console.log("بسم الله", category);
+  console.log("evaluate ", category);
   return (
     <>
       <NavCategories />
       <HomeCarousal slides={slides} />
+      <CategoryContainer />
+      {console.log("home page rendered")}
       <Container>
-        <SubTitle
-          title={"التصنيفات"}
-          BtnTitle={"المزيد"}
-          href={"/allcategory"}
-        />
-        <Row>
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-          <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        </Row>
-        <SubTitle
-          title={"الاكثر مبيعا"}
-          BtnTitle={"المزيد"}
-          href={"/products"}
-        />
         <Row>
           <CardElement />
           <CardElement />

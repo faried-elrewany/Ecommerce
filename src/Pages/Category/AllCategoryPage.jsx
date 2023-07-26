@@ -1,9 +1,10 @@
 import React from "react";
 import Row from "../../Components/Row";
-import CategoryCard from "../../Components/CategoryCard";
 import clothe from "../../images/clothe.png";
 import Container from "../../Components/Container";
 import Pagination from "../../Components/Pagination";
+import CategoryContainer from "../../Components/Category/CategoryContainer";
+import CategoryCard from "../../Components/Category/CategoryCard";
 const AllCategoryPage = () => {
   return (
     <>

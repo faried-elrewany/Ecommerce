@@ -21,3 +21,22 @@ https://tailwind-elements.com/docs/standard/getting-started/quick-start/
 
 ملحوظة ممكن تعدل الراوتنج وتخليها كلها من بره احسن ومن غير ما يكون في اتشيلد 
 كمان حجه ممكن تظبط الناف بار وتستخدم الناف بار الجاهز افضل وشكله حلو 
+
+
+
+مساء الخير
+ لو سمحت ممكن اعرف ايه مستوي المشاريع و ايه التكنولوجي الي اكون عارفها
+علشان اكون مناسب للتدريب الي نزل كفرونت اند 
+ولو في اي نصايح للانترفيو او اي حاجه احضر لها 
+
+ده ال
+Github Link: https://github.com/faried-elrewany
+
+Portfolio Link:https://faried-elrewany-portfolio.netlify.app
+
+انا حاليا ده المشروع الي شغال
+عليه هو لسه استاتيك عملت الاستراكشر بتاعة الريدكس بس لسه مخلصتش هو 20 صفحة
+دلوقتي 
+link: https://faried-ecommerce-in-progress.netlify.app
+
+معمول ب react,tailwind,material tailwind
