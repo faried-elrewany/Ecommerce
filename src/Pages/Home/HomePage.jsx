@@ -51,20 +51,13 @@ export default function HomePage() {
       discount: 30,
     },
   ];
-  const dispatch = useDispatch();
-  // eval print + render firsttime state changed reavalute print render use effect
-  useEffect(() => {
-    dispatch(getAllCategory(2));
-    console.log("effect");
-  }, []);
-  const category = useSelector((state) => state.allCategory.category);
-  console.log("evaluate ", category);
+
   return (
     <>
       <NavCategories />
       <HomeCarousal slides={slides} />
-      <CategoryContainer />
-      {console.log("home page rendered")}
+      {/* <CategoryContainer /> */}
+      {/* {console.log("home page rendered")} */}
       <Container>
         <Row>
           <CardElement />

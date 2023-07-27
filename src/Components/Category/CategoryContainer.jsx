@@ -2,19 +2,20 @@ import React from "react";
 import SubTitle from "../SubTitle";
 import Row from "../Row";
 import CategoryCard from "./CategoryCard";
-import clothe from "../../images/clothe.png";
+import Loading from "../Utility/Loading";
 
-const CategoryContainer = () => {
+const CategoryContainer = ({ category, loading }) => {
+  console.log("container", category);
   return (
     <>
-      <SubTitle title={"التصنيفات"} BtnTitle={"المزيد"} href={"/allcategory"} />
       <Row>
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
-        <CategoryCard bg={"#fff"} title={"الملابس"} img={clothe} />
+        {loading == true ? (
+          <Loading />
+        ) : (
+          category.map(({ id, name, image }) => (
+            <CategoryCard title={name} img={image} key={id} />
+          ))
+        )}
       </Row>
     </>
   );
