@@ -40,3 +40,4 @@ Portfolio Link:https://faried-elrewany-portfolio.netlify.app
 link: https://faried-ecommerce-in-progress.netlify.app
 
 معمول ب react,tailwind,material tailwind
+react toat notify https://reactgo.com/react-toastify/#:~:text=function%20Notify%28%29%20%7B%20toast%28%22You%20clicked%20the%20button%22%2C%7B%20position%3A,auto%20close%20by%20setting%20autoClose%20property%20to%20false.
