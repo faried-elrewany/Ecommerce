@@ -32,6 +32,7 @@ import User from "./Pages/User/User.jsx";
 import Admin from "./Pages/Admin/Admin.jsx";
 import ErrorPage from "./Pages/Error/ErrorPage.jsx";
 import AddSubCategory from "./Pages/Admin/AddSubCategory.jsx";
+import SideBar from "./Components/Utility/SideBar.jsx";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/side" element={<SideBar />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/allcategory" element={<AllCategoryPage />} />
