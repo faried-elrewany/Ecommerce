@@ -58,17 +58,15 @@ const App = () => {
             <Route path="addresses" element={<UserAllAddresPage />} />
             <Route path="wishlist" element={<UserFavoriteProductsPage />} />
           </Route>
-          <Route path="add-brand" element={<AdminAddBrand />} />
-
+          {/* Admin Pages */}
+          <Route path="/admin/add-brand" element={<AdminAddBrand />} />
           <Route path="/admin/all-orders" element={<AdminAllOrders />} />
-          <Route path="/admin" element={<Admin />}>
-            <Route index element={<AdminAllOrders />} />
-            <Route path="all-products" element={<AdminAllProducts />} />
-            <Route path="add-product" element={<AddNewProduct />} />
-            <Route path="add-category" element={<AddCategory />} />
-            <Route path="add-sub-category" element={<AddSubCategory />} />
-            <Route path="add-address" element={<UserAddAddressPage />} />
-          </Route>
+          <Route path="/admin/all-products" element={<AdminAllProducts />} />
+          <Route path="/admin/add-product" element={<AddNewProduct />} />
+          <Route path="/admin/add-category" element={<AddCategory />} />
+          <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
+          <Route path="/admin/add-address" element={<UserAddAddressPage />} />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* <Footer /> */}

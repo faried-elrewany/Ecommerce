@@ -124,7 +124,7 @@ export default function Login() {
         />
       )}
       <div className=" absolute  top-28 flex gap-4 m-4">
-        <Link to="/admin" className="ml-1 font-bold ms-2">
+        <Link to="/admin/all-orders" className="ml-1 font-bold ms-2">
           حساب ادمن
         </Link>
         <Link to="/user" className="ml-1 font-bold ms-2">

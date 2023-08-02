@@ -5,7 +5,7 @@ import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 
-export const menus = [
+export const AdminMenu = [
   {
     name: "ادارة الطلبات",
     link: "/admin/all-orders",

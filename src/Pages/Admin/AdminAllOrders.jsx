@@ -4,13 +4,13 @@ import labtop from "../../images/labtop.png";
 import { InputDisabled, ButtonAction } from "../../Components/Coupon.jsx";
 import SelectOptions from "../../Components/SelectOptions";
 import SideBar from "../../Components/Utility/SideBar";
-import { menus } from "../../Components/Utility/AdminLinks";
+import { AdminMenu } from "../../Components/Utility/AdminLinks";
 
 const AdminAllOrders = () => {
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">
-        <SideBar menus={menus} />
+        <SideBar menus={AdminMenu} />
         <div className="w-full h-full p-2">
           <h2 className="font-bold text-2xl m-2 text-red-900">
             ادارة جميع الطلبات

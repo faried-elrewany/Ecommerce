@@ -6,7 +6,7 @@ import { Link, Outlet } from "react-router-dom";
 const SideBar = ({ menus }) => {
   const [open, setOpen] = useState(false);
   return (
-    <section className=" gap-2 min-h-screen">
+    <section className=" gap-2 min-h-[80vh]">
       <div
         className={`bg-red-900 h-full ${
           open ? "w-64" : "w-16"
