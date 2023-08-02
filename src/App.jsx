@@ -58,11 +58,11 @@ const App = () => {
             <Route path="addresses" element={<UserAllAddresPage />} />
             <Route path="wishlist" element={<UserFavoriteProductsPage />} />
           </Route>
+          <Route path="add-brand" element={<AdminAddBrand />} />
 
+          <Route path="/admin/all-orders" element={<AdminAllOrders />} />
           <Route path="/admin" element={<Admin />}>
             <Route index element={<AdminAllOrders />} />
-            <Route path="all-orders" element={<AdminAllOrders />} />
-            <Route path="add-brand" element={<AdminAddBrand />} />
             <Route path="all-products" element={<AdminAllProducts />} />
             <Route path="add-product" element={<AddNewProduct />} />
             <Route path="add-category" element={<AddCategory />} />

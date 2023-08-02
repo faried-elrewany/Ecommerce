@@ -20,7 +20,7 @@ export function ProductCard({
   price,
 }) {
   return (
-    <div className="flex rounded-lg flex-col md:flex-row p-2 mb-2 bg-red-50 w-full">
+    <div className="flex rounded-lg flex-col md:flex-row p-2 mb-2 bg-red-50 min-w-[250px]">
       <div className="w-full flex md:w-64 justify-center items-center">
         <img
           className="md:w-3/4 object-contain object-center"

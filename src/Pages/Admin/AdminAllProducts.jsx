@@ -5,19 +5,21 @@ import Row from "../../Components/Row";
 const AdminAllProducts = () => {
   return (
     <>
-      <h2 className=" mt-2 font-bold text-red-900 text-2xl">
-        ادارة جميع المنتجات{" "}
-      </h2>
-      <Row>
-        <CardElement />
-        <CardElement />
-        <CardElement />
-        <CardElement />
-        <CardElement />
-        <CardElement />
-        <CardElement />
-        <CardElement />
-      </Row>
+      <div className="flex flex-col w-full">
+        <h2 className=" mt-2 font-bold ms-5 text-red-900 text-2xl">
+          ادارة جميع المنتجات{" "}
+        </h2>
+        <div className="flex flex-wrap p-2 gap-4">
+          <CardElement />
+          <CardElement />
+          <CardElement />
+          <CardElement />
+          <CardElement />
+          <CardElement />
+          <CardElement />
+          <CardElement />
+        </div>
+      </div>
     </>
   );
 };
