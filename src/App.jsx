@@ -49,15 +49,12 @@ const App = () => {
           <Route path="/products" element={<ShopProductsPage />} />
           <Route path="/products/:id" element={<ProductDetalisPage />} />
           <Route path="/cart" element={<CartPage />} />
-
-          <Route path="/user" element={<User />}>
-            <Route index element={<UserAllOrdersPage />} />
-            <Route path="all-orders" element={<UserAllOrdersPage />} />
-            <Route path="add-address" element={<UserAddAddressPage />} />
-            <Route path="profile" element={<UserProfilePage />} />
-            <Route path="addresses" element={<UserAllAddresPage />} />
-            <Route path="wishlist" element={<UserFavoriteProductsPage />} />
-          </Route>
+          {/* User Pages */}
+          <Route path="/user/all-orders" element={<UserAllOrdersPage />} />
+          <Route path="/user/add-address" element={<UserAddAddressPage />} />
+          <Route path="/user/profile" element={<UserProfilePage />} />
+          <Route path="/user/addresses" element={<UserAllAddresPage />} />
+          <Route path="/user/wishlist" element={<UserFavoriteProductsPage />} />
           {/* Admin Pages */}
           <Route path="/admin/add-brand" element={<AdminAddBrand />} />
           <Route path="/admin/all-orders" element={<AdminAllOrders />} />

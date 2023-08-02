@@ -1,8 +1,7 @@
 import { HiMenuAlt3 } from "react-icons/hi";
 import { MdOutlineDashboard } from "react-icons/md";
-import { RiSettings4Line } from "react-icons/ri";
 import { TbReportAnalytics } from "react-icons/tb";
-import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 
 export const AdminMenu = [
@@ -20,4 +19,10 @@ export const AdminMenu = [
   { name: "اضف تصنيف", link: "/admin/add-category", icon: TbReportAnalytics },
   { name: "اضف تصنيف فرعي", link: "/admin/add-sub-category", icon: FiFolder },
   { name: "اضف منتج", link: "/admin/add-product", icon: FiShoppingCart },
+];
+export const UserMenu = [
+  { name: "ادارة الطلبات", link: "/user/all-orders", icon: FiMessageSquare },
+  { name: "المنتجات المفضلة", link: "/user/wishlist", icon: FiMessageSquare },
+  { name: "العنواوين الشخصية", link: "/user/addresses", icon: FiMessageSquare },
+  { name: "الملف الشخصي", link: "/user/profile", icon: FiMessageSquare },
 ];

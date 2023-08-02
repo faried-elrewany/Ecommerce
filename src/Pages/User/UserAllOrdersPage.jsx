@@ -1,20 +1,13 @@
 import React from "react";
-import SideBar from "../../Components/AdminDrawer";
-import Pagination from "../../Components/Pagination";
 import PropTypes from "prop-types";
 import { TrashIcon } from "@heroicons/react/24/outline";
 
 import { Quantity } from "../../Components/Coupon.jsx";
 import labtop from "../../images/labtop.png";
 
-export function ProductCard({
-  image,
-  category,
-  description,
-  brand,
-  colors,
-  price,
-}) {
+import SideBar from "../../Components/Utility/SideBar";
+import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
+export function ProductCard({ image, category, description, brand }) {
   return (
     <div className="flex rounded-lg flex-col md:flex-row p-2 mb-2 bg-red-50 w-full">
       <div className="w-full flex md:w-64 justify-center items-center">
@@ -51,12 +44,7 @@ ProductCard.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string).isRequired,
   price: PropTypes.number.isRequired,
 };
-const listItems = [
-  { name: "ادارة الطلبات", href: "/user/all-orders" },
-  { name: "المنتجات المفضلة", href: "/user/wishlist" },
-  { name: "العنواوين الشخصية", href: "/user/addresses" },
-  { name: "الملف الشخصي", href: "/user/profile" },
-];
+
 const productsList = [
   {
     id: 1,
@@ -83,9 +71,9 @@ function UserOrder({ products, status, price }) {
   return (
     <>
       <div className="flex flex-col p-4 border-4 border-red-500 items-center justify-center rounded-lg">
-        <h3 className="font-bold text-red-900 text-2xl">
+        <h4 className="font-bold text-red-900 text-xl">
           طلب رقم: <span>#14521</span>
-        </h3>
+        </h4>
         {products.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}
@@ -105,28 +93,29 @@ function UserOrder({ products, status, price }) {
 const UserAllOrdersPage = () => {
   return (
     <>
-      <div className="flex  justify-around items-center m-2">
-        <h2 className=" font-bold text-red-900 text-2xl">كل الطلبات </h2>
-        <SideBar items={listItems} />
-      </div>
-      {/* orderd container for all orders  */}
-      <div className="flex flex-col gap-4  p-2  ">
-        {/* order data */}
-        <UserOrder
-          products={productsList}
-          status={"قيد التنفيذ"}
-          price={"3000"}
-        />
-        <UserOrder
-          products={productsList}
-          status={"قيد التنفيذ"}
-          price={"3000"}
-        />
-        <UserOrder
-          products={productsList}
-          status={"قيد التنفيذ"}
-          price={"3000"}
-        />
+      <div className=" overflow-x-hidden flex h-full">
+        <SideBar menus={UserMenu} />
+
+        {/* orderd container for all orders  */}
+        <div className="flex flex-col gap-4  p-2  ">
+          {/* order data */}
+          <h2 className=" font-bold text-red-900 text-2xl">كل الطلبات </h2>
+          <UserOrder
+            products={productsList}
+            status={"قيد التنفيذ"}
+            price={"3000"}
+          />
+          <UserOrder
+            products={productsList}
+            status={"قيد التنفيذ"}
+            price={"3000"}
+          />
+          <UserOrder
+            products={productsList}
+            status={"قيد التنفيذ"}
+            price={"3000"}
+          />
+        </div>
       </div>
     </>
   );

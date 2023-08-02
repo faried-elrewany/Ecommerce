@@ -1,30 +1,28 @@
 import React from "react";
-import SideBar from "../../Components/AdminDrawer";
-
+import SideBar from "../../Components/Utility/SideBar";
+import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
 import { ButtonAction } from "../../Components/Coupon";
 import { InputComponent, TextArea } from "../Admin/Input.jsx";
-const listItems = [
-  { name: "ادارة الطلبات", href: "/user/all-orders" },
-  { name: "المنتجات المفضلة", href: "/user/wishlist" },
-  { name: "العنواوين الشخصية", href: "/user/addresses" },
-  { name: "الملف الشخصي", href: "/user/profile" },
-  { name: " ", href: "/user/profile" },
-];
+
 const UserAddAddressPage = () => {
   return (
     <>
-      <div className="flex  justify-around items-center m-2">
-        <h2 className=" font-bold text-red-900 text-2xl">اضافة عنوان جديد </h2>
-        <SideBar items={listItems} />
-      </div>
-      <div className="flex flex-col gap-2 mx-auto w-72  my-4">
-        <InputComponent
-          label={"تسمية العنوان مثلا (المنزل- العمل)"}
-          width={"w-72"}
-        />
-        <TextArea label={"العنوان بالتفصيل"} width={"w-72"} />
-        <InputComponent label={"رقم الهاتف"} width={"w-72"} />
-        <ButtonAction title="اضافة عنوان" />
+      <div className=" overflow-x-hidden flex h-full">
+        <SideBar menus={UserMenu} />
+        <div className="flex flex-col  items-center m-2">
+          <h2 className=" font-bold text-red-900 text-2xl my-2">
+            اضافة عنوان جديد
+          </h2>
+          <div className="flex flex-col gap-2  w-56  my-4">
+            <InputComponent
+              label={"تسمية العنوان مثلا (المنزل- العمل)"}
+              width={"w-56"}
+            />
+            <TextArea label={"العنوان بالتفصيل"} width={"w-56"} />
+            <InputComponent label={"رقم الهاتف"} width={"w-56"} />
+            <ButtonAction title="اضافة عنوان" />
+          </div>
+        </div>
       </div>
     </>
   );
