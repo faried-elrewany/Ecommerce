@@ -1,35 +1,12 @@
 import React from "react";
-import Row from "../../Components/Row";
-import Container from "../../Components/Container";
+import Container from "../../Components/Utility/Container.jsx";
 import CategoryContainer from "../../Components/Category/CategoryContainer";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import CategoryCard from "../../Components/Category/CategoryCard";
-import {
-  getAllCategory,
-  getAllCategoryPage,
-} from "../../redux/actions/categoryAction";
 import ReactPagination from "../../Components/Utility/ReactPagination";
 import Loading from "../../Components/Utility/Loading";
-const AllCategoryPage = () => {
-  const dispatch = useDispatch();
+import AllCategoryHook from "../../hook/category/all-category-page-hook";
 
-  useEffect(() => {
-    //the limit equal 1
-    dispatch(getAllCategory(1));
-    console.log("effect");
-  }, []);
-  const category = useSelector((state) => state.allCategory.category);
-  const loading = useSelector((state) => state.allCategory.loading);
-  let pageCount = 0;
-  if (category.data) {
-    pageCount = category.paginationResult.numberOfPages;
-    console.log("pageCount", pageCount);
-  }
-  const onPress = (page) => {
-    //focus in action  is limit also one default u can make it dynamic
-    dispatch(getAllCategoryPage(page));
-  };
+const AllCategoryPage = () => {
+  const [category, loading, pageCount, getPage] = AllCategoryHook();
   return (
     <>
       <Container>
@@ -40,7 +17,7 @@ const AllCategoryPage = () => {
           <Loading />
         )}
         {pageCount > 1 && (
-          <ReactPagination pageCount={pageCount} onPress={onPress} />
+          <ReactPagination pageCount={pageCount} onPress={getPage} />
         )}
       </Container>
     </>

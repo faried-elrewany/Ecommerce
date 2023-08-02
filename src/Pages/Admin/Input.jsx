@@ -1,9 +1,9 @@
 import { Input } from "@material-tailwind/react";
 
-export function InputComponent({ label, width }) {
+export function InputComponent({ label, width, name, onchange }) {
   return (
     <div className={width}>
-      <Input color="red" label={label} />
+      <Input color="red" label={label} value={name} onChange={onchange} />
     </div>
   );
 }

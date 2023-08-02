@@ -1,6 +1,6 @@
 import React from "react";
 import CardElement from "../../Components/Card";
-import Row from "../../Components/Row";
+import Row from "../../Components/Utility/Row";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
 const AdminAllProducts = () => {

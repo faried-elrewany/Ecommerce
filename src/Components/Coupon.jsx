@@ -46,15 +46,16 @@ export function InputDisabled(props) {
   );
 }
 
-export function ButtonAction(props) {
+export function ButtonAction({ title, onClick }) {
   return (
     <Button
       className="
     w-56
     outline-none"
       color="red"
+      onClick={onClick}
     >
-      {props.title}
+      {title}
     </Button>
   );
 }

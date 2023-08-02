@@ -127,7 +127,7 @@ export default function Login() {
         <Link to="/admin/all-orders" className="ml-1 font-bold ms-2">
           حساب ادمن
         </Link>
-        <Link to="/user" className="ml-1 font-bold ms-2">
+        <Link to="/user/all-orders" className="ml-1 font-bold ms-2">
           حساب يوزر
         </Link>
       </div>

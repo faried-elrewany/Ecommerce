@@ -1,6 +1,6 @@
 import React from "react";
 import CardElement from "../../Components/Card";
-import Row from "../../Components/Row";
+import Row from "../../Components/Utility/Row";
 import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
 const UserFavoriteProductsPage = () => {

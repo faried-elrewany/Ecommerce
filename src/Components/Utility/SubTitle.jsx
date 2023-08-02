@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonOutlined } from "./Buttons";
+import { ButtonOutlined } from "../Buttons";
 import { Link, useNavigate } from "react-router-dom";
 
 const SubTitle = ({ title, BtnTitle, href }) => {

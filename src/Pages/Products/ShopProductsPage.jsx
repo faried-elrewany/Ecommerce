@@ -1,7 +1,7 @@
 import React from "react";
 import { FilterMenu } from "../../Components/FiltersComponents";
 import FiltersDrawer from "../../Components/FiltersDrawer";
-import Row from "../../Components/Row";
+import Row from "../../Components/Utility/Row";
 import CardElement from "../../Components/Card";
 import Pagination from "../../Components/Pagination";
 import NavCategories from "../../Components/NavCategories";
