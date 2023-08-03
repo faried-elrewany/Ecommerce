@@ -1,6 +1,7 @@
 import React from "react";
-import SelectOptions from "../../Components/SelectOptions.jsx";
-import { ButtonAction } from "../../Components/Coupon.jsx";
+import SelectOptions from "../../Components/Utility/SelectOptions.jsx";
+import { Button } from "@material-tailwind/react";
+
 import { InputComponent, TextArea } from "./Input.jsx";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
@@ -29,7 +30,12 @@ const AddNewProduct = () => {
           <InputComponent label={"سعر المنتج "} width={"w-full"} />
           <SelectOptions />
           <SelectOptions />
-          <ButtonAction title="حفظ التعديلات" />
+          {/* <ButtonAction title="حفظ التعديلات" /> */}
+          <a href={href} className="">
+            <Button color="red" variant="outlined">
+              حفظ التعديلات
+            </Button>
+          </a>
         </div>
       </div>
     </>

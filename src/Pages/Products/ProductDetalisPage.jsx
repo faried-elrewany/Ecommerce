@@ -1,8 +1,8 @@
 import React from "react";
 import NavCategories from "../../Components/NavCategories";
-import CardDetails from "../../Components/CardDetails";
+import CardDetails from "../../Components/Products/CardDetails";
 import Row from "../../Components/Utility/Row";
-import CardElement from "../../Components/Card";
+import CardElement from "../../Components/Products/Card";
 
 const ProductDetalisPage = () => {
   return (

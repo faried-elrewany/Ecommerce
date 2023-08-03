@@ -1,5 +1,5 @@
-import labtop from "../images/labtop.png";
-import clothe from "../images/clothe.png";
+import labtop from "../../images/labtop.png";
+import clothe from "../../images/clothe.png";
 import { useNavigate } from "react-router-dom";
 
 import {

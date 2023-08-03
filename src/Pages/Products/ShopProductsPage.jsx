@@ -1,9 +1,8 @@
 import React from "react";
-import { FilterMenu } from "../../Components/FiltersComponents";
-import FiltersDrawer from "../../Components/FiltersDrawer";
+import { FilterMenu } from "../../Components/Products/FiltersComponents.jsx";
+import FiltersDrawer from "../../Components/Products/FiltersDrawer.jsx";
 import Row from "../../Components/Utility/Row";
-import CardElement from "../../Components/Card";
-import Pagination from "../../Components/Pagination";
+import CardElement from "../../Components/Products/Card.jsx";
 import NavCategories from "../../Components/NavCategories";
 
 const ShopProductsPage = () => {
@@ -22,7 +21,6 @@ const ShopProductsPage = () => {
         <CardElement />
         <CardElement />
       </Row>
-      <Pagination />
     </>
   );
 };

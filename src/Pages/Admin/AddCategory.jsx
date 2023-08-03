@@ -1,7 +1,7 @@
 import React from "react";
 import avatar from "../../images/avatar.png";
 import { InputComponent } from "./Input.jsx";
-import { ButtonAction } from "../../Components/Coupon.jsx";
+import { ButtonAction } from "../../Components/Products/Coupon.jsx";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
 import AddCategoryHook from "../../hook/category/add-category-hook";

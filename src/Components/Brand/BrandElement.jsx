@@ -1,5 +1,4 @@
 import React from "react";
-import brand1 from "../../images/brand1.png";
 const BrandElement = ({ img }) => {
   return (
     <>

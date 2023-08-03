@@ -1,8 +1,11 @@
 import React from "react";
 import { ProductCard } from "../Cart/CartPage";
 import labtop from "../../images/labtop.png";
-import { InputDisabled, ButtonAction } from "../../Components/Coupon.jsx";
-import SelectOptions from "../../Components/SelectOptions";
+import {
+  InputDisabled,
+  ButtonAction,
+} from "../../Components/Products/Coupon.jsx";
+import SelectOptions from "../../Components/Utility/SelectOptions";
 import SideBar from "../../Components/Utility/SideBar";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 

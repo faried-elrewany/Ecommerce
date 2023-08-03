@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { TrashIcon } from "@heroicons/react/24/outline";
 
-import { Quantity } from "../../Components/Coupon.jsx";
+import { Quantity } from "../../Components/Products/Coupon.jsx";
 import labtop from "../../images/labtop.png";
 
 import SideBar from "../../Components/Utility/SideBar";

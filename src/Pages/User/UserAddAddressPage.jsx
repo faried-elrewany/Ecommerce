@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
-import { ButtonAction } from "../../Components/Coupon";
+import { ButtonAction } from "../../Components/Products/Coupon";
 import { InputComponent, TextArea } from "../Admin/Input.jsx";
 
 const UserAddAddressPage = () => {

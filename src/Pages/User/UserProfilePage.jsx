@@ -1,6 +1,6 @@
 import React from "react";
 import { EyeIcon } from "@heroicons/react/24/outline";
-import { ButtonAction } from "../../Components/Coupon";
+import { ButtonAction } from "../../Components/Products/Coupon";
 import { InputComponent } from "../Admin/Input.jsx";
 import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";

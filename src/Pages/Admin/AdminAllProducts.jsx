@@ -1,5 +1,5 @@
 import React from "react";
-import CardElement from "../../Components/Card";
+import CardElement from "../../Components/Products/Card.jsx";
 import Row from "../../Components/Utility/Row";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";

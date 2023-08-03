@@ -1,6 +1,6 @@
 import React from "react";
-import { ButtonOutlined } from "../Buttons";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
 
 const SubTitle = ({ title, BtnTitle, href }) => {
   const navigate = useNavigate();
@@ -10,7 +10,9 @@ const SubTitle = ({ title, BtnTitle, href }) => {
         {title}
       </p>
       <Link to={href}>
-        <ButtonOutlined title={BtnTitle} />
+        <Button color="red" variant="outlined">
+          {BtnTitle}
+        </Button>
       </Link>
       {}
     </div>

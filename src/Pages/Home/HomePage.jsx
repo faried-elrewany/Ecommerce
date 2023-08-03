@@ -3,12 +3,9 @@ import HomeCarousal from "../../Components/HomeCarousal";
 import Container from "../../Components/Utility/Container";
 import Row from "../../Components/Utility/Row";
 import SubTitle from "../../Components/Utility/SubTitle";
-import CardElement from "../../Components/Card";
+import CardElement from "../../Components/Products/Card";
 import Ad from "../../Components/Ad";
-import BrandElement from "../../Components/Brand/BrandElement";
 import NavCategories from "../../Components/NavCategories";
-import CategoryContainer from "../../Components/Category/CategoryContainer";
-import HomeCategoryHook from "../../hook/category/home-category-hook";
 import HomeCategory from "./HomeCategory";
 import HomeBrand from "./HomeBrand";
 

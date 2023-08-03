@@ -12,7 +12,7 @@ const HomeCategory = () => {
   return (
     <>
       <SubTitle
-        title={" اشهر الماركات"}
+        title={"  التصنيفات"}
         BtnTitle={"المزيد"}
         href={"/allcategory"}
       />
