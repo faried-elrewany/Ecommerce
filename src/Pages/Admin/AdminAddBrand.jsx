@@ -4,7 +4,20 @@ import { InputComponent } from "./Input.jsx";
 import { ButtonAction } from "../../Components/Coupon.jsx";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
+import AddBrandHook from "../../hook/brand/add-brand-hook";
+import { ToastContainer, toast } from "react-toastify";
+import { Input } from "@material-tailwind/react";
+import Loading from "../../Components/Utility/Loading";
 const AdminAddBrand = () => {
+  const [
+    img,
+    name,
+    loading,
+    isPress,
+    handelSubmit,
+    onImageChange,
+    onChangeName,
+  ] = AddBrandHook();
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">
@@ -14,15 +27,34 @@ const AdminAddBrand = () => {
             اضف ماركة جديدة
           </h2>
           <div className="flex flex-col   justify-center">
-            <p className="font-bold text-xl ">صورة الماركة</p>
-            <img
-              src={avatar}
-              alt="add image photo"
-              className="w-48 h-48 object-contain"
-            />
+            <div>
+              <label for="upload-photo">
+                <img
+                  src={img}
+                  alt="fzx"
+                  height="150px"
+                  width="150px"
+                  style={{ cursor: "pointer" }}
+                />
+              </label>
+              <input
+                type="file"
+                name="photo"
+                onChange={onImageChange}
+                id="upload-photo"
+              />
+            </div>
           </div>
-          <InputComponent label={"اسم الماركة"} width={"w-56"} />
-          <ButtonAction title="حفظ" />
+          <Input
+            label={"اسم الماركة"}
+            width={"w-56"}
+            value={name}
+            onChange={onChangeName}
+            color="red"
+          />
+          <ButtonAction title="حفظ" onClick={handelSubmit} />
+          {isPress ? loading ? <Loading /> : <h4>تم الانتهاء</h4> : null}
+          <ToastContainer />
         </div>
       </div>
     </>

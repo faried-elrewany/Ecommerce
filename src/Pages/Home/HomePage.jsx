@@ -10,6 +10,7 @@ import NavCategories from "../../Components/NavCategories";
 import CategoryContainer from "../../Components/Category/CategoryContainer";
 import HomeCategoryHook from "../../hook/category/home-category-hook";
 import HomeCategory from "./HomeCategory";
+import HomeBrand from "./HomeBrand";
 
 export default function HomePage() {
   const slides = [
@@ -71,19 +72,8 @@ export default function HomePage() {
           <CardElement />
           <CardElement />
         </Row>
-        <SubTitle
-          title={" اشهر الماركات"}
-          BtnTitle={"المزيد"}
-          href={"/allbrand"}
-        />
-        <Row>
-          <BrandElement />
-          <BrandElement />
-          <BrandElement />
-          <BrandElement />
-          <BrandElement />
-          <BrandElement />
-        </Row>
+
+        <HomeBrand />
       </Container>
     </>
   );
