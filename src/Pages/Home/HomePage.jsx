@@ -2,20 +2,16 @@ import React from "react";
 import HomeCarousal from "../../Components/HomeCarousal";
 import Container from "../../Components/Utility/Container";
 import Row from "../../Components/Utility/Row";
-import clothe from "../../images/clothe.png";
 import SubTitle from "../../Components/Utility/SubTitle";
 import CardElement from "../../Components/Card";
 import Ad from "../../Components/Ad";
 import BrandElement from "../../Components/Brand/BrandElement";
 import NavCategories from "../../Components/NavCategories";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllCategory } from "../../redux/actions/categoryAction";
 import CategoryContainer from "../../Components/Category/CategoryContainer";
 import HomeCategoryHook from "../../hook/category/home-category-hook";
+import HomeCategory from "./HomeCategory";
 
 export default function HomePage() {
-  const [category, loading, colors] = HomeCategoryHook();
   const slides = [
     {
       image: "https://i.ibb.co/Vvndkmy/banner.jpg",
@@ -58,16 +54,7 @@ export default function HomePage() {
     <>
       <NavCategories />
       <HomeCarousal slides={slides} />
-      <SubTitle
-        title={" اشهر الماركات"}
-        BtnTitle={"المزيد"}
-        href={"/allcategory"}
-      />
-      <CategoryContainer
-        category={category.data}
-        loading={loading}
-        colors={colors}
-      />
+      <HomeCategory />
       {/* {console.log("home page rendered")} */}
       <Container>
         <Row>

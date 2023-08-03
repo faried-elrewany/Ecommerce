@@ -3,16 +3,21 @@ import Row from "../Utility/Row";
 import CategoryCard from "./CategoryCard";
 import Loading from "../Utility/Loading";
 
-const CategoryContainer = ({ category, loading }) => {
+const CategoryContainer = ({ data, loading }) => {
+  console.log(data);
   return (
     <>
       <Row>
-        {loading == true ? (
-          <Loading />
+        {loading === false ? (
+          data ? (
+            data.map(({ name, image, id }) => {
+              return <CategoryCard title={name} img={image} key={id} />;
+            })
+          ) : (
+            <h4>لا يوجد تصنيفات</h4>
+          )
         ) : (
-          category.map(({ id, name, image }) => (
-            <CategoryCard title={name} img={image} key={id} />
-          ))
+          <Loading />
         )}
       </Row>
     </>

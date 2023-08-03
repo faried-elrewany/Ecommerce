@@ -12,7 +12,7 @@ const AllCategoryPage = () => {
       <Container>
         <h2 className="font-bold text-red-900 text-2xl m-4">كل التصنيفات</h2>
         {category.data ? (
-          <CategoryContainer category={category.data} loading={loading} />
+          <CategoryContainer data={category.data} loading={loading} />
         ) : (
           <Loading />
         )}

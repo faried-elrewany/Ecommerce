@@ -5,7 +5,9 @@ import { ButtonAction } from "../../Components/Coupon.jsx";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
 import AddCategoryHook from "../../hook/category/add-category-hook";
+import { ToastContainer, toast } from "react-toastify";
 import { Input } from "@material-tailwind/react";
+import Loading from "../../Components/Utility/Loading";
 
 const AddCategory = () => {
   const [
@@ -44,15 +46,16 @@ const AddCategory = () => {
               id="upload-photo"
             />
           </div>
-          {/* <InputComponent
-            label={"اسم التصنيف"}
-            width={"w-56"}
-            name={name}
-            onChange={onChangeName}
-          /> */}
-          <Input color="red" value={name} onChange={onChangeName} />
 
+          <Input
+            color="red"
+            label="اسم التصنيف"
+            value={name}
+            onChange={onChangeName}
+          />
           <ButtonAction title="حفظ" onClick={handelSubmit} />
+          {isPress ? loading ? <Loading /> : <h4>تم الانتهاء</h4> : null}
+          <ToastContainer />
         </div>
       </div>
     </>

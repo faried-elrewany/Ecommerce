@@ -5,11 +5,12 @@ import { getAllCategory } from "../../redux/actions/categoryAction";
 
 const HomeCategoryHook = () => {
   const dispatch = useDispatch();
+  const category = useSelector((state) => state.allCategory.category);
   useEffect(() => {
     dispatch(getAllCategory(6));
   }, []);
   //get last catgeory state from redux
-  const category = useSelector((state) => state.allCategory.category);
+
   //get last loading state from redux
   const loading = useSelector((state) => state.allCategory.loading);
   const colors = [
