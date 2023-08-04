@@ -11,7 +11,7 @@ function DynamicSelect({ label, options }) {
   );
 }
 
-export default function SelectOptions() {
+export default function SelectOptions({ options }) {
   const versionOptions = [
     "Material Tailwind HTML",
     "Material Tailwind React",
