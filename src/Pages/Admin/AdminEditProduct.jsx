@@ -9,10 +9,13 @@ import { ToastContainer } from "react-toastify";
 import { Textarea } from "@material-tailwind/react";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
-import AdminAddProductsHook from "../../hook/products/add-products-hook";
 import add from "../../images/add.png";
+import { useParams } from "react-router-dom";
+import AdminEditProductsHook from "./../../hook/products/edit-products-hook";
 
-const AddNewProduct = () => {
+const AdminEditProduct = () => {
+  const { id } = useParams();
+
   const [
     CatID,
     BrandID,
@@ -41,7 +44,7 @@ const AddNewProduct = () => {
     qty,
     prodDescription,
     prodName,
-  ] = AdminAddProductsHook();
+  ] = AdminEditProductsHook(id);
   // const [images, setImages] = useState({});
   if (options) console.log(options);
   return (
@@ -50,7 +53,7 @@ const AddNewProduct = () => {
         <SideBar menus={AdminMenu} />
         <div className="flex flex-col w-3/4  gap-4 p-8  ">
           <h2 className="self-start font-bold text-red-900 text-2xl">
-            اضف منتج جديدة
+            تعديل المنتج
           </h2>
           <div className="flex flex-col   justify-center">
             <div>
@@ -100,7 +103,7 @@ const AddNewProduct = () => {
             class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="التصنيف الرئيسي"
             onChange={onSeletCategory}
-            // value={CatID}
+            value={CatID}
           >
             <option value="0" class="text-gray-700 !bg-white px-2">
               اختر تصنيف رئيسي
@@ -117,7 +120,7 @@ const AddNewProduct = () => {
             class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="الماركة"
             onChange={onSeletBrand}
-            // value={BrandID}
+            value={BrandID}
           >
             <option value="0" class="text-gray-700  px-2">
               اختر ماركة
@@ -180,4 +183,4 @@ const AddNewProduct = () => {
   );
 };
 
-export default AddNewProduct;
+export default AdminEditProduct;

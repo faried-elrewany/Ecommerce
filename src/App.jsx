@@ -30,6 +30,7 @@ import CartPage from "./Pages/Cart/CartPage.jsx";
 import ErrorPage from "./Pages/Error/ErrorPage.jsx";
 import AddSubCategory from "./Pages/Admin/AddSubCategory.jsx";
 import SideBar from "./Components/Utility/SideBar.jsx";
+import AdminEditProduct from "./Pages/Admin/AdminEditProduct.jsx";
 
 const App = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
           <Route path="/admin/add-category" element={<AddCategory />} />
           <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
           <Route path="/admin/add-address" element={<UserAddAddressPage />} />
+          <Route path="/admin/editproduct/:id" element={<AdminEditProduct />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

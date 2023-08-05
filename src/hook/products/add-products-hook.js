@@ -167,7 +167,7 @@ const AdminAddProductsHook = () => {
 
   useEffect(() => {
     if (loading === false) {
-      // setCatID(0)
+      setCatID(0);
       setColors([]);
       setImages([]);
       setProdName("");
@@ -190,6 +190,8 @@ const AdminAddProductsHook = () => {
   }, [loading]);
 
   return [
+    CatID,
+    BrandID,
     onChangeDesName,
     onChangeQty,
     onChangeColor,

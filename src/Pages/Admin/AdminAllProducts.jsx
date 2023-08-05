@@ -5,9 +5,10 @@ import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
 import AdminAllProductsContainer from "../../Components/Products/AdminAllProductsContainer.jsx";
 import ViewProductAdminHook from "../../hook/admin/view-product-admin-hook.js";
-
+import Loading from "../../Components/Utility/Loading.jsx";
+import ReactPagination from "../../Components/Utility/ReactPagination";
 const AdminAllProducts = () => {
-  const [items, pagination, onPress] = ViewProductAdminHook();
+  const [loading, items, pagination, onPress] = ViewProductAdminHook();
   if (pagination) var pageCount = pagination;
   else pageCount = 0;
 
@@ -20,8 +21,17 @@ const AdminAllProducts = () => {
             ادارة جميع المنتجات{" "}
           </h2>
           <div className="flex flex-wrap p-2 gap-4">
-            <AdminAllProductsContainer products={items} />
+            {!loading ? (
+              <AdminAllProductsContainer products={items} loading={loading} />
+            ) : (
+              <Loading />
+            )}
           </div>
+          {pageCount > 1 ? (
+            <div className="flex justify-center items-center w-full m-4">
+              <ReactPagination pageCount={pageCount} onPress={onPress} />
+            </div>
+          ) : null}
         </div>
       </div>
     </>
