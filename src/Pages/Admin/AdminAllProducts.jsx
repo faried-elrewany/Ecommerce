@@ -3,8 +3,14 @@ import CardElement from "../../Components/Products/Card.jsx";
 import Row from "../../Components/Utility/Row";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
-import ProductUpdate from "../../Components/Products/ProductUpdate.jsx";
+import AdminAllProductsContainer from "../../Components/Products/AdminAllProductsContainer.jsx";
+import ViewProductAdminHook from "../../hook/admin/view-product-admin-hook.js";
+
 const AdminAllProducts = () => {
+  const [items, pagination, onPress] = ViewProductAdminHook();
+  if (pagination) var pageCount = pagination;
+  else pageCount = 0;
+
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">
@@ -14,11 +20,7 @@ const AdminAllProducts = () => {
             ادارة جميع المنتجات{" "}
           </h2>
           <div className="flex flex-wrap p-2 gap-4">
-            <ProductUpdate />
-            <ProductUpdate />
-            <ProductUpdate />
-            <ProductUpdate />
-            <ProductUpdate />
+            <AdminAllProductsContainer products={items} />
           </div>
         </div>
       </div>
