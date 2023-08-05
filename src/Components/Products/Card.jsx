@@ -25,8 +25,8 @@ export default function CardElement(props) {
   };
 
   return (
-    <Card className="w-72 shadow-lg">
-      <CardHeader floated={false} color="blue-gray">
+    <Card className="w-72 shadow-xl mt-6 ">
+      <CardHeader floated={true} color="blue-gray" className="shadow-2xl ">
         <img
           className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
           src={imageUrl}

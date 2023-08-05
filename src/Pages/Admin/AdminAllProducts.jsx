@@ -3,6 +3,7 @@ import CardElement from "../../Components/Products/Card.jsx";
 import Row from "../../Components/Utility/Row";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
+import ProductUpdate from "../../Components/Products/ProductUpdate.jsx";
 const AdminAllProducts = () => {
   return (
     <>
@@ -13,14 +14,11 @@ const AdminAllProducts = () => {
             ادارة جميع المنتجات{" "}
           </h2>
           <div className="flex flex-wrap p-2 gap-4">
-            <CardElement />
-            <CardElement />
-            <CardElement />
-            <CardElement />
-            <CardElement />
-            <CardElement />
-            <CardElement />
-            <CardElement />
+            <ProductUpdate />
+            <ProductUpdate />
+            <ProductUpdate />
+            <ProductUpdate />
+            <ProductUpdate />
           </div>
         </div>
       </div>
