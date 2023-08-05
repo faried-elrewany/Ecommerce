@@ -7,7 +7,6 @@ import SideBar from "../../Components/Utility/SideBar";
 import addSubcategoryhook from "../../hook/subcategory/add-subcategory-hook.js";
 import { Input } from "@material-tailwind/react";
 import { ToastContainer } from "react-toastify";
-import { useState } from "react";
 
 const AddSubCategory = () => {
   const [
@@ -35,14 +34,14 @@ const AddSubCategory = () => {
               label="اسم التصنيف"
               value={name}
               onChange={onChangeName}
-              size="sm"
+              size="md"
             />
           </div>
           <div className="w-56">
             <Select
               label={"اختر تصنيف رئيسي"}
-              value={name}
               onChange={handelChange}
+              value={name}
             >
               {category.data ? (
                 category.data.map((item) => (
@@ -56,7 +55,6 @@ const AddSubCategory = () => {
               )}
             </Select>
           </div>
-
           <ButtonAction title="حفظ التعديلات" onClick={handelSubmit} />
           <ToastContainer />
         </div>

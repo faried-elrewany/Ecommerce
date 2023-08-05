@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import MultiImageInput from "react-multiple-image-input";
 import regeneratorRuntime from "regenerator-runtime";
-function Multipinput() {
+function Multipinput({ images, setImages }) {
   const crop = {
     unit: "%",
     aspect: 4 / 3,
     width: "100",
   };
 
-  const [images, setImages] = useState({});
-
-  return (
-    <MultiImageInput
-      images={images}
-      setImages={setImages}
-      cropConfig={{ crop, ruleOfThirds: true }}
-    />
-  );
+  return <MultiImageInput images={images} setImages={setImages} />;
 }
 
 export default Multipinput;

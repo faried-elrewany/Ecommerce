@@ -205,3 +205,58 @@
 .search-wrapper.searchWrapper {
   border: none;
 }
+.option .highlightOption {
+  padding: 10px !important;
+}
+.multiSelectContainer li {
+  padding: 0 !important;
+}
+.highlightOption {
+  background-color: white !important;
+}
+.multiSelectContainer li:hover {
+  background-color: #ddd !important;
+}
+
+.multiselectcontainer {
+  width: 300px !important;
+  height: 200px !important;
+  /* Add more styles as needed */
+}
+
+/* To change search box element look */
+.searchbox {
+  border: none !important;
+  font-size: 15px !important;
+  min-height: 50px !important;
+}
+
+/* To change input field position or margin */
+.inputfield {
+  margin: 5px !important;
+}
+
+/* To change CSS for chips (Selected options) */
+.chip {
+  background: red !important;
+}
+
+/* To change CSS for option container */
+.optioncontainer {
+  border: 2px solid !important;
+}
+
+/* To change CSS for dropdown options */
+.option {
+  color: red !important;
+}
+.lmMaya {
+  border: 1px solid #bbb !important;
+  border-radius: 10px !important;
+}
+.color {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
