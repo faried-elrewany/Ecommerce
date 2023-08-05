@@ -14,7 +14,6 @@ import add from "../../images/add.png";
 
 const AddNewProduct = () => {
   const [
-    BrandID,
     onChangeDesName,
     onChangeQty,
     onChangeColor,
@@ -73,7 +72,6 @@ const AddNewProduct = () => {
             value={prodDescription}
             onChange={onChangeDesName}
           />
-          <Input color="red" label="  سعر المنتج" type="number" />
           <Input
             color="red"
             label=" السعر قبل الخصم"

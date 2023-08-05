@@ -88,11 +88,10 @@ const AdminAddProductsHook = () => {
 
   //when selet category store id
   const onSeletCategory = async (e) => {
-    console.log("category", e.target.value);
     if (e.target.value !== 0) {
       await dispatch(getOneCategory(e.target.value));
     }
-    setCatID(e);
+    setCatID(e.target.value);
   };
   useEffect(() => {
     if (CatID !== 0) {
@@ -104,7 +103,6 @@ const AdminAddProductsHook = () => {
 
   //when selet brand store id
   const onSeletBrand = (e) => {
-    console.log("brand", e.target.value);
     SetBrandID(e.target.value);
   };
 
@@ -166,37 +164,32 @@ const AdminAddProductsHook = () => {
 
   //get create meesage
   const product = useSelector((state) => state.allproducts.products);
-  try {
-    useEffect(() => {
-      if (loading === false) {
-        // setCatID(0)
-        setColors([]);
-        setImages({});
-        setProdName("");
-        setProdDescription("");
-        setPriceBefore("السعر قبل الخصم");
-        setPriceAftr("السعر بعد الخصم");
-        setQty("الكمية المتاحة");
-        SetBrandID(0);
-        setSeletedSubID([]);
-        setTimeout(() => setLoading(true), 1500);
 
-        if (product) {
-          if (product.status === 201) {
-            notify("تم الاضافة بنجاح", "success");
-          } else {
-            console.log(product);
-            notify("هناك مشكله", "error");
-          }
+  useEffect(() => {
+    if (loading === false) {
+      // setCatID(0)
+      setColors([]);
+      setImages([]);
+      setProdName("");
+      setProdDescription("");
+      setPriceBefore("السعر قبل الخصم");
+      setPriceAftr("السعر بعد الخصم");
+      setQty("الكمية المتاحة");
+      SetBrandID(0);
+      setSeletedSubID([]);
+      setTimeout(() => setLoading(true), 1500);
+
+      if (product) {
+        if (product.status === 201) {
+          notify("تم الاضافة بنجاح", "success");
+        } else {
+          notify("هناك مشكلة في اصضاة المنتج", "error");
         }
       }
-    }, [loading]);
-  } catch (e) {
-    console.log(e);
-  }
+    }
+  }, [loading]);
 
   return [
-    BrandID,
     onChangeDesName,
     onChangeQty,
     onChangeColor,
