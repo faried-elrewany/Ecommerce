@@ -8,8 +8,14 @@ import Ad from "../../Components/Ad";
 import NavCategories from "../../Components/NavCategories";
 import HomeCategory from "./HomeCategory";
 import HomeBrand from "./HomeBrand";
+import clothe from "../../images/clothe.png";
+import ViewProductsDetalisHook from "../../hook/products/view-home-products-hook";
+import CardProductContainer from "../../Components/Products/CardProductContainer";
 
 export default function HomePage() {
+  const [items] = ViewProductsDetalisHook();
+  if (items) console.log(items);
+
   const slides = [
     {
       image: "https://i.ibb.co/Vvndkmy/banner.jpg",
@@ -53,15 +59,24 @@ export default function HomePage() {
       <NavCategories />
       <HomeCarousal slides={slides} />
       <HomeCategory />
-      {/* {console.log("home page rendered")} */}
       <Container>
+        <CardProductContainer
+          products={items}
+          title="الاكثر مبيعا"
+          btntitle="المزيد"
+          pathText="/products"
+        />
         <Row>
-          <CardElement />
-          <CardElement />
-          <CardElement />
-          <CardElement />
+          <CardElement
+            imageUrl={clothe}
+            title="Wooden House, Florida"
+            rating={5.0}
+            description="Enter a freshly updated and thoughtfully furnished peaceful home"
+            navigateUrl="/products/:id"
+          />
         </Row>
         <Ad />
+        {/* <Multipinput /> */}
         <SubTitle title={" احدث الازياء"} BtnTitle={"المزيد"} href={"#"} />
         <Row>
           <CardElement />

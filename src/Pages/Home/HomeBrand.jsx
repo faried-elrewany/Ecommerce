@@ -7,7 +7,6 @@ import HomeBrandHook from "../../hook/brand/home-brand-hook";
 
 const HomeBrand = () => {
   const [brand, loading] = HomeBrandHook();
-  console.log(brand);
   return (
     <>
       <SubTitle
