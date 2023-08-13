@@ -14,11 +14,11 @@ const UserFavoriteProductsPage = () => {
           </h2>
           <div className="flex flex-wrap gap-4 p-2">
             {/* متنساش اعمل الكارد ديناميك */}
+            {/* <CardElement />
             <CardElement />
             <CardElement />
             <CardElement />
-            <CardElement />
-            <CardElement />
+            <CardElement /> */}
           </div>
         </div>
       </div>

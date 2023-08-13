@@ -10,14 +10,14 @@ const ProductDetalisPage = () => {
       <NavCategories />
       <CardDetails />
       <Row>
+        {/* <CardElement />
         <CardElement />
         <CardElement />
         <CardElement />
         <CardElement />
         <CardElement />
         <CardElement />
-        <CardElement />
-        <CardElement />
+        <CardElement /> */}
       </Row>
     </div>
   );

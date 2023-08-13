@@ -9,11 +9,12 @@ import NavCategories from "../../Components/NavCategories";
 import HomeCategory from "./HomeCategory";
 import HomeBrand from "./HomeBrand";
 import clothe from "../../images/clothe.png";
-import ViewProductsDetalisHook from "../../hook/products/view-home-products-hook";
+
 import CardProductContainer from "../../Components/Products/CardProductContainer";
+import ViewHomeProductsHook from "./../../hook/products/view-home-products-hook";
 
 export default function HomePage() {
-  const [items] = ViewProductsDetalisHook();
+  const [items] = ViewHomeProductsHook();
   if (items) console.log(items);
 
   const slides = [
@@ -66,25 +67,14 @@ export default function HomePage() {
           btntitle="المزيد"
           pathText="/products"
         />
-        <Row>
-          <CardElement
-            imageUrl={clothe}
-            title="Wooden House, Florida"
-            rating={5.0}
-            description="Enter a freshly updated and thoughtfully furnished peaceful home"
-            navigateUrl="/products/:id"
-          />
-        </Row>
         <Ad />
-        {/* <Multipinput /> */}
-        <SubTitle title={" احدث الازياء"} BtnTitle={"المزيد"} href={"#"} />
-        <Row>
-          <CardElement />
-          <CardElement />
-          <CardElement />
-          <CardElement />
-        </Row>
 
+        <CardProductContainer
+          products={items}
+          title=" الاحدث"
+          btntitle="المزيد"
+          pathText="/products"
+        />
         <HomeBrand />
       </Container>
     </>

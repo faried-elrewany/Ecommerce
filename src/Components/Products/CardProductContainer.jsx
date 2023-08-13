@@ -5,15 +5,18 @@ import SubTitle from "../Utility/SubTitle";
 
 const CardProductContainer = ({ products, title, pathText, btntitle }) => {
   return (
-    <Row>
-      {/* {products ? (
-        <SubTitle title={title} btntitle={btntitle} href={pathText} />
+    <>
+      {products ? (
+        <SubTitle title={title} BtnTitle={btntitle} href={pathText} />
       ) : null}
-      className='my-2 d-flex justify-content-between'>
-      {products
-        ? products.map((item, index) => <CardElement key={index} item={item} />)
-        : null} */}
-    </Row>
+      <Row>
+        {products
+          ? products.map((item, index) => (
+              <CardElement key={index} item={item} />
+            ))
+          : null}
+      </Row>
+    </>
   );
 };
 export default CardProductContainer;
