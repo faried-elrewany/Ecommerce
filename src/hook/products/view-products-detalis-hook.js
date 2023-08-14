@@ -13,6 +13,10 @@ const ViewProductsDetalisHook = (prodID) => {
     dispatch(getOneProduct(prodID));
   }, []);
 
+  useEffect(() => {
+    dispatch(getOneProduct(prodID));
+  }, [prodID]);
+
   const oneProducts = useSelector((state) => state.allproducts.oneProduct);
   const oneCategory = useSelector((state) => state.allCategory.oneCategory);
   const oneBrand = useSelector((state) => state.allBrand.oneBrand);

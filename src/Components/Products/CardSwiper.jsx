@@ -17,6 +17,7 @@ function CardSwiper({ images }) {
     zoomWidth: 500,
     img: "https://i.ibb.co/Vvndkmy/banner.jpg",
   };
+  console.log("image", images);
   return (
     <>
       <div className="cont">
@@ -40,16 +41,24 @@ function CardSwiper({ images }) {
           modules={[Autoplay, Navigation]}
           className="mySwiper  mb-20  rounded"
         >
-          {images.map((src) => (
-            <SwiperSlide
-              key={src.original}
-              className=" rounded object-contain text-slate-700"
-            >
+          {images.length >= 1 ? (
+            images.map((src, index) => (
+              <SwiperSlide
+                key={src.original}
+                className=" rounded object-contain text-slate-700"
+              >
+                <div className="zoom">
+                  <img src={src.original} />
+                </div>
+              </SwiperSlide>
+            ))
+          ) : (
+            <SwiperSlide className=" rounded object-contain text-slate-700">
               <div className="zoom">
-                <img src={src.original} />
+                <h2>لا يوجد صورة لهذا المنتج</h2>
               </div>
             </SwiperSlide>
-          ))}
+          )}
         </Swiper>
       </div>
     </>

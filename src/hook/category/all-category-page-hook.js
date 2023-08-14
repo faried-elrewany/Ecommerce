@@ -21,7 +21,7 @@ const AllCategoryHook = () => {
 
   //to get page count
   let pageCount = 0;
-  if (category.paginationResult)
+  if (category && category.paginationResult)
     pageCount = category.paginationResult.numberOfPages;
 
   //when press pagination

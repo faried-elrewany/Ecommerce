@@ -31,6 +31,9 @@ import ErrorPage from "./Pages/Error/ErrorPage.jsx";
 import AddSubCategory from "./Pages/Admin/AddSubCategory.jsx";
 import SideBar from "./Components/Utility/SideBar.jsx";
 import AdminEditProduct from "./Pages/Admin/AdminEditProduct.jsx";
+import ForgetPasswordPage from "./Pages/Auth/ForgetPassword.jsx";
+import ResetPasswordPage from "./Pages/Auth/ResetPasswordPage.jsx";
+import VerifyPasswordPage from "./Pages/Auth/VerifyPasswordPage.jsx";
 
 const App = () => {
   return (
@@ -62,6 +65,12 @@ const App = () => {
           <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
           <Route path="/admin/add-address" element={<UserAddAddressPage />} />
           <Route path="/admin/editproduct/:id" element={<AdminEditProduct />} />
+          <Route
+            path="/user/forget-password"
+            element={<ForgetPasswordPage />}
+          />
+          <Route path="/user/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/user/verify-code" element={<VerifyPasswordPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AllCategoryHook from "../hook/category/all-category-page-hook";
 
 const SubCategory = ({ subCategories, imageUrl }) => {
   return (
@@ -18,18 +19,17 @@ const SubCategory = ({ subCategories, imageUrl }) => {
 };
 
 const NavContainer = () => {
+  const [category, loading, pageCount, getPage] = AllCategoryHook();
+  let categoryName = [];
+  if (category && category.data) {
+    categoryName = category.data
+      .slice(0, 6)
+      .map(({ name }) => ({ name: name }));
+    console.log(categoryName);
+  }
   const categories = [
     {
       name: "الهواتف الذكية",
-      subCategories: [
-        "ايفون 10",
-        "جالاكسي نوت 10",
-        "كوتورولا One",
-        "جلاكسي A80",
-        "جلاكسي M",
-        "هواوي P30",
-      ],
-      imageUrl: "https://i.ibb.co/Vvndkmy/banner.jpg",
     },
     { name: "اثاث منزلي" },
     { name: "الالعاب" },
@@ -54,31 +54,33 @@ const NavContainer = () => {
             <i className="fas fa-angle-up"></i>
           </span>
           <ul className="all-category-list">
-            {categories.map((category, index) => (
-              <li key={index} className="all-category-list-item">
-                <Link to="/" className="all-category-list-link">
-                  {category.name} <i className="fas fa-angle-right"></i>
-                </Link>
-                {category.subCategories && (
-                  <SubCategory
-                    subCategories={category.subCategories}
-                    imageUrl={category.imageUrl}
-                  />
-                )}
-              </li>
-            ))}
+            {categoryName &&
+              categoryName.map((category, index) => (
+                <li key={index} className="all-category-list-item">
+                  <Link to="/" className="all-category-list-link">
+                    {category.name} <i className="fas fa-angle-right"></i>
+                  </Link>
+                  {category.subCategories && (
+                    <SubCategory
+                      subCategories={category.subCategories}
+                      imageUrl={category.imageUrl}
+                    />
+                  )}
+                </li>
+              ))}
           </ul>
         </label>
       </nav>
       <nav className="featured-category">
         <ul className="nav-row">
-          {categories.map((category, index) => (
-            <li key={index} className="nav-row-list">
-              <Link to="/" className="nav-row-list-link">
-                {category.name}
-              </Link>
-            </li>
-          ))}
+          {categoryName &&
+            categoryName.map((category, index) => (
+              <li key={index} className="nav-row-list">
+                <Link to="/" className="nav-row-list-link">
+                  {category.name}
+                </Link>
+              </li>
+            ))}
         </ul>
       </nav>
     </div>
