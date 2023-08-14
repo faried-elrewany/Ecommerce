@@ -2,6 +2,7 @@ import React from "react";
 import Row from "../Utility/Row";
 import CardElement from "./Card";
 import SubTitle from "../Utility/SubTitle";
+import Loading from "../Utility/Loading";
 
 const CardProductContainer = ({ products, title, pathText, btntitle }) => {
   return (

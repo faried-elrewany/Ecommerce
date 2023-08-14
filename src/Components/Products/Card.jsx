@@ -82,12 +82,7 @@ export default function CardElement({ item }) {
         </CardBody>
         <CardFooter className="pt-0 m-0">
           <Link to={`/products/${item._id}`}>
-            <Button
-              onClick={() => navigate(navigateUrl)}
-              size="md"
-              color="red"
-              fullWidth={true}
-            >
+            <Button size="md" color="red" fullWidth={true}>
               Buy Now
             </Button>
           </Link>

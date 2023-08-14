@@ -16,7 +16,7 @@ const HomeBrand = () => {
       />
       <Row>
         {loading === false ? (
-          brand.data ? (
+          brand && brand.data ? (
             brand.data
               .slice(0, 6)
               .map(({ image, id }) => <BrandElement img={image} key={id} />)

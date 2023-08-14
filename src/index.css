@@ -37,7 +37,7 @@
 }
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  color: #eee !important;
+  color: #aaa !important;
   font-size: 1.5rem !important;
 }
 
@@ -262,4 +262,25 @@
 }
 .no-scroll {
   overflow: hidden;
+}
+input[type="checkbox"] {
+  accent-color: rgba(255, 0, 0, 0.445);
+}
+
+.small-image {
+  width: 2002px !important;
+  height: 3020px !important;
+  position: absolute;
+  top: 200% !important;
+}
+.cont {
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 80%;
+  display: flex;
+  gap: 0 1rem;
+}
+
+.zoom {
+  width: 80%;
 }

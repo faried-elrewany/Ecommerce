@@ -14,8 +14,6 @@ import add from "../../images/add.png";
 
 const AddNewProduct = () => {
   const [
-    CatID,
-    BrandID,
     onChangeDesName,
     onChangeQty,
     onChangeColor,
@@ -100,7 +98,6 @@ const AddNewProduct = () => {
             class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="التصنيف الرئيسي"
             onChange={onSeletCategory}
-            // value={CatID}
           >
             <option value="0" class="text-gray-700 !bg-white px-2">
               اختر تصنيف رئيسي
@@ -117,7 +114,6 @@ const AddNewProduct = () => {
             class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="الماركة"
             onChange={onSeletBrand}
-            // value={BrandID}
           >
             <option value="0" class="text-gray-700  px-2">
               اختر ماركة

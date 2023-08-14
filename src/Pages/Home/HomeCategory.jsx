@@ -17,7 +17,7 @@ const HomeCategory = () => {
       />
       <Row>
         {loading === false ? (
-          category.data ? (
+          category && category.data ? (
             category.data
               .slice(0, 6)
               .map(({ name, image, id }) => (

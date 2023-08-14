@@ -61,7 +61,12 @@ export function AvailabilityFilter({ title, options, click }) {
   );
 }
 
-_________________________________________________________________________;
+AvailabilityFilter.propTypes = {
+  inStock: PropTypes.number.isRequired,
+  preOrder: PropTypes.number.isRequired,
+  outOfStock: PropTypes.number.isRequired,
+};
+// _________________________________________________________________________
 export function PriceFilter({ priceFrom, priceTo }) {
   const [isOpen, setIsOpen] = useState(false);
 

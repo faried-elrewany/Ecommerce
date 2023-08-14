@@ -24,8 +24,6 @@ export default function FiltersDrawer() {
   // search functionality
   const [category, brand, clickCategory, clickBrand, priceFrom, priceTo] =
     SidebarSearchHook();
-  let localFrom = localStorage.getItem("priceFrom");
-  let localTo = localStorage.getItem("priceTo");
   return (
     <React.Fragment>
       <Button

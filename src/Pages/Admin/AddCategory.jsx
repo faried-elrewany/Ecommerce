@@ -30,7 +30,7 @@ const AddCategory = () => {
           </h2>
 
           <div>
-            <label for="upload-photo">
+            <label htmlFor="upload-photo">
               <img
                 src={img}
                 alt="fzx"

@@ -58,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       <NavCategories />
-      <HomeCarousal slides={slides} />
+      {/* <HomeCarousal slides={slides} /> */}
       <HomeCategory />
       <Container>
         <CardProductContainer

@@ -26,7 +26,7 @@ const AdminAddBrand = () => {
           </h2>
           <div className="flex flex-col   justify-center">
             <div>
-              <label for="upload-photo">
+              <label htmlFor="upload-photo">
                 <img
                   src={img}
                   alt="fzx"

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-
+import NavbarSearchHook from "../hook/search/navbar-search-hook";
 function ContactInfo(props) {
   return (
     <div className="header-content-top">
@@ -26,6 +26,8 @@ function Logo(props) {
 }
 
 function Search(props) {
+  const [OnChangeSearch, searchWord] = NavbarSearchHook();
+
   return (
     <label className="open-search" htmlFor="open-search">
       <i className={props.icon}></i>
@@ -43,6 +45,8 @@ function Search(props) {
           type="text"
           placeholder={props.placeholder}
           className="input-search"
+          onChange={OnChangeSearch}
+          value={searchWord}
         />
       </div>
     </label>
