@@ -5,6 +5,7 @@ import Row from "../../Components/Utility/Row";
 import CardElement from "../../Components/Products/Card";
 import { useParams } from "react-router-dom";
 import ViewProductsDetalisHook from "../../hook/products/view-products-detalis-hook";
+import CardProductContainer from "../../Components/Products/CardProductContainer";
 
 const ProductDetalisPage = () => {
   const { id } = useParams();
@@ -16,11 +17,17 @@ const ProductDetalisPage = () => {
       <NavCategories />
       <CardDetails />
 
-      <Row>
+      {/* <Row>
         {items
           ? items.map((item, index) => <CardElement key={index} item={item} />)
           : null}
-      </Row>
+      </Row> */}
+      <CardProductContainer
+        products={items}
+        title="منتجات مشابهه "
+        btntitle="المزيد"
+        pathText="/products"
+      />
     </div>
   );
 };

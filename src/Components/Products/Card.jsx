@@ -56,7 +56,7 @@ export default function CardElement({ item }) {
             <Typography
               variant="h5"
               color="blue-gray"
-              className="font-light text-sm"
+              className="font-light text-sm whitespace-break-spaces"
             >
               {item.description.length > 60
                 ? item.description.slice(0, 60) + "..."
