@@ -35,6 +35,8 @@ import ForgetPasswordPage from "./Pages/Auth/ForgetPassword.jsx";
 import ResetPasswordPage from "./Pages/Auth/ResetPasswordPage.jsx";
 import VerifyPasswordPage from "./Pages/Auth/VerifyPasswordPage.jsx";
 import Reviews from "./Components/Utility/Reviews.jsx";
+import AdminAddCoupon from "./Pages/Admin/AdminAddCoupon.jsx";
+import AdminEditCoupon from "./Pages/Admin/AdminEditCoupon.jsx";
 
 const App = () => {
   return (
@@ -66,6 +68,8 @@ const App = () => {
           <Route path="/admin/all-orders" element={<AdminAllOrders />} />
           <Route path="/admin/all-products" element={<AdminAllProducts />} />
           <Route path="/admin/add-product" element={<AddNewProduct />} />
+          <Route path="/admin/add-coupon" element={<AdminAddCoupon />} />
+          <Route path="/admin/editcoupon/:id" element={<AdminEditCoupon />} />
           <Route path="/admin/add-category" element={<AddCategory />} />
           <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
           <Route path="/admin/add-address" element={<UserAddAddressPage />} />

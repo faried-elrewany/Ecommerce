@@ -18,6 +18,7 @@ export const AdminMenu = [
     icon: BiAccessibility,
   },
   { name: "اضف منتج", link: "/admin/add-product", icon: BiAccessibility },
+  { name: "اضف منتج", link: "/admin/add-coupon", icon: BiAccessibility },
 ];
 export const UserMenu = [
   { name: "ادارة الطلبات", link: "/user/all-orders", icon: BiAccessibility },

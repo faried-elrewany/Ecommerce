@@ -18,6 +18,9 @@ export function Coupon() {
         containerProps={{
           className: "min-w-0",
         }}
+        labelProps={{
+          className: "hidden",
+        }}
       />
       <Button
         size="sm"
