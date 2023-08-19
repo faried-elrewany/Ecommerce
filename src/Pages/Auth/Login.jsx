@@ -50,6 +50,7 @@ export default function Login() {
               size="lg"
               value={password}
               color="red"
+              type="password"
               onChange={onChangePassword}
             />
           </CardBody>

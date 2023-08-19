@@ -39,9 +39,10 @@ const UserFavoriteProductsPage = () => {
             منتجاتك المفضلة
           </h2>
           <div className="flex flex-wrap gap-4 p-2">
-            {items.length <= 0 ? (
+            {items && items.length <= 0 ? (
               <h6>لا يوجد منتجات مفضله حاليا</h6>
             ) : items ? (
+              items &&
               items.map((item, index) => (
                 <FavouriteCard key={index} item={item} favProd={favProd} />
               ))

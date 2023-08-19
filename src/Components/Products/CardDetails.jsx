@@ -3,7 +3,7 @@ import CardSwiper from "./CardSwiper.jsx";
 import ProductOptions from "./ProductOptions.jsx";
 import ViewProductsDetalisHook from "../../hook/products/view-products-detalis-hook.js";
 import { useParams } from "react-router-dom";
-import ReactImageGallery from "react-image-gallery";
+import Reviews from "../Utility/Reviews.jsx";
 
 const CardDetails = () => {
   const { id } = useParams();

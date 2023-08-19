@@ -26,7 +26,7 @@ const ProductUpdate = ({ item }) => {
     await dispatch(deleteProducts(item._id));
     setOpen(!open);
     // window.location.reload();
-    await dispatch(getAllProducts(2));
+    await dispatch(getAllProducts());
   };
 
   return (

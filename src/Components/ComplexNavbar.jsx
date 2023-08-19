@@ -19,7 +19,7 @@ function Logo(props) {
   return (
     <strong className="logo">
       <NavLink to="/">
-        <i class="fa-solid fa-f"></i>
+        <i className="fa-solid fa-f"></i>
       </NavLink>
     </strong>
   );
@@ -118,10 +118,8 @@ function NavContent(props) {
             <span className="item-arrow"></span>
             <ul className="login-list">
               {accountMenu.items.map((item, index) => (
-                <NavLink to={item.link}>
-                  <li className="login-list-item" key={index}>
-                    {item.text}
-                  </li>
+                <NavLink to={item.link} key={index}>
+                  <li className="login-list-item">{item.text}</li>
                 </NavLink>
               ))}
               {user !== "" ? (

@@ -15,7 +15,7 @@ export default combineReducers({
   subCategory: subcategoryReducer,
   allproducts: productsReducer,
   authReducer: authReducer,
-  // reviewReducer: reviewReducer,
+  reviewReducer: reviewReducer,
   addToWishListReducer: addToWishListReducer,
   // couponReducer: couponReducer,
   // userAddressesReducer: userAddressesReducer,

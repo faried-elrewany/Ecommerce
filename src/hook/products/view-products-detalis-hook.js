@@ -23,7 +23,7 @@ const ViewProductsDetalisHook = (prodID) => {
   const productLike = useSelector((state) => state.allproducts.productLike);
   //to show products item
   let item = [];
-  if (oneProducts.data) item = oneProducts.data;
+  if (oneProducts && oneProducts.data) item = oneProducts.data;
   else item = [];
 
   useEffect(() => {

@@ -94,11 +94,11 @@ const AddNewProduct = () => {
           />
 
           <select
-            class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
+            className=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="التصنيف الرئيسي"
             onChange={onSeletCategory}
           >
-            <option value="0" class="text-gray-700 !bg-white px-2">
+            <option value="0" className="text-gray-700 !bg-white px-2">
               اختر تصنيف رئيسي
             </option>
             {category.data
@@ -110,11 +110,11 @@ const AddNewProduct = () => {
               : null}
           </select>
           <select
-            class=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
+            className=" rounded  border bg-white border-gray-400 shadow-sm pl-3 pr-10 py-2 text-sm focus:outline-none focus:border-red-700 focus:shadow-outline-indigo"
             name="الماركة"
             onChange={onSeletBrand}
           >
-            <option value="0" class="text-gray-700  px-2">
+            <option value="0" className="text-gray-700  px-2">
               اختر ماركة
             </option>
             {brand.data

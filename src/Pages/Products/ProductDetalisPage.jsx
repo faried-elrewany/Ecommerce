@@ -5,6 +5,7 @@ import CardElement from "../../Components/Products/Card";
 import { useParams } from "react-router-dom";
 import ViewProductsDetalisHook from "../../hook/products/view-products-detalis-hook";
 import CardProductContainer from "../../Components/Products/CardProductContainer";
+import ReviewContainer from "../../Components/Utility/ReviewContainer";
 
 const ProductDetalisPage = () => {
   const { id } = useParams();
@@ -12,11 +13,15 @@ const ProductDetalisPage = () => {
   let items = [];
   if (prod) items = prod.slice(0, 4);
 
+  if (item) {
+    var rateAvg = item.ratingsAverage;
+    var rateQty = item.ratingsQuantity;
+  }
   return (
     <div>
       <NavCategories />
       <CardDetails />
-
+      <ReviewContainer rateAvg={rateAvg} rateNum={rateQty} />
       <CardProductContainer
         products={items}
         title="منتجات مشابهه "

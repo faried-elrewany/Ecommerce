@@ -61,7 +61,7 @@ export default function SignUp() {
               name="password"
               type="password"
               size="lg"
-              label="الرقم السري"
+              label=" كلمة المرور"
               value={password}
               onChange={onChangePassword}
               color="red"
@@ -70,7 +70,7 @@ export default function SignUp() {
               name="password"
               type="password"
               size="lg"
-              label="الرقم السري"
+              label=" تاكيد كلمة المرور"
               value={confirmPassword}
               onChange={onChangeConfirmPassword}
               color="red"

@@ -34,6 +34,7 @@ import AdminEditProduct from "./Pages/Admin/AdminEditProduct.jsx";
 import ForgetPasswordPage from "./Pages/Auth/ForgetPassword.jsx";
 import ResetPasswordPage from "./Pages/Auth/ResetPasswordPage.jsx";
 import VerifyPasswordPage from "./Pages/Auth/VerifyPasswordPage.jsx";
+import Reviews from "./Components/Utility/Reviews.jsx";
 
 const App = () => {
   return (
@@ -42,6 +43,10 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route
+            path="/reviews"
+            element={<Reviews userName={"faried"} rateAvg={4} rateNum={4} />}
+          />
           <Route path="/side" element={<SideBar />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
