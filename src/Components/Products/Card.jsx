@@ -12,14 +12,13 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 import { HeartIcon as HeartIconOutline } from "@heroicons/react/24/outline";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
-export default function CardElement({ item }) {
-  const [isLiked, setIsLiked] = useState(false);
-
-  const handleLikeClick = () => {
-    setIsLiked(!isLiked);
-  };
-
+import CardContainerHook from "../../hook/products/card-container-hook";
+import { ToastContainer } from "react-toastify";
+import ProductCardHook from "../../hook/products/product-card-hook";
+export default function CardElement({ item, favProd }) {
+  const [removeToWishListData, addToWishListData, handelFav, favImg] =
+    ProductCardHook(item, favProd);
+  console.log(favImg);
   return (
     <>
       <Card className="w-64 shadow-xl mt-6 ">
@@ -34,13 +33,13 @@ export default function CardElement({ item }) {
             size="sm"
             color="red"
             variant="text"
-            className="!absolute top-4 end-4 rounded-full z-10"
-            onClick={handleLikeClick}
+            className=" !absolute top-4 end-4 rounded-full z-40"
+            onClick={handelFav}
           >
-            {isLiked ? (
-              <HeartIcon className="h-6 w-6" />
+            {favImg && favImg == "HeartIcon" ? (
+              <HeartIcon className="h-6 w-6 text-red-400" />
             ) : (
-              <HeartIconOutline className="h-6 w-6" />
+              <HeartIconOutline className="h-6 w-6 text-red-400" />
             )}
           </IconButton>
         </CardHeader>
@@ -87,6 +86,7 @@ export default function CardElement({ item }) {
             </Button>
           </Link>
         </CardFooter>
+        <ToastContainer />
       </Card>
     </>
   );

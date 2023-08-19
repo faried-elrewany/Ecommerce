@@ -15,7 +15,6 @@ import ViewHomeProductsHook from "./../../hook/products/view-home-products-hook"
 
 export default function HomePage() {
   const [items] = ViewHomeProductsHook();
-  if (items) console.log(items);
 
   const slides = [
     {
@@ -58,7 +57,7 @@ export default function HomePage() {
   return (
     <>
       <NavCategories />
-      {/* <HomeCarousal slides={slides} /> */}
+      <HomeCarousal slides={slides} />
       <HomeCategory />
       <Container>
         <CardProductContainer

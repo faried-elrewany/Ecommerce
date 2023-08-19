@@ -33,7 +33,6 @@ const AddBrandHook = () => {
   const handelSubmit = async (event) => {
     event.preventDefault();
     if (name === "" || selectedFile === null) {
-      console.log("من فضلك اكمل البيانات");
       notify("من فضلك اكمل البيانات", "warn");
       return;
     }
@@ -51,7 +50,6 @@ const AddBrandHook = () => {
       setImg(avatar);
       setName("");
       setSelectedFile(null);
-      console.log("تم الانتهاء");
       setLoading(true);
       setTimeout(() => setIsPress(false), 1000);
 

@@ -41,7 +41,6 @@ const AddNewProduct = () => {
     prodName,
   ] = AdminAddProductsHook();
   // const [images, setImages] = useState({});
-  if (options) console.log(options);
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">

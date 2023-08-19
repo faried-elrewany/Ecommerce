@@ -17,8 +17,6 @@ const AllCategoryHook = () => {
   const category = useSelector((state) => state.allCategory.category);
   const loading = useSelector((state) => state.allCategory.loading);
 
-  console.log(category);
-
   //to get page count
   let pageCount = 0;
   if (category && category.paginationResult)
@@ -27,7 +25,6 @@ const AllCategoryHook = () => {
   //when press pagination
   const getPage = (page) => {
     dispatch(getAllCategoryPage(page));
-    console.log(page);
   };
 
   return [category, loading, pageCount, getPage];

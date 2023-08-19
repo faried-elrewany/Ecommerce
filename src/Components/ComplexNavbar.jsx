@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { NavLink, Link } from "react-router-dom";
 import NavbarSearchHook from "../hook/search/navbar-search-hook";
 function ContactInfo(props) {
@@ -54,6 +54,42 @@ function Search(props) {
 }
 
 function NavContent(props) {
+  const getUser = useCallback(() => {
+    if (localStorage.getItem("user")) {
+      return JSON.parse(localStorage.getItem("user"));
+    }
+    return "";
+  }, []);
+
+  const [user, setUser] = useState(getUser);
+  console.log("user", user);
+  useEffect(() => {
+    setUser(getUser());
+    console.log(user);
+  }, [getUser]);
+  let accountMenu = {};
+  if (user == "") {
+    accountMenu = {
+      text: "مرحبا, تسجيل الدخول",
+      action: "انشاء حساب",
+      items: [
+        { text: " تسجيل الدخول", link: "/login" },
+        { text: "انشاء حساب", link: "/register" },
+      ],
+    };
+  } else {
+    accountMenu = {
+      text: user ? " " + user.name : "",
+      action: "",
+      items: [{ text: "الصفحة الشخصية", link: "/user/wishlist" }],
+    };
+  }
+
+  const logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setUser("");
+  };
   return (
     <nav className="nav-content">
       <ul className="nav-content-list">
@@ -77,17 +113,26 @@ function NavContent(props) {
             />
             <i className="fa fa-user-circle"></i>
             <span className="login-text">
-              {props.account.text} <strong>{props.account.action}</strong>
+              {accountMenu.text} <strong>{accountMenu.action}</strong>
             </span>
             <span className="item-arrow"></span>
             <ul className="login-list">
-              {props.account.items.map((item, index) => (
+              {accountMenu.items.map((item, index) => (
                 <NavLink to={item.link}>
                   <li className="login-list-item" key={index}>
                     {item.text}
                   </li>
                 </NavLink>
               ))}
+              {user !== "" ? (
+                <NavLink to={"/"}>
+                  <li onClick={logOut} className="login-list-item">
+                    تسجيل الخروج
+                  </li>
+                </NavLink>
+              ) : (
+                ""
+              )}
             </ul>
           </label>
         </li>
@@ -115,10 +160,8 @@ function Header() {
     text: "مرحبا, تسجيل الدخول",
     action: "انشاء حساب",
     items: [
-      { text: "الصقحة الشخصية", link: "/" },
       { text: "انشاء حساب", link: "/register" },
       { text: " تسجيل الدخول", link: "/login" },
-      { text: "تسجيل الخروج", link: "/" },
     ],
   };
 
@@ -128,7 +171,7 @@ function Header() {
       <Container>
         <Logo />
         <Search icon={searchIcon} placeholder={searchPlaceholder} />
-        <NavContent items={navItems} account={accountMenu} />
+        <NavContent items={navItems} />
       </Container>
     </header>
   );

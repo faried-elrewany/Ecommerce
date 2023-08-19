@@ -44,12 +44,12 @@ const ViewProductsDetalisHook = (prodID) => {
 
   //to show category item
   let cat = [];
-  if (oneCategory.data) cat = oneCategory.data;
+  if (oneCategory && oneCategory.data) cat = oneCategory.data;
   else cat = [];
 
   //to show brand item
   let brand = [];
-  if (oneBrand.data) brand = oneBrand.data;
+  if (oneBrand && oneBrand.data) brand = oneBrand.data;
   else brand = [];
 
   let prod = [];

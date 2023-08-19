@@ -8,7 +8,6 @@ import ReactImageGallery from "react-image-gallery";
 const CardDetails = () => {
   const { id } = useParams();
   const [item, images, cat, brand] = ViewProductsDetalisHook(id);
-  console.log(item);
   return (
     <section className="text-gray-700 body-font  bg-slate-50">
       <div className="container px-5 py-4  mx-auto ">

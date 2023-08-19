@@ -17,7 +17,6 @@ const ShopProductsPage = () => {
   if (pagination) pageCount = pagination;
   return (
     <>
-      {console.log(loading)}
       <NavCategories />
       <div className="flex my-2 justify-around items-center shadow py-4">
         <FilterMenu onClick={getProduct} />

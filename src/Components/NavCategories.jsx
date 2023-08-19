@@ -25,7 +25,6 @@ const NavContainer = () => {
     categoryName = category.data
       .slice(0, 6)
       .map(({ name }) => ({ name: name }));
-    console.log(categoryName);
   }
   const categories = [
     {

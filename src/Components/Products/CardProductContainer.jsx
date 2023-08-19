@@ -3,8 +3,11 @@ import Row from "../Utility/Row";
 import CardElement from "./Card";
 import SubTitle from "../Utility/SubTitle";
 import Loading from "../Utility/Loading";
+import CardContainerHook from "../../hook/products/card-container-hook";
 
 const CardProductContainer = ({ products, title, pathText, btntitle }) => {
+  const [favProd] = CardContainerHook();
+
   return (
     <>
       {products ? (
@@ -13,7 +16,11 @@ const CardProductContainer = ({ products, title, pathText, btntitle }) => {
       <Row>
         {products
           ? products.map((item, index) => (
-              <CardElement key={index} item={item} />
+              <CardElement
+                key={index}
+                item={item}
+                favProd={favProd ? favProd : []}
+              />
             ))
           : null}
       </Row>

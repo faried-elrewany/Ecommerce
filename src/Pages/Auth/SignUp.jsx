@@ -2,63 +2,23 @@ import { useState } from "react";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import AlertMessage from "../../Components/Alert.jsx";
 import { Link } from "react-router-dom";
-
+import RegisterHook from "../../hook/auth/register-hook";
+import { ToastContainer } from "react-toastify";
 export default function SignUp() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const nameRegex = new RegExp(/^[a-zA-Z\s]*$/);
-  const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
-  const passwordRegex = new RegExp(
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-  );
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setShowAlert(false);
-    setShowSuccess(false);
-    if (!nameRegex.test(name)) {
-      setShowAlert(true);
-      setAlertMessage("Invalid name. Name must contain only letters");
-    } else if (!emailRegex.test(email)) {
-      setShowAlert(true);
-      setAlertMessage("Invalid email address");
-    } else if (!passwordRegex.test(password)) {
-      setShowAlert(true);
-      setAlertMessage(
-        "Invalid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number"
-      );
-    } else {
-      console.log(name, email, password);
-      reset();
-      setShowSuccess(true);
-      setAlertMessage("Form submitted successfully");
-      setShowAlert(true);
-    }
-  };
-
-  const reset = () => {
-    setName("");
-    setEmail("");
-    setPassword("");
-  };
-
+  const [
+    name,
+    email,
+    phone,
+    password,
+    confirmPassword,
+    loading,
+    onChangeName,
+    onChangeEmail,
+    onChangePhone,
+    onChangePassword,
+    onChangeConfirmPassword,
+    OnSubmit,
+  ] = RegisterHook();
   return (
     <section className="  h-[100vh] flex justify-center items-center overflow-hidden">
       <Card color="transparent" shadow={false}>
@@ -78,7 +38,7 @@ export default function SignUp() {
               label="الاسم"
               value={name}
               name="name"
-              onChange={handleNameChange}
+              onChange={onChangeName}
               color="red"
             />
             <Input
@@ -86,7 +46,15 @@ export default function SignUp() {
               name="email"
               label="الايميل"
               value={email}
-              onChange={handleEmailChange}
+              onChange={onChangeEmail}
+              color="red"
+            />
+            <Input
+              size="md"
+              name="number"
+              label="الهاتف"
+              value={phone}
+              onChange={onChangePhone}
               color="red"
             />
             <Input
@@ -95,7 +63,16 @@ export default function SignUp() {
               size="lg"
               label="الرقم السري"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={onChangePassword}
+              color="red"
+            />
+            <Input
+              name="password"
+              type="password"
+              size="lg"
+              label="الرقم السري"
+              value={confirmPassword}
+              onChange={onChangeConfirmPassword}
               color="red"
             />
           </div>
@@ -104,7 +81,7 @@ export default function SignUp() {
             color="red"
             className="mt-6 text-xl"
             fullWidth
-            onClick={handleSubmit}
+            onClick={OnSubmit}
           >
             الاشتراك
           </Button>
@@ -113,31 +90,12 @@ export default function SignUp() {
               color="gray"
               className="mt-4 ms-2 text-center font-normal text-lg"
             >
-              بالفعل تمتلك ايميل?{" "}
-              <a
-                href="#"
-                className="font-bold text-red-500 transition-colors hover:text-red-700"
-              >
-                تسجيل الدخول{" "}
-              </a>
+              بالفعل تمتلك ايميل? تسجيل الدخول{" "}
             </Typography>
           </Link>
         </form>
       </Card>
-      {showAlert && (
-        <AlertMessage
-          message={alertMessage}
-          type="error"
-          onClose={() => setShowAlert(false)}
-        />
-      )}
-      {showSuccess && (
-        <AlertMessage
-          message="Form submitted successfully"
-          type="success"
-          onClose={() => setShowSuccess(false)}
-        />
-      )}
+      <ToastContainer />
     </section>
   );
 }

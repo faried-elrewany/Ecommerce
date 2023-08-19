@@ -4,7 +4,7 @@ import {
   GET_ERROR,
   GET_ALL_SUB_CATEGORY,
 } from "../type";
-import useGetData from "../../hooks/useGetData";
+import { useGetData } from "../../hooks/useGetData";
 import { useInsertData } from "../../hooks/useInsertData";
 
 //gcreate sub category with pagination

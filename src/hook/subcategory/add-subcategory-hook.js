@@ -25,7 +25,6 @@ const addSubcategoryhook = () => {
 
   //on change dropdown menu
   const handelChange = (e) => {
-    console.log(e);
     setID(e._id);
   };
 
@@ -64,7 +63,6 @@ const addSubcategoryhook = () => {
       setName("");
       setID("0");
 
-      if (subcategory) console.log(subcategory);
       if (subcategory.status === 201) {
         notify("تمت الاضافة بنجاح", "success");
       } else if (

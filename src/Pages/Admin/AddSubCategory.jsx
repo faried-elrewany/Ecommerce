@@ -19,7 +19,6 @@ const AddSubCategory = () => {
     handelSubmit,
     onChangeName,
   ] = addSubcategoryhook();
-  if (category) console.log(category.data, id);
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">

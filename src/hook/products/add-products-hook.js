@@ -20,7 +20,6 @@ const AdminAddProductsHook = () => {
   //get last sub cat state from redux
   let subCat = [];
   subCat = useSelector((state) => state.subCategory.subcategory);
-  console.log(subCat);
   const onSelect = (selectedList) => {
     setSeletedSubID(selectedList);
   };
@@ -191,7 +190,6 @@ const AdminAddProductsHook = () => {
           notify("تم الاضافة بنجاح", "success");
         } else {
           notify("هناك مشكلة في اصضاة المنتج", "error");
-          window.location.reload();
         }
       }
     }

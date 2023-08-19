@@ -86,6 +86,7 @@ header {
   margin: 0 15px;
   overflow: hidden;
   position: relative;
+  color: #e74c3c;
 }
 @media (max-width: 991px) {
   .container-header .open-search {
@@ -273,6 +274,14 @@ header {
 }
 .container-header.nav-content.nav-content-list.nav-content-item:hover .fas {
   color: var(--slate);
+}
+.login-text {
+  letter-spacing: 1.5px !important;
+  font-weight: bolder;
+  color: red;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  transform: skewX(15deg);
 }
 .container-header.nav-content.nav-content-list.account-login.login-text {
   display: flex;
