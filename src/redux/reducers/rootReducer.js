@@ -18,6 +18,6 @@ export default combineReducers({
   reviewReducer: reviewReducer,
   addToWishListReducer: addToWishListReducer,
   couponReducer: couponReducer,
-  // userAddressesReducer: userAddressesReducer,
+  userAddressesReducer: userAddressesReducer,
   // cartReducer: cartReducer
 });

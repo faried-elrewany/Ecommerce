@@ -5,8 +5,8 @@ import { AdminMenu } from "../../Components/Utility/AdminLinks";
 import SideBar from "../../Components/Utility/SideBar";
 import { Input } from "@material-tailwind/react";
 import { ToastContainer } from "react-toastify";
-import CouponCard from "./CouponCard.jsx";
 import { useParams } from "react-router-dom";
+import CouponCard from "./CouponCard.jsx";
 import EditCouponHook from "../../hook/coupon/edit-coupon-hook";
 
 const AdminEditCoupon = () => {
@@ -59,15 +59,6 @@ const AdminEditCoupon = () => {
             />
           </div>
           <ButtonAction title="حفظ التعديلات" onClick={onSubmit} />
-          {/* <div className=" flex flex-col gap-4">
-            {coupons ? (
-              coupons.map((item, index) => {
-                return <CouponCard key={index} coupon={item} />;
-              })
-            ) : (
-              <h4>لا يوجد كوبونات حتى الان</h4>
-            )}
-          </div> */}
         </div>
         <ToastContainer />
       </div>
