@@ -1,99 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import PropTypes from "prop-types";
+import { AiTwotoneDelete, AiFillStar } from "react-icons/ai";
 
-import {
-  Coupon,
-  InputDisabled,
-  ButtonAction,
-  Colors,
-  Quantity,
-} from "../../Components/Products/Coupon.jsx";
 import labtop from "../../images/labtop.png";
+import { Button, Input } from "@material-tailwind/react";
+import GetAllUserCartHook from "./../../hook/cart/get-all-user-cart-hook";
+import DeleteCartHook from "../../hook/cart/delete-cart-hook";
+import ApplayCouponHook from "./../../hook/cart/applay-coupon-hook";
+import ProductCard from "./ProductCart";
+import CheckOut from "./CheckOut";
+import { ToastContainer } from "react-toastify";
 
-export function ProductCard({
-  image,
-  category,
-  description,
-  brand,
-  colors,
-  price,
-}) {
-  return (
-    <div className="flex rounded-lg flex-col md:flex-row p-2 mb-2 bg-red-50 min-w-[250px]">
-      <div className="w-full flex md:w-64 justify-center items-center">
-        <img
-          className="md:w-3/4 object-contain object-center"
-          src={image}
-          alt={`${brand} ${category}`}
-        />
-      </div>
-      <div className="w-full flex-col gap-y-4">
-        <div className="flex justify-between items-center mb-2">
-          <div className="font-semibold">{category}</div>
-          <button>
-            <TrashIcon className="h-8 w-8 text-red-400" />
-          </button>
-        </div>
-        <p className="text-small mb-2">{description}</p>
-        <p>
-          الماركة: <span>{brand}</span>
-        </p>
-        <Colors colors={colors} />
-        <div className="flex justify-between items-center">
-          <Quantity />
-          <p>
-            <span>{price}</span>جنية
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-ProductCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
-  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-  price: PropTypes.number.isRequired,
-};
 const CartPage = () => {
+  const [
+    itemsNum,
+    cartItems,
+    totalCartPrice,
+    couponNameRes,
+    totalCartPriceAfterDiscount,
+  ] = GetAllUserCartHook();
+  const [handelDeleteCart] = DeleteCartHook();
+
+  const [couponName, onChangeCoupon, handelSubmitCoupon] = ApplayCouponHook();
+
+  useEffect(() => {
+    if (couponNameRes) {
+      onChangeCoupon(couponNameRes);
+    }
+  }, [couponNameRes]);
+  if (cartItems) console.log(cartItems);
   return (
     <div>
       <h2 className="text-red-400 mt-4 text-2xl font-bold ">عربة التسوق </h2>
-      {/* layout conatiner */}
 
       <div className=" overflow-hidden flex items-center justify-center flex-col md:flex-row w-full gap-4  p-4 ">
         {/* right side */}
         <div className="flex-col w-full ">
-          {/*  start component */}
-
-          <ProductCard
-            image={labtop}
-            category="اجهزة الكترونية"
-            brand="سامسونج"
-            colors={["red"]}
-            price={3000}
-          />
-          <ProductCard
-            image={labtop}
-            category="اجهزة الكترونية"
-            brand="سامسونج"
-            colors={["red"]}
-            price={3000}
-          />
-          {/*  end component */}
+          {cartItems && cartItems.length >= 1 ? (
+            cartItems.map((item, index) => {
+              return <ProductCard key={index} item={item} />;
+            })
+          ) : (
+            <h6 className="font-bold text-3xl ">لا يوجد منتجات فى العربة</h6>
+          )}
         </div>
 
         {/* left side */}
-        <div className=" md:self-start w-64 rounded-md p-2 flex flex-col justify-center items-center gap-2 ">
-          <Coupon />
-          <InputDisabled value={15020} className="w-full" />
-          <ButtonAction className="w-full" title="اتمام الشراء" />
-        </div>
+        <CheckOut
+          couponNameRes={couponNameRes}
+          totalCartPriceAfterDiscount={totalCartPriceAfterDiscount}
+          totalCartPrice={totalCartPrice}
+        />
       </div>
+      <ToastContainer />
     </div>
   );
 };

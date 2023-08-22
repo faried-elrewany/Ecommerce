@@ -1,38 +1,82 @@
 import React from "react";
-import { TrashIcon } from "@heroicons/react/24/outline";
-import { EyeIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@material-tailwind/react";
 import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
-function HouseComponent(props) {
+import { Link } from "react-router-dom";
+import { AiTwotoneDelete, AiFillEdit } from "react-icons/ai";
+
+import ViewAddressesHook from "../../hook/user/view-addresses-hook";
+import DeleteAddressHook from "./../../hook/user/delete-address-hook";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+function HouseComponent({ item }) {
+  const [show, handleClose, handleShow, handelDelete] = DeleteAddressHook(
+    item._id
+  );
   return (
-    <div className="w-11/12  flex flex-col bg-gray-200 rounded-lg gap-4 p-4 justify-content">
-      <div className="flex items-center justify-between">
-        <p></p>
-        <div className="flex justify-center items-center gap-2">
-          <a href="#" className="flex justify-center items-center gap-2">
-            <div>ازالة</div>
-            <TrashIcon className="h-6 w-6 text-red-500" />
-          </a>
-          <a href="#" className="flex justify-center items-center gap-2">
-            <div>تعديل</div>
-            <EyeIcon className="h-6 w-6 text-red-500" />
-          </a>
+    <>
+      <Dialog
+        open={show}
+        handler={handleShow}
+        animate={{
+          mount: { scale: 1, y: 0 },
+          unmount: { scale: 0.9, y: -100 },
+        }}
+      >
+        <DialogHeader>تاكيد الحذف</DialogHeader>
+        <DialogBody divider>هل انتا متاكد من عملية الحذف للمنتج</DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={handleClose}
+            className="mr-1"
+          >
+            تراجع
+          </Button>
+          <Button variant="gradient" color="green" onClick={handelDelete}>
+            <span>حذف</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+      <div className="w-11/12  flex flex-col bg-gray-200 rounded-lg gap-4 p-4 justify-content">
+        <div className="flex items-center justify-between">
+          <p></p>
+          <div className="flex justify-center items-center gap-2">
+            <a href="#" className="flex justify-center items-center gap-2">
+              <AiTwotoneDelete
+                onClick={handleShow}
+                className="h-6 w-6 text-red-500 cursor-pointer"
+              />
+            </a>
+            <Link
+              to={`/user/edit-address/${item._id}`}
+              className="flex justify-center items-center gap-2"
+            >
+              <AiFillEdit className="h-6 w-6 text-red-500" />
+            </Link>
+          </div>
         </div>
+        <p className="text-xl bold">
+          عنوان المنزل: <span className="text-lg">{item.alias}</span>
+        </p>
+        <p> {item.details}</p>
+        <p className="text-xl bold">
+          رقم الهاتف : <span className="text-lg">{item.phone}</span>
+        </p>
       </div>
-      <p className="text-xl bold">
-        المنزل : <span className="text-lg">{props.title}</span>
-      </p>
-      <p>{props.address}</p>
-      <p className="text-xl bold">
-        رقم الهاتف : <span className="text-lg">{props.phone}</span>
-      </p>
-    </div>
+    </>
   );
 }
 const UserAllAddresPage = () => {
   const navigate = useNavigate();
+  const [res] = ViewAddressesHook();
+  if (res.data) console.log(res);
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">
@@ -42,21 +86,13 @@ const UserAllAddresPage = () => {
             دفتر العناوين
           </h2>
           <div className=" flex flex-col gap-4">
-            <HouseComponent
-              title="المنزل"
-              address="القليوبية الخانكة شارع لرويني"
-              phone="01552805430"
-            />
-            <HouseComponent
-              title="المنزل"
-              address="القليوبية الخانكة شارع لرويني"
-              phone="01552805430"
-            />
-            <HouseComponent
-              title="المنزل"
-              address="القليوبية الخانكة شارع لرويني"
-              phone="01552805430"
-            />
+            {res && res.data ? (
+              res.data.map((item, index) => {
+                return <HouseComponent key={index} item={item} />;
+              })
+            ) : (
+              <h6>لا يوجد عنوانين حتى الان</h6>
+            )}
           </div>
           <div className="flex justify-center m-4">
             <Button

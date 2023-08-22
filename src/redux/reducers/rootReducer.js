@@ -19,5 +19,5 @@ export default combineReducers({
   addToWishListReducer: addToWishListReducer,
   couponReducer: couponReducer,
   userAddressesReducer: userAddressesReducer,
-  // cartReducer: cartReducer
+  cartReducer: cartReducer,
 });

@@ -79,9 +79,12 @@ function NavContent(props) {
     };
   } else {
     accountMenu = {
-      text: user ? " " + user.name : "",
-      action: "",
-      items: [{ text: "الصفحة الشخصية", link: "/user/wishlist" }],
+      text: user ? "" + user.name : "",
+      items: [
+        user.role === "admin"
+          ? { text: " لوحة التحكم", link: "/admin/all-orders" }
+          : { text: "الصفحة الشخصية", link: "/user/wishlist" },
+      ],
     };
   }
 
@@ -153,7 +156,6 @@ function Header() {
     { icon: "fa fa-heart", link: "user/wishlist" },
     { icon: "fa fa-shopping-cart", link: "/cart" },
   ];
-
   const accountMenu = {
     text: "مرحبا, تسجيل الدخول",
     action: "انشاء حساب",

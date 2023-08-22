@@ -37,6 +37,7 @@ import VerifyPasswordPage from "./Pages/Auth/VerifyPasswordPage.jsx";
 import Reviews from "./Components/Utility/Reviews.jsx";
 import AdminAddCoupon from "./Pages/Admin/AdminAddCoupon.jsx";
 import AdminEditCoupon from "./Pages/Admin/AdminEditCoupon.jsx";
+import UserEditAddressPage from "./Pages/User/UserEditAddressPage.jsx";
 
 const App = () => {
   return (
@@ -72,7 +73,7 @@ const App = () => {
           <Route path="/admin/editcoupon/:id" element={<AdminEditCoupon />} />
           <Route path="/admin/add-category" element={<AddCategory />} />
           <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
-          <Route path="/admin/add-address" element={<UserAddAddressPage />} />
+
           <Route path="/admin/editproduct/:id" element={<AdminEditProduct />} />
           <Route
             path="/user/forget-password"
@@ -80,6 +81,10 @@ const App = () => {
           />
           <Route path="/user/reset-password" element={<ResetPasswordPage />} />
           <Route path="/user/verify-code" element={<VerifyPasswordPage />} />
+          <Route
+            path="/user/edit-address/:id"
+            element={<UserEditAddressPage />}
+          />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

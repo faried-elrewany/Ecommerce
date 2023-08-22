@@ -1,13 +1,14 @@
 import React from "react";
 import CardSwiper from "./CardSwiper.jsx";
-import ProductOptions from "./ProductOptions.jsx";
 import ViewProductsDetalisHook from "../../hook/products/view-products-detalis-hook.js";
 import { useParams } from "react-router-dom";
-import Reviews from "../Utility/Reviews.jsx";
+import AddToCartHook from "./../../hook/cart/add-to-cart-hook";
 
 const CardDetails = () => {
   const { id } = useParams();
   const [item, images, cat, brand] = ViewProductsDetalisHook(id);
+  const [colorClick, indexColor, addToCartHandel] = AddToCartHook(id, item);
+
   return (
     <section className="text-gray-700 body-font  bg-slate-50">
       <div className="container px-5 py-4  mx-auto ">
@@ -39,8 +40,13 @@ const CardDetails = () => {
                       return (
                         <div
                           key={index}
-                          className={`border-2 border-gray-300 ms-1  rounded-full w-6 h-6 focus:outline-none`}
-                          style={{ backgroundColor: color }}
+                          onClick={() => colorClick(index, color)}
+                          style={{
+                            backgroundColor: color,
+                            border:
+                              indexColor === index ? "3px solid #000" : "none",
+                          }}
+                          className={` ring-offset-2 ms-1  rounded-full w-8 h-8 focus:outline-none`}
                         ></div>
                       );
                     })
@@ -51,7 +57,10 @@ const CardDetails = () => {
               <button className="flex gap-2 text-xl shadow text-gray-800 bg-white transition  py-2 px-6 focus:outline-non rounded">
                 {item.price} <span>جنية </span>
               </button>
-              <button className="flex ms-auto text-white bg-red-800 transition border-0 py-2 px-6 focus:outline-none hover:bg-red-900 rounded">
+              <button
+                onClick={addToCartHandel}
+                className="flex ms-auto text-white bg-red-800 transition border-0 py-2 px-6 focus:outline-none hover:bg-red-900 rounded"
+              >
                 اضافة الي العربة
               </button>
             </div>

@@ -3,18 +3,21 @@ import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
 import { ButtonAction } from "../../Components/Products/Coupon";
 import { Textarea, Input, Button } from "@material-tailwind/react";
-import AddAddressHook from "../../hook/user/add-address-hook";
+import { useParams } from "react-router-dom";
+import EditAddressHook from "./../../hook/user/edit-address-hook";
 import { ToastContainer } from "react-toastify";
-const UserAddAddressPage = () => {
+
+const UserEditAddressPage = () => {
+  const { id } = useParams();
   const [
+    handelEdit,
     alias,
     detalis,
     phone,
     onChangeAlias,
     onChangeDetalis,
     onChangePhone,
-    onSubmit,
-  ] = AddAddressHook();
+  ] = EditAddressHook(id);
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">
@@ -46,7 +49,7 @@ const UserAddAddressPage = () => {
               />
             </div>
 
-            <Button color="red" onClick={onSubmit}>
+            <Button color="red" onClick={handelEdit}>
               اضف عنوان
             </Button>
           </div>
@@ -57,4 +60,4 @@ const UserAddAddressPage = () => {
   );
 };
 
-export default UserAddAddressPage;
+export default UserEditAddressPage;

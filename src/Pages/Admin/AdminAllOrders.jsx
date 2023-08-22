@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard } from "../Cart/CartPage";
+import ProductCard from "../Cart/CartPage";
 import labtop from "../../images/labtop.png";
 import {
   InputDisabled,
@@ -19,7 +19,7 @@ const AdminAllOrders = () => {
             ادارة جميع الطلبات
           </h2>
           <div className=" flex flex-col w-3/4  justify-center">
-            <ProductCard
+            {/* <ProductCard
               image={labtop}
               category="اجهزة الكترونية"
               brand="سامسونج"
@@ -39,7 +39,7 @@ const AdminAllOrders = () => {
               brand="سامسونج"
               colors={["red"]}
               price={3000}
-            />
+            /> */}
           </div>
           <div className=" flex flex-col w-64   items-start  gap-4 border-2 border-red-500 rounded-lg p-4">
             <h4 className="font-bold text-2xl">تفاصيل العميل</h4>
