@@ -22,28 +22,17 @@ export default function CardElement({ item, favProd }) {
   return (
     <>
       <Card className="w-64 shadow-xl mt-6 ">
-        <CardHeader floated={true} color="blue-gray" className="shadow-2xl ">
-          <img
-            className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
-            src={item.imageCover}
-            alt="ui/ux review check"
-          />
-          <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
-          <IconButton
-            size="sm"
-            color="red"
-            variant="text"
-            className=" !absolute top-4 end-4 rounded-full z-40"
-            onClick={handelFav}
-          >
-            {favImg && favImg == "HeartIcon" ? (
-              <HeartIcon className="h-6 w-6 text-red-400" />
-            ) : (
-              <HeartIconOutline className="h-6 w-6 text-red-400" />
-            )}
-          </IconButton>
-        </CardHeader>
-        <CardBody className="px-6 pt-4 pb-2">
+        <Link to={`/products/${item._id}`}>
+          <CardHeader floated={true} color="blue-gray" className="shadow-2xl ">
+            <img
+              className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
+              src={item.imageCover}
+              alt="ui/ux review check"
+            />
+            <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
+          </CardHeader>
+        </Link>
+        <CardBody className=" relative px-6 pt-4 pb-2">
           <div className="mb-0 flex flex-col  ">
             <Typography
               variant="h5"
@@ -61,7 +50,7 @@ export default function CardElement({ item, favProd }) {
                 ? item.description.slice(0, 60) + "..."
                 : item.description}
             </Typography>
-            <div className="flex justify-between items-cente w-full ">
+            <div className=" flex justify-between items-cente w-full ">
               <Typography
                 variant="h5"
                 color="blue-gray"
@@ -76,16 +65,23 @@ export default function CardElement({ item, favProd }) {
                 <AiFillStar className="-mt-0.5 h-5 w-5 text-yellow-700" />
                 {item.ratingsQuantity}
               </Typography>
+              <IconButton
+                size="sm"
+                color="red"
+                variant="text"
+                className=" !absolute top-4 end-4 rounded-full z-40"
+                onClick={handelFav}
+              >
+                {favImg && favImg == "HeartIcon" ? (
+                  <HeartIcon className="h-6 w-6 text-red-400" />
+                ) : (
+                  <HeartIconOutline className="h-6 w-6 text-red-400" />
+                )}
+              </IconButton>
             </div>
           </div>
         </CardBody>
-        <CardFooter className="pt-0 m-0">
-          <Link to={`/products/${item._id}`}>
-            <Button size="md" color="red" fullWidth={true}>
-              Buy Now
-            </Button>
-          </Link>
-        </CardFooter>
+
         <ToastContainer />
       </Card>
     </>
