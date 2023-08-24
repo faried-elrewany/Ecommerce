@@ -26,7 +26,7 @@ export default function Login() {
   ] = LoginHook();
   return (
     <>
-      <section className="  h-[100vh] flex justify-center items-center overflow-hidden">
+      <section className="  h-[80vh] flex justify-center items-center overflow-hidden">
         <Card className="w-96">
           <CardHeader
             variant="gradient"
@@ -92,15 +92,6 @@ export default function Login() {
           </CardFooter>
           {isPress === true ? loading === true ? <Loading /> : null : null}
         </Card>
-
-        <div className=" absolute  top-28 flex gap-4 m-4">
-          <Link to="/admin/all-orders" className="ml-1 font-bold ms-2">
-            حساب ادمن
-          </Link>
-          <Link to="/user/all-orders" className="ml-1 font-bold ms-2">
-            حساب يوزر
-          </Link>
-        </div>
       </section>
       <ToastContainer />
     </>

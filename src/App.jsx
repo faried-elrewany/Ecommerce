@@ -38,6 +38,8 @@ import Reviews from "./Components/Utility/Reviews.jsx";
 import AdminAddCoupon from "./Pages/Admin/AdminAddCoupon.jsx";
 import AdminEditCoupon from "./Pages/Admin/AdminEditCoupon.jsx";
 import UserEditAddressPage from "./Pages/User/UserEditAddressPage.jsx";
+import { ProductByBrand } from "./Pages/Products/ProductByBrand.jsx";
+import ProductByCategory from "./Pages/Products/ProductByCategory.jsx";
 
 const App = () => {
   return (
@@ -57,6 +59,11 @@ const App = () => {
           <Route path="/allbrand" element={<AllBrandPage />} />
           <Route path="/products" element={<ShopProductsPage />} />
           <Route path="/products/:id" element={<ProductDetalisPage />} />
+          <Route
+            path="/products/category/:id"
+            element={<ProductByCategory />}
+          />
+          <Route path="/products/brand/:id " element={<ProductByBrand />} />
           <Route path="/cart" element={<CartPage />} />
           {/* User Pages */}
           <Route path="/user/all-orders" element={<UserAllOrdersPage />} />

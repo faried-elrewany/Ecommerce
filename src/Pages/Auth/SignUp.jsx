@@ -20,7 +20,7 @@ export default function SignUp() {
     OnSubmit,
   ] = RegisterHook();
   return (
-    <section className="  h-[100vh] flex justify-center items-center overflow-hidden">
+    <section className="  h-[80vh] flex justify-center items-center overflow-hidden">
       <Card color="transparent" shadow={false}>
         <Typography variant="h2" color="red">
           الاشتراك

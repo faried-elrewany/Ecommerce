@@ -19,7 +19,9 @@ const HomeBrand = () => {
           brand && brand.data ? (
             brand.data
               .slice(0, 6)
-              .map(({ image, id }) => <BrandElement img={image} key={id} />)
+              .map(({ image, _id }) => (
+                <BrandElement img={image} key={_id} id={_id} />
+              ))
           ) : (
             <h4>لا يوجد ماركات</h4>
           )

@@ -25,7 +25,7 @@ export const addProductToCart = (body) => async (dispatch) => {
 export const getAllUserCartItems = () => async (dispatch) => {
     try {
         const response = await useGetDataToken(`/api/v1/cart`);
-        console.log(response)
+      //  console.log(response)
         dispatch({
             type: GET_ALL_USER_CART,
             payload: response,

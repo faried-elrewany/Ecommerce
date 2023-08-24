@@ -8,6 +8,7 @@ import CategoryCard from "../../Components/Category/CategoryCard";
 
 const HomeCategory = () => {
   const [category, loading] = HomeCategoryHook();
+  if (category) console.log(category.data);
   return (
     <>
       <SubTitle
@@ -20,8 +21,8 @@ const HomeCategory = () => {
           category && category.data ? (
             category.data
               .slice(0, 6)
-              .map(({ name, image, id }) => (
-                <CategoryCard title={name} img={image} key={id} />
+              .map(({ name, image, _id }) => (
+                <CategoryCard title={name} img={image} key={_id} id={_id} />
               ))
           ) : (
             <h4>لا يوجد تصنيفات</h4>

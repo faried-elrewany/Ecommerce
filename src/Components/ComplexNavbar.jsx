@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { NavLink, Link } from "react-router-dom";
 import NavbarSearchHook from "../hook/search/navbar-search-hook";
+import GetAllUserCartHook from "../hook/cart/get-all-user-cart-hook";
+import { Badge, Button } from "@material-tailwind/react";
 function ContactInfo(props) {
   return (
     <div className="header-content-top">
@@ -54,6 +56,8 @@ function Search(props) {
 }
 
 function NavContent(props) {
+  const [itemsNum] = GetAllUserCartHook();
+
   const getUser = useCallback(() => {
     if (localStorage.getItem("user")) {
       return JSON.parse(localStorage.getItem("user"));
@@ -63,12 +67,14 @@ function NavContent(props) {
 
   const [user, setUser] = useState(getUser);
   console.log("user", user);
+
   useEffect(() => {
     setUser(getUser());
-    console.log(user);
   }, [getUser]);
+  let showIcons = false;
   let accountMenu = {};
   if (user == "") {
+    showIcons = false;
     accountMenu = {
       text: "مرحبا, تسجيل الدخول",
       action: "انشاء حساب",
@@ -78,6 +84,8 @@ function NavContent(props) {
       ],
     };
   } else {
+    showIcons = true;
+
     accountMenu = {
       text: user ? "" + user.name : "",
       items: [
@@ -96,13 +104,26 @@ function NavContent(props) {
   return (
     <nav className="nav-content">
       <ul className="nav-content-list">
-        {props.items.map((item, index) => (
-          <li className="nav-content-item" key={index}>
-            <NavLink className="nav-content-link" to={item.link}>
-              <i className={item.icon}></i>
-            </NavLink>
-          </li>
-        ))}
+        {showIcons && (
+          <>
+            <li className="nav-content-item">
+              <NavLink className="nav-content-link" to="user/wishlist">
+                <i className="fa fa-heart"></i>
+              </NavLink>
+            </li>
+            <li className="nav-content-item">
+              <Badge
+                content={itemsNum ? itemsNum : 0}
+                placement="top-start"
+                color="gray"
+              >
+                <NavLink className="nav-content-link" to="/cart">
+                  <i className="fa fa-shopping-cart"></i>
+                </NavLink>
+              </Badge>
+            </li>
+          </>
+        )}
         <li className="nav-content-item account-login">
           <label
             className="open-menu-login-account"
