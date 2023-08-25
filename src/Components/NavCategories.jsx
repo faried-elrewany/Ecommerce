@@ -27,8 +27,8 @@ const NavContainer = () => {
       setCat(category.data.slice(0, 6));
       //
     }
-    cat.map(({ _id, name }) => ({ name: name, id: _id }));
-    console.log("ahhhhhh");
+    // cat.map(({ _id, name }) => ({ name: name, id: _id }));
+    console.log("ahhhhhh", cat);
   }, [category]);
 
   return (
@@ -48,10 +48,10 @@ const NavContainer = () => {
           </span>
           <ul className="all-category-list">
             {cat &&
-              cat.map((category, index) => (
-                <li key={index} className="all-category-list-item">
+              cat.map((category) => (
+                <li key={category._id} className="all-category-list-item">
                   <Link
-                    to={`/products/category/${category.id}`}
+                    to={`/products/category/${category._id}`}
                     className="all-category-list-link"
                   >
                     {category.name} <i className="fas fa-angle-right"></i>
@@ -64,10 +64,10 @@ const NavContainer = () => {
       <nav className="featured-category">
         <ul className="nav-row">
           {cat &&
-            cat.map((category, index) => (
-              <li key={index} className="nav-row-list">
+            cat.map((category) => (
+              <li key={category._id} className="nav-row-list">
                 <Link
-                  to={`/products/category/${category.id}`}
+                  to={`/products/category/${category._id}`}
                   className="nav-row-list-link"
                 >
                   {category.name}

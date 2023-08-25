@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createBrand } from "../../redux/actions/brandAction";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import notify from "../../hook/useNotifaction";
 import { applayCoupnCart } from "../../redux/actions/cartAction";
-import cartReducer from "./../../redux/reducers/cartReducer";
-import GetAllUserCartHook from "./get-all-user-cart-hook";
-const ApplayCouponHook = () => {
+import { useNavigate } from "react-router-dom";
+
+const ApplayCouponHook = (cartItems) => {
   const dispatch = useDispatch();
 
   const [couponName, setCouponName] = useState("");
@@ -35,6 +33,7 @@ const ApplayCouponHook = () => {
 
   useEffect(() => {
     if (loading === false) {
+      console.log(res);
       if (res && res.status === 200) {
         notify("تم تطبيق الكوبون بنجاح", "success");
         setTimeout(() => {
@@ -49,7 +48,16 @@ const ApplayCouponHook = () => {
     }
   }, [loading]);
 
-  return [couponName, onChangeCoupon, handelSubmitCoupon];
+  const navigate = useNavigate();
+  const handelCheckout = () => {
+    if (cartItems.length >= 1) {
+      navigate("/order/payment-method");
+    } else {
+      notify("من فضلك اضف منتجات للعربة اولا", "warn");
+    }
+  };
+
+  return [couponName, onChangeCoupon, handelSubmitCoupon, handelCheckout];
 };
 
 export default ApplayCouponHook;

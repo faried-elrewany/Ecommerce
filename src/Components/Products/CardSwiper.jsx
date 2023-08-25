@@ -10,12 +10,6 @@ import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 
 function CardSwiper({ images }) {
-  const props = {
-    width: 200,
-    height: 250,
-    zoomWidth: 500,
-    img: "https://i.ibb.co/Vvndkmy/banner.jpg",
-  };
   return (
     <>
       <div className="cont">

@@ -11,14 +11,17 @@ import ApplayCouponHook from "./../../hook/cart/applay-coupon-hook";
 import ProductCard from "./ProductCart";
 import CheckOut from "./CheckOut";
 import { ToastContainer } from "react-toastify";
+import Loading from "../../Components/Utility/Loading";
 
 const CartPage = () => {
   const [
-    itemsNum,
+    ,
     cartItems,
     totalCartPrice,
     couponNameRes,
     totalCartPriceAfterDiscount,
+    loading,
+    ,
   ] = GetAllUserCartHook();
   const [handelDeleteCart] = DeleteCartHook();
 
@@ -36,17 +39,22 @@ const CartPage = () => {
       <div className=" overflow-hidden flex items-center justify-center flex-col md:flex-row w-full gap-4  p-4 ">
         {/* right side */}
         <div className="flex-col w-full ">
-          {cartItems && cartItems.length >= 1 ? (
-            cartItems.map((item, index) => {
-              return <ProductCard key={index} item={item} />;
-            })
+          {loading == false ? (
+            cartItems && cartItems.length >= 1 ? (
+              cartItems.map((item, index) => {
+                return <ProductCard key={index} item={item} />;
+              })
+            ) : (
+              <h6 className="font-bold text-3xl ">لا يوجد منتجات فى العربة</h6>
+            )
           ) : (
-            <h6 className="font-bold text-3xl ">لا يوجد منتجات فى العربة</h6>
+            <Loading />
           )}
         </div>
 
         {/* left side */}
         <CheckOut
+          cartItems={cartItems}
           couponNameRes={couponNameRes}
           totalCartPriceAfterDiscount={totalCartPriceAfterDiscount}
           totalCartPrice={totalCartPrice}

@@ -8,10 +8,12 @@ const CheckOut = ({
   totalCartPrice,
   totalCartPriceAfterDiscount,
   couponNameRes,
+  cartItems,
 }) => {
   const [handelDeleteCart] = DeleteCartHook();
 
-  const [couponName, onChangeCoupon, handelSubmitCoupon] = ApplayCouponHook();
+  const [couponName, onChangeCoupon, handelSubmitCoupon, handelCheckout] =
+    ApplayCouponHook(cartItems);
 
   useEffect(() => {
     if (couponNameRes) {
@@ -54,7 +56,7 @@ const CheckOut = ({
             }
           />
         </div>
-        <Button className="w-full" color="red">
+        <Button className="w-full" color="red" onClick={handelCheckout}>
           اتمام الشراء
         </Button>
         <Button

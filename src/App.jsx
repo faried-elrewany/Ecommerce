@@ -40,6 +40,7 @@ import AdminEditCoupon from "./Pages/Admin/AdminEditCoupon.jsx";
 import UserEditAddressPage from "./Pages/User/UserEditAddressPage.jsx";
 import { ProductByBrand } from "./Pages/Products/ProductByBrand.jsx";
 import ProductByCategory from "./Pages/Products/ProductByCategory.jsx";
+import PaymentMethod from "./Pages/Cart/PaymentMethod.jsx";
 
 const App = () => {
   return (
@@ -65,6 +66,7 @@ const App = () => {
           />
           <Route path="/products/brand/:id" element={<ProductByBrand />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/order/payment-method" element={<PaymentMethod />} />
           {/* User Pages */}
           <Route path="/user/all-orders" element={<UserAllOrdersPage />} />
           <Route path="/user/add-address" element={<UserAddAddressPage />} />

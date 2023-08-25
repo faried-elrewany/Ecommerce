@@ -66,15 +66,17 @@ export default function ProductCard({ item }) {
             </button>
           </div>
           <p className="text-small mb-2"> {item.product.title || ""}</p>
-          <p>
-            الماركة: <span>{item.product.brand.name || ""}</span>
-          </p>
-          {item && item.color === "" ? null : (
-            <div
-              className="color ms-2 border"
-              style={{ backgroundColor: `${item.color}` }}
-            ></div>
-          )}
+          <div className="flex gap-4 items-center">
+            <p>
+              الماركة: <span>{item.product.brand.name || ""}</span>
+            </p>
+            {item && item.color === "" ? null : (
+              <div
+                className="color ms-2  border"
+                style={{ backgroundColor: `${item.color}` }}
+              ></div>
+            )}
+          </div>
           <div className="flex justify-between items-center">
             <div>
               <div className="flex items-center  gap-4  ">
