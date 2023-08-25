@@ -4,7 +4,6 @@ import CategoryCard from "./CategoryCard";
 import Loading from "../Utility/Loading";
 
 const CategoryContainer = ({ data, loading }) => {
-  if (data) console.log(data);
   return (
     <>
       <Row>

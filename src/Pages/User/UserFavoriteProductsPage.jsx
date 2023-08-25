@@ -8,6 +8,7 @@ import { getProductWishList } from "../../redux/actions/wishListAction";
 
 import FavouriteCard from "../../Components/Products/FavouriteCard";
 import CardContainerHook from "../../hook/products/card-container-hook";
+import Loading from "../../Components/Utility/Loading";
 
 const UserFavoriteProductsPage = () => {
   const dispatch = useDispatch();
@@ -39,14 +40,27 @@ const UserFavoriteProductsPage = () => {
             منتجاتك المفضلة
           </h2>
           <div className="flex flex-wrap gap-4 p-2">
-            {items && items.length <= 0 ? (
+            {loading == false ? (
+              items && items.length >= 1 ? (
+                items.map((item, index) => (
+                  <FavouriteCard key={index} item={item} favProd={favProd} />
+                ))
+              ) : (
+                <h4 className="text-xl text-red-900">
+                  لا يوجد منتجات في قائمة المفضلة
+                </h4>
+              )
+            ) : (
+              <Loading />
+            )}
+            {/* {items && items.length <= 0 ? (
               <h6>لا يوجد منتجات مفضله حاليا</h6>
             ) : items ? (
               items &&
               items.map((item, index) => (
                 <FavouriteCard key={index} item={item} favProd={favProd} />
               ))
-            ) : null}
+            ) : null} */}
           </div>
         </div>
       </div>

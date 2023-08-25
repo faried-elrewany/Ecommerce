@@ -10,7 +10,7 @@ const AllCategoryHook = () => {
   const dispatch = useDispatch();
   //when first load
   useEffect(() => {
-    dispatch(getAllCategory(6));
+    dispatch(getAllCategory(12));
   }, []);
 
   //to get state from redux

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AllCategoryHook from "../hook/category/all-category-page-hook";
 
@@ -20,22 +21,15 @@ const SubCategory = ({ subCategories, imageUrl }) => {
 
 const NavContainer = () => {
   const [category, loading, pageCount, getPage] = AllCategoryHook();
-  let categoryName = [];
-  if (category && category.data) {
-    categoryName = category.data
-      .slice(0, 6)
-      .map(({ name }) => ({ name: name }));
-  }
-  const categories = [
-    {
-      name: "الهواتف الذكية",
-    },
-    { name: "اثاث منزلي" },
-    { name: "الالعاب" },
-    { name: "الحوسبة" },
-    { name: "العاب الكمبيوتر" },
-    { name: "الازياءوالاحذية" },
-  ];
+  const [cat, setCat] = useState([]);
+  useEffect(() => {
+    if (category && category.data) {
+      setCat(category.data.slice(0, 6));
+      //
+    }
+    cat.map(({ _id, name }) => ({ name: name, id: _id }));
+    console.log("ahhhhhh");
+  }, [category]);
 
   return (
     <div className="nav-container">
@@ -53,18 +47,15 @@ const NavContainer = () => {
             <i className="fas fa-angle-up"></i>
           </span>
           <ul className="all-category-list">
-            {categoryName &&
-              categoryName.map((category, index) => (
+            {cat &&
+              cat.map((category, index) => (
                 <li key={index} className="all-category-list-item">
-                  <Link to="/" className="all-category-list-link">
+                  <Link
+                    to={`/products/category/${category.id}`}
+                    className="all-category-list-link"
+                  >
                     {category.name} <i className="fas fa-angle-right"></i>
                   </Link>
-                  {category.subCategories && (
-                    <SubCategory
-                      subCategories={category.subCategories}
-                      imageUrl={category.imageUrl}
-                    />
-                  )}
                 </li>
               ))}
           </ul>
@@ -72,10 +63,13 @@ const NavContainer = () => {
       </nav>
       <nav className="featured-category">
         <ul className="nav-row">
-          {categoryName &&
-            categoryName.map((category, index) => (
+          {cat &&
+            cat.map((category, index) => (
               <li key={index} className="nav-row-list">
-                <Link to="/" className="nav-row-list-link">
+                <Link
+                  to={`/products/category/${category.id}`}
+                  className="nav-row-list-link"
+                >
                   {category.name}
                 </Link>
               </li>

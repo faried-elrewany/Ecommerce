@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const CategoryCard = ({ img, title, id }) => {
-  console.log(id);
   return (
     <Link
       to={`/products/category/${id}`}

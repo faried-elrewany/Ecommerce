@@ -76,7 +76,6 @@ function HouseComponent({ item }) {
 const UserAllAddresPage = () => {
   const navigate = useNavigate();
   const [res] = ViewAddressesHook();
-  if (res.data) console.log(res);
   return (
     <>
       <div className=" overflow-x-hidden flex h-full">

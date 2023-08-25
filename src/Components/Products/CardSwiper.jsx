@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-// import required modules
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 
 function CardSwiper({ images }) {
@@ -17,7 +16,6 @@ function CardSwiper({ images }) {
     zoomWidth: 500,
     img: "https://i.ibb.co/Vvndkmy/banner.jpg",
   };
-  console.log("image", images);
   return (
     <>
       <div className="cont">

@@ -128,7 +128,6 @@ const ProfileHook = () => {
   const resPass = useSelector((state) => state.authReducer.userChangePassword);
   useEffect(() => {
     if (loadingPass === false) {
-      console.log(resPass);
       if (resPass && resPass.status === 200) {
         notify("تم تغير كلمة المرور بنجاح", "success");
         setTimeout(() => {

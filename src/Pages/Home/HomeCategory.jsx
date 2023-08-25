@@ -8,7 +8,6 @@ import CategoryCard from "../../Components/Category/CategoryCard";
 
 const HomeCategory = () => {
   const [category, loading] = HomeCategoryHook();
-  if (category) console.log(category.data);
   return (
     <>
       <SubTitle

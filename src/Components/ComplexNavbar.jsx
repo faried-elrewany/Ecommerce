@@ -66,7 +66,6 @@ function NavContent(props) {
   }, []);
 
   const [user, setUser] = useState(getUser);
-  console.log("user", user);
 
   useEffect(() => {
     setUser(getUser());

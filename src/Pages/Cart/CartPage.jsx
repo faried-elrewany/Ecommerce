@@ -29,7 +29,6 @@ const CartPage = () => {
       onChangeCoupon(couponNameRes);
     }
   }, [couponNameRes]);
-  if (cartItems) console.log(cartItems);
   return (
     <div>
       <h2 className="text-red-400 mt-4 text-2xl font-bold ">عربة التسوق </h2>
