@@ -25,6 +25,7 @@ const UserFavoriteProductsPage = () => {
 
   const res = useSelector((state) => state.addToWishListReducer.allWishList);
   useEffect(() => {
+    console.log(res);
     if (loading === false) {
       if (res) setItems(res.data);
     }

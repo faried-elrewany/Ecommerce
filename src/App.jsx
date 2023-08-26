@@ -41,6 +41,7 @@ import UserEditAddressPage from "./Pages/User/UserEditAddressPage.jsx";
 import { ProductByBrand } from "./Pages/Products/ProductByBrand.jsx";
 import ProductByCategory from "./Pages/Products/ProductByCategory.jsx";
 import PaymentMethod from "./Pages/Cart/PaymentMethod.jsx";
+import AdminOrderDetails from "./Pages/Admin/AdminOrderDetails.jsx";
 
 const App = () => {
   return (
@@ -82,6 +83,7 @@ const App = () => {
           <Route path="/admin/editcoupon/:id" element={<AdminEditCoupon />} />
           <Route path="/admin/add-category" element={<AddCategory />} />
           <Route path="/admin/add-sub-category" element={<AddSubCategory />} />
+          <Route path="/admin/orders/:id" element={<AdminOrderDetails />} />
 
           <Route path="/admin/editproduct/:id" element={<AdminEditProduct />} />
           <Route

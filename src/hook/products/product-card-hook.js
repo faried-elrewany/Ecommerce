@@ -40,6 +40,7 @@ const ProductCardHook = (item, favProd) => {
   );
 
   const addToWishListData = async () => {
+    console.log("add");
     setIsFav(true);
     setFavImg("HeartIcon");
     setLoadingAdd(true);
@@ -60,6 +61,8 @@ const ProductCardHook = (item, favProd) => {
   };
 
   useEffect(() => {
+    console.log("loading add", "add");
+
     if (loadingAdd === false) {
       if (resAdd && resAdd.status === 200) {
         notify("تمت اضافة المنتج للمفضلة بنجاح", "success");
@@ -70,6 +73,8 @@ const ProductCardHook = (item, favProd) => {
   }, [loadingAdd]);
 
   useEffect(() => {
+    console.log("loading remove", "add");
+
     if (loadingRemove === false) {
       if (resRemove && resRemove.status === "success") {
         notify("تمت حذف المنتج من المفضلة بنجاح", "warn");

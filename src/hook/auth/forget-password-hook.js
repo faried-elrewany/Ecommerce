@@ -52,7 +52,7 @@ const ForgetPasswordHook = () => {
     }
   }, [loading]);
 
-  return [OnChangeEmail, email, onSubmit];
+  return [OnChangeEmail, email, onSubmit, loading];
 };
 
 export default ForgetPasswordHook;

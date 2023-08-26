@@ -8,62 +8,42 @@ import {
 import SelectOptions from "../../Components/Utility/SelectOptions";
 import SideBar from "../../Components/Utility/SideBar";
 import { AdminMenu } from "../../Components/Utility/AdminLinks";
+import { Link } from "react-router-dom";
+import UserGetAllOrderHook from "./../../hook/user/user-get-all-order-hook";
+import AdminOrder from "./AdminOrder";
+import Loading from "../../Components/Utility/Loading";
+import ReactPagination from "../../Components/Utility/ReactPagination";
 
 const AdminAllOrders = () => {
+  const [userName, results, paginate, orderData, onPress, loading] =
+    UserGetAllOrderHook();
+
   return (
     <>
-      <div className=" overflow-x-hidden flex h-full">
+      <div className=" overflow-x-hidden  bg-gray-200 flex h-full">
         <SideBar menus={AdminMenu} />
         <div className="w-full h-full p-2">
           <h2 className="font-bold text-2xl m-2 text-red-900">
             ادارة جميع الطلبات
           </h2>
-          <div className=" flex flex-col w-3/4  justify-center">
-            {/* <ProductCard
-              image={labtop}
-              category="اجهزة الكترونية"
-              brand="سامسونج"
-              colors={["red"]}
-              price={3000}
-            />
-            <ProductCard
-              image={labtop}
-              category="اجهزة الكترونية"
-              brand="سامسونج"
-              colors={["red"]}
-              price={3000}
-            />
-            <ProductCard
-              image={labtop}
-              category="اجهزة الكترونية"
-              brand="سامسونج"
-              colors={["red"]}
-              price={3000}
-            /> */}
-          </div>
-          <div className=" flex flex-col w-64   items-start  gap-4 border-2 border-red-500 rounded-lg p-4">
-            <h4 className="font-bold text-2xl">تفاصيل العميل</h4>
-            <p className="font-extrabold text-red-900">
-              الاسم:{" "}
-              <span className="font-medium text-gray-800">احمد عبدالله</span>
-            </p>
-            <p className="font-extrabold text-red-900">
-              الاسم:{" "}
-              <span className="font-medium text-gray-800">احمد عبدالله</span>
-            </p>
-            <p className="font-extrabold text-red-900">
-              الاسم:{" "}
-              <span className="font-medium text-gray-800">احمد عبدالله</span>
-            </p>
-
-            <div className="self-center">
-              <InputDisabled value="4000" />
-            </div>
-            {/* هتعدلها وتبعتلها البروبس الي هي الاراي */}
-            <div className=" flex flex-col gap-2 mb-16 self-center" dir="ltr">
-              <SelectOptions />
-              <ButtonAction title="حفظ" />
-            </div>
+          <div className=" flex flex-col  w-full md:w-3/4  gap-4">
+            {loading == false ? (
+              orderData.length >= 1 ? (
+                orderData.map((orderItem, index) => {
+                  return <AdminOrder key={index} orderItem={orderItem} />;
+                })
+              ) : (
+                <h6>لا يوجد طلبات حتى </h6>
+              )
+            ) : (
+              <Loading />
+            )}
+            {paginate.numberOfPages >= 2 ? (
+              <ReactPagination
+                onPress={onPress}
+                pageCount={paginate.numberOfPages ? paginate.numberOfPages : 0}
+              />
+            ) : null}
           </div>
         </div>
       </div>

@@ -5,27 +5,28 @@ import {
   getAllProductsSearch,
 } from "../../redux/actions/productsAction";
 import { getAllProductsPage } from "./../../redux/actions/productsAction";
-
+import { useState } from "react";
 const ViewSearchProductsHook = () => {
   let limit = 8;
+  const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
   const getProduct = async () => {
     getStorge();
     sortData();
-
+    setLoading(true);
     await dispatch(
       getAllProductsSearch(
         `sort=${sort}&limit=${limit}&keyword=${word}&${queryCat}&${brandCat}${pricefromString}${priceToString}`
       )
     );
+    setLoading(false);
   };
   useEffect(() => {
     getProduct();
   }, []);
 
   const allProducts = useSelector((state) => state.allproducts.allProducts);
-  const loading = useSelector((state) => state.allproducts.loading);
 
   let items = [];
   let pagination = [];

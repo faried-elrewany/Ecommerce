@@ -8,8 +8,9 @@ import {
 import { ToastContainer } from "react-toastify";
 import ForgetPasswordHook from "../../hook/auth/forget-password-hook";
 import { Link } from "react-router-dom";
+import Loading from "../../Components/Utility/Loading";
 export default function ForgetPasswordPage() {
-  const [OnChangeEmail, email, onSubmit] = ForgetPasswordHook();
+  const [OnChangeEmail, email, onSubmit, loading] = ForgetPasswordHook();
 
   return (
     <section className=" h-full mt-10   flex justify-center items-center ">
@@ -28,7 +29,7 @@ export default function ForgetPasswordPage() {
         </CardBody>
         <CardFooter className="pt-0">
           <Button variant="gradient" fullWidth color="red" onClick={onSubmit}>
-            ارسال الكود
+            {loading === true ? "ارسال الكود " : <Loading />}
           </Button>
         </CardFooter>
       </div>

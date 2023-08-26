@@ -9,9 +9,10 @@ import {
 } from "@material-tailwind/react";
 import VerifyPasswordHook from "../../hook/auth/verify-password-hook";
 import { ToastContainer } from "react-toastify";
+import Loading from "../../Components/Utility/Loading";
 
 export default function VerifyPasswordPage() {
-  const [code, OnChangeCode, onSubmit] = VerifyPasswordHook();
+  const [code, OnChangeCode, onSubmit, loading] = VerifyPasswordHook();
 
   return (
     <section className=" h-full mt-10   flex justify-center items-center ">
@@ -23,9 +24,8 @@ export default function VerifyPasswordPage() {
           <Input
             value={code}
             onChange={OnChangeCode}
-            placeholder="ادخل الكود المرسل"
+            label="ادخل الكود المرسل"
             type="text"
-            label="كلمة المرور الجديدة "
             size="lg"
             color="red"
           />
@@ -38,7 +38,7 @@ export default function VerifyPasswordPage() {
             color="red"
             type="submit"
           >
-            تاكيد
+            {loading === true ? "تاكيد  " : <Loading />}
           </Button>
         </CardFooter>
         <ToastContainer />

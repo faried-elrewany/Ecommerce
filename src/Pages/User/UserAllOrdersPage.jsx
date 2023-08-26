@@ -1,13 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { TrashIcon } from "@heroicons/react/24/outline";
-
-import { Quantity } from "../../Components/Products/Coupon.jsx";
-import labtop from "../../images/labtop.png";
 import UserGetAllOrderHook from "./../../hook/user/user-get-all-order-hook";
 import SideBar from "../../Components/Utility/SideBar";
 import { UserMenu } from "../../Components/Utility/AdminLinks.jsx";
 import baseUrl from "../../Api/baseURL.js";
+import Loading from "../../Components/Utility/Loading";
+import ReactPagination from "../../Components/Utility/ReactPagination";
 export function ProductCard({ item }) {
   console.log(item.product.imageCover);
   return (
@@ -21,58 +18,79 @@ export function ProductCard({ item }) {
       </div>
       <div className="w-full flex flex-col gap-y-4 gap-2">
         <div className="flex justify-between items-center ">
-          <div className="font-semibold"> {item.product.title || ""}</div>
-          <button>
-            <TrashIcon className="h-8 w-8 text-red-400" />
-          </button>
+          <div className=" text-gray-700 mt-4 flex gap-2 font-semibold">
+            {" "}
+            <p>{item.product.title || ""}</p>
+            <p className="text-yellow-600">
+              {item.product.ratingsAverage ? item.product.ratingsAverage : 0}
+            </p>
+            <p>({`${item.product.ratingsQuantity || 0} تقييم`})</p>
+          </div>
         </div>
-        <p className="text-small mb-2">
-          {item.product.ratingsAverage ? item.product.ratingsAverage : 0}
-        </p>
-        <p className="text-small mb-2">
-          ({`${item.product.ratingsQuantity || 0} تقييم`})
-        </p>
         <p className="text-xl bold">
-          الماركة: <span className="text-lg ">{444}</span>
+          الكمية:{" "}
+          <span className="text-lg ">
+            <input
+              type="number"
+              id="Quantity"
+              value={item.count}
+              className="h-6 outline-none  w-8 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+            />
+          </span>
         </p>
-        <div className="flex justify-between items-center">
-          <input
-            type="number"
-            id="Quantity"
-            value={item.count}
-            className="h-10 outline-none  w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
-          />
-        </div>
+        <div
+          className="w-6 h-6 rounded-full mx-auto md:mx-0 "
+          style={{ backgroundColor: item.color }}
+        ></div>
       </div>
     </div>
   );
 }
 
-function UserOrder({ products }) {
+export function UserOrder({ products }) {
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "numeric", day: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
   console.log(products);
   return (
     <>
-      <div className="flex flex-col p-4 border-4 border-red-500 items-center justify-center rounded-lg">
-        <h4 className="font-bold text-red-900 text-xl">
-          طلب رقم: <span>#14521</span>
+      <div className="flex w-full flex-col p-4 border-4 border-red-500 items-center justify-center rounded-lg">
+        <h4 className="font-bold text-red-900 text-xl mb-4">
+          طلب رقم #{products.id || 0} ...تم بتاريخ{" "}
+          {formatDate(products.createdAt)}
         </h4>
         {products.cartItems
           ? products.cartItems.map((product) => (
               <ProductCard key={product._id} item={product} />
             ))
           : null}
-        {/* {orderItem.cartItems
-          ? orderItem.cartItems.map((item, index) => {
-              return <UserAllOrderCard key={index} item={item} />;
-            })
-          : null} */}
-        <div className="flex w-full  items-center justify-between">
-          <p className="text-xl bold">
-            الحالة: <span className="text-lg">{44}</span>
-          </p>
-          <p className="text-xl bold">
-            <span className="text-lg">{44}</span> جنية
-          </p>
+        <div className=" flex flex-col md:flex-row w-full gap-4  items-center ">
+          <div className="flex gap-2">
+            <div className=" font-bold "> التوصيل</div>
+            <div className="text-red-800 font-bold">
+              {products.isDelivered === true ? "تم التوصيل" : "لم يتم "}
+            </div>
+          </div>
+
+          <div className="flex gap-2">
+            <div className=" font-bold "> الدفع</div>
+            <div className="text-red-800 font-bold">
+              {products.isPaid === true ? "تم الدفع" : "لم يتم "}
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className=" font-bold "> طريقة الدفع</div>
+            <div className="text-red-800 font-bold">
+              {products.paymentMethodType === "cash" ? "كاش" : "بطاقة ائتمانية"}{" "}
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className=" font-bold "> السعر</div>
+            <div className="text-red-800 font-bold">
+              {products.totalOrderPrice || 0} جنية{" "}
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -80,42 +98,37 @@ function UserOrder({ products }) {
 }
 
 const UserAllOrdersPage = () => {
-  const [userName, results, paginate, orderData, onPress] =
+  const [userName, results, paginate, orderData, onPress, loading] =
     UserGetAllOrderHook();
 
   return (
     <>
-      <div className=" overflow-x-hidden flex h-full">
+      <div className=" overflow-x-hidden w-full flex h-full">
         <SideBar menus={UserMenu} />
 
         {/* orderd container for all orders  */}
-        <div className="flex flex-col gap-4  p-2  ">
+        <div className="flex w-3/4 flex-col gap-4  p-2  ">
           {/* order data */}
           <h2 className=" font-bold text-red-900 text-2xl">
             عدد الطلبات #{results}
           </h2>
-          {orderData.length >= 1 ? (
-            orderData.map((orderItem, index) => {
-              return <UserOrder key={index} products={orderItem} />;
-            })
+          {loading == false ? (
+            orderData.length >= 1 ? (
+              orderData.map((orderItem, index) => {
+                return <UserOrder key={index} products={orderItem} />;
+              })
+            ) : (
+              <h6>لا يوجد طلبات حتى </h6>
+            )
           ) : (
-            <h6>لا يوجد طلبات حتى </h6>
+            <Loading />
           )}
-          {/* <UserOrder
-            products={productsList}
-            status={"قيد التنفيذ"}
-            price={"3000"}
-          />
-          <UserOrder
-            products={productsList}
-            status={"قيد التنفيذ"}
-            price={"3000"}
-          />
-          <UserOrder
-            products={productsList}
-            status={"قيد التنفيذ"}
-            price={"3000"}
-          /> */}
+          {paginate.numberOfPages >= 2 ? (
+            <ReactPagination
+              onPress={onPress}
+              pageCount={paginate.numberOfPages ? paginate.numberOfPages : 0}
+            />
+          ) : null}
         </div>
       </div>
     </>

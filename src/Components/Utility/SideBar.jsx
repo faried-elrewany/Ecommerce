@@ -19,7 +19,7 @@ const SideBar = ({ menus }) => {
             onClick={() => setOpen((prev) => !prev)}
           />
         </div>
-        <div className="mt-4 flex flex-col gap-4 relative">
+        <div className="z-50 mt-4 flex flex-col gap-4 relative">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}

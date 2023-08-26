@@ -12,7 +12,6 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 import { HeartIcon as HeartIconOutline } from "@heroicons/react/24/outline";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import CardContainerHook from "../../hook/products/card-container-hook";
 import { ToastContainer } from "react-toastify";
 import ProductCardHook from "../../hook/products/product-card-hook";
 export default function CardElement({ item, favProd }) {

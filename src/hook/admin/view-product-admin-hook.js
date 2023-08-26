@@ -6,11 +6,11 @@ import { getAllProductsPage } from "./../../redux/actions/productsAction";
 const ViewProductAdminHook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllProducts(2));
+    dispatch(getAllProducts(12));
   }, []);
 
   const onPress = async (page) => {
-    await dispatch(getAllProductsPage(page, 2));
+    await dispatch(getAllProductsPage(page, 12));
   };
   let items = [];
   let pagination = [];

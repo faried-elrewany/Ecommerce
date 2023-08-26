@@ -62,7 +62,15 @@ export default function Login() {
               color="red"
               type="submit"
             >
-              تسجيل الدخول
+              {isPress === true ? (
+                loading === true ? (
+                  <Loading />
+                ) : (
+                  "تسجيل الدخول"
+                )
+              ) : (
+                "تسجيل الدخول"
+              )}
             </Button>
             <Typography variant="large" className="mt-6 flex justify-center">
               لا تمتلك حساب ؟
@@ -90,7 +98,6 @@ export default function Login() {
               </Typography>
             </Link>
           </CardFooter>
-          {isPress === true ? loading === true ? <Loading /> : null : null}
         </Card>
       </section>
       <ToastContainer />

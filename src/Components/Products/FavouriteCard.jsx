@@ -18,6 +18,7 @@ import baseUrl from "../../Api/baseURL";
 export default function FavouriteCard({ item, favProd }) {
   const [removeToWishListData, addToWishListData, handelFav, favImg] =
     ProductCardHook(item, favProd);
+  console.log(favImg);
   return (
     <>
       <Card className="w-64 shadow-xl mt-6 ">

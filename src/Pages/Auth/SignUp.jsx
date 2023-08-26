@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
-import AlertMessage from "../../Components/Alert.jsx";
 import { Link } from "react-router-dom";
 import RegisterHook from "../../hook/auth/register-hook";
 import { ToastContainer } from "react-toastify";
+import Loading from "../../Components/Utility/Loading.jsx";
 export default function SignUp() {
   const [
     name,

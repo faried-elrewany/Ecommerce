@@ -46,12 +46,13 @@ const VerifyPasswordHook = () => {
         }
         if (res.data.status === "fail") {
           notify("الكود خاطئ او انتهت صلاحيته", "error");
+          setLoading(true);
         }
       }
     }
   }, [loading]);
 
-  return [code, OnChangeCode, onSubmit];
+  return [code, OnChangeCode, onSubmit, loading];
 };
 
 export default VerifyPasswordHook;
