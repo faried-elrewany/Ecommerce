@@ -24,6 +24,7 @@ export default function FavouriteCard({ item, favProd }) {
       <Card className="w-64 shadow-xl mt-6 ">
         <CardHeader floated={true} color="blue-gray" className="shadow-2xl ">
           <img
+            loading="lazy"
             className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
             src={baseUrl.getUri() + "/products/" + item.imageCover}
             alt="ui/ux review check"

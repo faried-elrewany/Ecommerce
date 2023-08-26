@@ -23,6 +23,7 @@ export default function CardElement({ item, favProd }) {
         <Link to={`/products/${item._id}`}>
           <CardHeader floated={true} color="blue-gray" className="shadow-2xl ">
             <img
+              loading="lazy"
               className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
               src={item.imageCover}
               alt="ui/ux review check"

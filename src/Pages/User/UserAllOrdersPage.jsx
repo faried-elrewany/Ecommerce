@@ -11,6 +11,7 @@ export function ProductCard({ item }) {
     <div className="flex rounded-lg flex-col md:flex-row p-2 mb-2 bg-red-50 w-full">
       <div className="w-full flex md:w-64 justify-center items-center">
         <img
+          loading="lazy"
           className="md:w-3/4 object-contain object-center"
           src={baseUrl.getUri() + "/products/" + item.product.imageCover}
           alt={item.product.title || ""}

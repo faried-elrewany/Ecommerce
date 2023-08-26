@@ -27,15 +27,15 @@ function HomeCarousal({ slides }) {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className=" bg-red-100 text-slate-500">
-            <img src={slide.image} alt="slider" />
-            <div className="flex flex-col gap-2 text-red-800 ">
+            <img loading="lazy" src={slide.image} alt="slider" />
+            {/* <div className="flex flex-col gap-2 text-red-800 ">
               <p className="md:text-3xl text-xl">{slide.text}</p>
               <p className="md:text-3xl text-xl font-bold">
                 خصم يصل الى
                 <br className=" block md:hidden" />
                 {slide.discount}% عند الشراء
               </p>
-            </div>
+            </div> */}
           </SwiperSlide>
         ))}
       </Swiper>

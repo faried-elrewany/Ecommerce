@@ -187,9 +187,10 @@ const AdminAddProductsHook = () => {
 
       if (product) {
         if (product.status === 201) {
-          notify("تم الاضافة بنجاح", "success");
+          notify("تمت الاضافة بنجاح", "success");
         } else {
-          notify("هناك مشكلة في اصضاة المنتج", "error");
+          console.log(product);
+          notify("هناك مشكلة في اضافة المنتج", "error");
         }
       }
     }

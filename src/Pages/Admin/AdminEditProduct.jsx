@@ -145,6 +145,7 @@ const AdminEditProduct = () => {
           <div className="mt-2 flex gap-2 items-center relative">
             <div className="  "> الالوان المتاحه للمنتج</div>
             <img
+              loading="lazy"
               onClick={onChangeColor}
               src={add}
               alt="add-color-image"

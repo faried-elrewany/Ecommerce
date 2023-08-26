@@ -40,7 +40,7 @@ function CardSwiper({ images }) {
                 className=" rounded object-contain text-slate-700"
               >
                 <div className="zoom">
-                  <img src={src.original} />
+                  <img loading="lazy" src={src.original} />
                 </div>
               </SwiperSlide>
             ))

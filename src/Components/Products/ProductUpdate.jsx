@@ -70,6 +70,7 @@ const ProductUpdate = ({ item }) => {
         </div>
         <CardHeader floated={false} color="blue-gray">
           <img
+            loading="lazy"
             className="w-60 h-60 object-contain  transition duration-500 group-hover:scale-105"
             src={item.imageCover}
             alt="product image"

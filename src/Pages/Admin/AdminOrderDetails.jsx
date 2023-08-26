@@ -54,7 +54,6 @@ const AdminOrderDetails = () => {
                 <select
                   name="pay"
                   id="paid"
-                  value={"0"}
                   onChange={onChangePaid}
                   className="select input-form-area mt-1  text-center w-50"
                 >
@@ -68,7 +67,6 @@ const AdminOrderDetails = () => {
               </div>
               <div className="flex gap-2">
                 <select
-                  value={"0"}
                   onChange={onChangeDeliver}
                   name="deliver"
                   id="deliver"

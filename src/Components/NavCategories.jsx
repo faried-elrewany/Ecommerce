@@ -13,7 +13,7 @@ const SubCategory = ({ subCategories, imageUrl }) => {
         ))}
       </ul>
       <div className="img-product-menu">
-        <img src={imageUrl} alt="product menu" />
+        <img loading="lazy" src={imageUrl} alt="product menu" />
       </div>
     </div>
   );

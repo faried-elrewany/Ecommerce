@@ -43,7 +43,7 @@ const AddNewProduct = () => {
   // const [images, setImages] = useState({});
   return (
     <>
-      <div className=" overflow-x-hidden flex h-full">
+      <div className=" overflow-x-hidden bg-gray-200 flex h-full">
         <SideBar menus={AdminMenu} />
         <div className="flex flex-col w-3/4  gap-4 p-8  ">
           <h2 className="self-start font-bold text-red-900 text-2xl">
@@ -56,6 +56,7 @@ const AddNewProduct = () => {
                 setImages={setImages}
                 theme={"light"}
                 allowCrop={false}
+                cropConfig={{ minWidth: 100 }}
               />
             </div>
           </div>
@@ -138,6 +139,7 @@ const AddNewProduct = () => {
           <div className="mt-2 flex gap-2 items-center relative">
             <div className="  "> الالوان المتاحه للمنتج</div>
             <img
+              loading="lazy"
               onClick={onChangeColor}
               src={add}
               alt="add-color-image"

@@ -9,7 +9,12 @@ const CategoryCard = ({ img, title, id }) => {
       <div
         className={` w-full h-full !bg-red-50 rounded-full flex items-center justify-center shadow-lg `}
       >
-        <img alt="Art" src={img} className=" w-4/6 h-4/6 object-contain " />
+        <img
+          loading="lazy"
+          alt="Art"
+          src={img}
+          className=" w-4/6 h-4/6 object-contain "
+        />
       </div>
       <h3 className="my-2 text-lg  text-center  font-bold text-slate-800 ">
         {title}

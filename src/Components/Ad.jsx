@@ -6,7 +6,13 @@ const Ad = () => {
       <div className=" sm:text-xl md:text-2xl font-bold text-red-800">
         خصم يصل الي علي اللاب توب 30%
       </div>
-      <img src={labtops} alt="image" className="object-contain h-[100px]" />
+      <img
+        loading="lazy"
+        src={labtops}
+        alt="image"
+        loading="lazy"
+        className="object-contain h-[100px]"
+      />
     </div>
   );
 };

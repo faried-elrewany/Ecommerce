@@ -28,6 +28,7 @@ const AdminAddBrand = () => {
             <div>
               <label htmlFor="upload-photo">
                 <img
+                  loading="lazy"
                   src={img}
                   alt="fzx"
                   height="150px"
