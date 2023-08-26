@@ -165,7 +165,7 @@ function NavContent(props) {
 function Header() {
   const contactInfo = [
     { icon: "fas fa-phone-square-alt", text: "+201552805430" },
-    { icon: "fas fa-envelope-square", text: "fariedelrewany@email.com" },
+    { icon: "fas fa-envelope-square", text: "fariedelrewany@Gmail.com" },
   ];
 
   const logoIcon = "fa fa-heart";

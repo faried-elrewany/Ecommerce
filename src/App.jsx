@@ -42,6 +42,7 @@ import { ProductByBrand } from "./Pages/Products/ProductByBrand.jsx";
 import ProductByCategory from "./Pages/Products/ProductByCategory.jsx";
 import PaymentMethod from "./Pages/Cart/PaymentMethod.jsx";
 import AdminOrderDetails from "./Pages/Admin/AdminOrderDetails.jsx";
+import Footer from "./Components/Footer.jsx";
 
 const App = () => {
   return (
@@ -99,7 +100,7 @@ const App = () => {
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </>
   );
