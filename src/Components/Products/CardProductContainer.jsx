@@ -7,7 +7,7 @@ import CardContainerHook from "../../hook/products/card-container-hook";
 
 const CardProductContainer = ({ products, title, pathText, btntitle }) => {
   const [favProd] = CardContainerHook();
-
+  console.log("products", products);
   return (
     <>
       {products ? (

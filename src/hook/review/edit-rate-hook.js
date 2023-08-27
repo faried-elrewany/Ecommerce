@@ -5,16 +5,18 @@ import {
   forgetPassword,
   loginUser,
 } from "../../redux/actions/authAction";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import notify from "../useNotifaction";
 import {
   createReview,
   deleteReviewOnProduct,
   updateReviewOnProduct,
 } from "./../../redux/actions/reviewAction";
+import { allReviewProduct } from "./../../redux/actions/reviewAction";
+
 const EditRateHook = (review) => {
   const dispatch = useDispatch();
-
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
 
   const [newRateText, setNewRateText] = useState(review.review);
@@ -49,7 +51,7 @@ const EditRateHook = (review) => {
       if (res.status && res.status === 200) {
         notify("تم تعديل التقييم بنجاح", "success");
         setTimeout(() => {
-          window.location.reload(false);
+          dispatch(allReviewProduct(id, 1, 5));
         }, 1000);
       } else notify("هناك مشكله فى عملية التعديل", "error");
     }

@@ -43,10 +43,12 @@ const CardDetails = () => {
                           onClick={() => colorClick(index, color)}
                           style={{
                             backgroundColor: color,
-                            border:
-                              indexColor === index ? "3px solid #000" : "none",
+                            outline:
+                              indexColor === index ? "1px solid #000" : "none",
+                            outlineOffset:
+                              indexColor === index ? "3px" : "none",
                           }}
-                          className={` ring-offset-2 ms-1  rounded-full w-8 h-8 focus:outline-none`}
+                          className={` ms-2   rounded-full w-8 h-8 `}
                         ></div>
                       );
                     })

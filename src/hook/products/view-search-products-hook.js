@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllProducts,
-  getAllProductsSearch,
+  getAllProductSearch,
 } from "../../redux/actions/productsAction";
 import { getAllProductsPage } from "./../../redux/actions/productsAction";
 import { useState } from "react";
@@ -16,7 +16,7 @@ const ViewSearchProductsHook = () => {
     sortData();
     setLoading(true);
     await dispatch(
-      getAllProductsSearch(
+      getAllProductSearch(
         `sort=${sort}&limit=${limit}&keyword=${word}&${queryCat}&${brandCat}${pricefromString}${priceToString}`
       )
     );
@@ -26,7 +26,9 @@ const ViewSearchProductsHook = () => {
     getProduct();
   }, []);
 
-  const allProducts = useSelector((state) => state.allproducts.allProducts);
+  const allProducts = useSelector(
+    (state) => state.allproducts.allproductsearch
+  );
 
   let items = [];
   let pagination = [];
@@ -50,7 +52,7 @@ const ViewSearchProductsHook = () => {
     getStorge();
     sortData();
     await dispatch(
-      getAllProductsSearch(
+      getAllProductSearch(
         `sort=${sort}&limit=${limit}&page=${page}&keyword=${word}&${queryCat}&${brandCat}${pricefromString}${priceToString}`
       )
     );

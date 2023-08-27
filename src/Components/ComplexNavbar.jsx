@@ -146,7 +146,7 @@ function NavContent(props) {
                 </NavLink>
               ))}
               {user !== "" ? (
-                <NavLink to={"/"}>
+                <NavLink to={"/login"}>
                   <li onClick={logOut} className="login-list-item">
                     تسجيل الخروج
                   </li>

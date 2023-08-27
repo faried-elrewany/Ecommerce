@@ -11,7 +11,7 @@ const ProductDetalisPage = () => {
   const { id } = useParams();
   let [item, images, cat, brand, prod] = ViewProductsDetalisHook(id);
   let items = [];
-  if (prod) items = prod.slice(0, 4);
+  if (prod) items = prod.slice(0, 12);
 
   if (item) {
     var rateAvg = item.ratingsAverage;

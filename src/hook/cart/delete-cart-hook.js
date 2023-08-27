@@ -7,12 +7,14 @@ import notify from "../../hook/useNotifaction";
 import {
   clearAllCartItem,
   deleteCartItem,
+  getAllUserCartItems,
   updateCartItem,
 } from "./../../redux/actions/cartAction";
 
 const DeleteCartHook = (item) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+  const [loadingQuantity, setLoadingQuantity] = useState(true);
   const [itemCount, setItemCount] = useState(0);
 
   const handelDeleteCart = async () => {
@@ -57,10 +59,7 @@ const DeleteCartHook = (item) => {
         count: itemCount,
       })
     );
-
-    window.location.reload(false);
   };
-
   return [
     handelDeleteCart,
     show,

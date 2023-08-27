@@ -49,8 +49,8 @@ const ReviewPost = ({ review }) => {
   return (
     <>
       <Dialog
-        open={open}
-        handler={handleOpen}
+        open={showDelete}
+        handler={handleShow}
         animate={{
           mount: { scale: 1, y: 0 },
           unmount: { scale: 0.9, y: -100 },
@@ -62,7 +62,7 @@ const ReviewPost = ({ review }) => {
           <Button
             variant="text"
             color="red"
-            onClick={handleOpen}
+            onClick={handleClose}
             className="mr-1 outline-none"
           >
             <span>تراجع</span>
@@ -118,7 +118,7 @@ const ReviewPost = ({ review }) => {
           {isUser === true ? (
             <>
               <AiTwotoneDelete
-                onClick={handleOpen}
+                onClick={handleShow}
                 className="cursor-pointer text-gray-600"
               />
               <AiFillEdit

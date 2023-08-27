@@ -1,9 +1,6 @@
 import React from "react";
 import HomeCarousal from "../../Components/HomeCarousal";
 import Container from "../../Components/Utility/Container";
-import Row from "../../Components/Utility/Row";
-import SubTitle from "../../Components/Utility/SubTitle";
-import CardElement from "../../Components/Products/Card";
 import Ad from "../../Components/Ad";
 import NavCategories from "../../Components/NavCategories";
 import HomeCategory from "./HomeCategory";
@@ -20,7 +17,7 @@ import ViewHomeProductsHook from "./../../hook/products/view-home-products-hook"
 
 export default function HomePage() {
   const [items] = ViewHomeProductsHook();
-
+  if (items) console.log(items);
   const slides = [
     {
       image: home1,
@@ -68,12 +65,6 @@ export default function HomePage() {
         />
         <Ad />
 
-        <CardProductContainer
-          products={items}
-          title=" الاحدث"
-          btntitle="المزيد"
-          pathText="/products"
-        />
         <HomeBrand />
       </Container>
     </>
