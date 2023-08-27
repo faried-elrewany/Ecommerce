@@ -4,7 +4,10 @@ import { createBrand } from "../../redux/actions/brandAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import notify from "../../hook/useNotifaction";
-import { addProductToCart } from "./../../redux/actions/cartAction";
+import {
+  addProductToCart,
+  getAllUserCartItems,
+} from "./../../redux/actions/cartAction";
 
 const AddToCartHook = (prdID, item) => {
   const dispatch = useDispatch();
@@ -49,7 +52,6 @@ const AddToCartHook = (prdID, item) => {
       } else {
         if (localStorage.getItem("user")) {
           let user = JSON.parse(localStorage.getItem("user"));
-          console.log(user, "useeeee");
           if (user.role == "admin")
             notify("  غير مسموح للادمن  باضافة العربة ", "warn");
           return;

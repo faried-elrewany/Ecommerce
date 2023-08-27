@@ -13,7 +13,7 @@ const AdminOrder = ({ orderItem }) => {
           <p> طلب من : {orderItem.user.name || ""} </p>
           <p> {orderItem.user.email || ""}</p>
         </div>
-        <p className="flex justify-start md:justify-end">السعر : 14000</p>
+
         <div className=" flex flex-col md:flex-row w-full gap-4  items-center ">
           <div className="flex gap-2">
             <div className=" font-bold "> التوصيل</div>

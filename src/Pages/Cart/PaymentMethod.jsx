@@ -34,7 +34,7 @@ const PaymentMethod = () => {
   return (
     <div className="p-2">
       <h2 className=" font-bold mt-8 text-red-900 text-2xl my-2">
-        اضافة عنوان جديد
+        اختر طريقة الدفع
       </h2>
 
       <div className="  border-2 p-4 bg-gary-100 rounded-3xl border-red-600 w-full md:w-3/4 flex flex-col gap-8 ">

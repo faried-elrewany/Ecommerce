@@ -59,6 +59,7 @@ const DeleteCartHook = (item) => {
         count: itemCount,
       })
     );
+    window.location.reload(false);
   };
   return [
     handelDeleteCart,

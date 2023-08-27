@@ -32,6 +32,7 @@ const CartPage = () => {
       onChangeCoupon(couponNameRes);
     }
   }, [couponNameRes]);
+  useEffect(() => {}, []);
   return (
     <div>
       <h2 className="text-red-400 mt-4 text-2xl font-bold ">عربة التسوق </h2>

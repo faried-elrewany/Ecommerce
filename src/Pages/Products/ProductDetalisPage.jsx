@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import NavCategories from "../../Components/NavCategories";
 import CardDetails from "../../Components/Products/CardDetails";
 import CardElement from "../../Components/Products/Card";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ViewProductsDetalisHook from "../../hook/products/view-products-detalis-hook";
 import CardProductContainer from "../../Components/Products/CardProductContainer";
 import ReviewContainer from "../../Components/Utility/ReviewContainer";
@@ -17,6 +17,11 @@ const ProductDetalisPage = () => {
     var rateAvg = item.ratingsAverage;
     var rateQty = item.ratingsQuantity;
   }
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div>
       <NavCategories />
