@@ -56,7 +56,7 @@ const AddCouponHook = () => {
       } else if (res && res.status === 400) {
         notify("هذا الكوبون موجود من قبل ", "error");
       } else if (res && res.status === 403) {
-        notify("انتا غير مسموح لك بالاضافة", "error");
+        notify("انت غير مسموح لك بالاضافة", "error");
       }
     }
   }, [loading]);

@@ -71,6 +71,7 @@ const AddNewProduct = () => {
             label="تفاصيل المنتج"
             value={prodDescription}
             onChange={onChangeDesName}
+            color="red"
           />
           <Input
             color="red"

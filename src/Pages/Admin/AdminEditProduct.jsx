@@ -61,6 +61,7 @@ const AdminEditProduct = () => {
                 setImages={setImages}
                 theme={"light"}
                 allowCrop={false}
+                cropConfig={{ minWidth: 100 }}
               />
             </div>
           </div>

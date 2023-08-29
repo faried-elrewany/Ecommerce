@@ -57,7 +57,7 @@ const ReviewPost = ({ review }) => {
         }}
       >
         <DialogHeader>تاكيد الحذف</DialogHeader>
-        <DialogBody divider>هل انتا متاكد من عملية الحذف للمنتج</DialogBody>
+        <DialogBody divider>هل انت متاكد من عملية الحذف للمنتج</DialogBody>
         <DialogFooter>
           <Button
             variant="text"
