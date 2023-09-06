@@ -88,7 +88,7 @@ export default function SignUp() {
           <Link to="/login">
             <Typography
               color="gray"
-              className="mt-4 ms-2 text-center font-normal text-lg"
+              className="mt-4 text-red-700 ms-2 text-center font-normal text-lg"
             >
               بالفعل تمتلك ايميل? تسجيل الدخول{" "}
             </Typography>
